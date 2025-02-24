@@ -1,0 +1,6 @@
+Kör codegen kommandot för att generera testfall för en webbsida med output ("-o") titll en specific fil på en specifik plats.
+npx playwright codegen https://opensource-demo.orangehrmlive.com/web/index.php/auth/login -o ./tests/codegen.spec.js
+
+
+allure generate ./allure-results -o allure-report --clean
+allure open ./allure-report

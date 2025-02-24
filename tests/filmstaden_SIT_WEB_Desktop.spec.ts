@@ -1,0 +1,618 @@
+import { test, expect, chromium } from '@playwright/test';
+import { MailiskClient } from "mailisk";
+
+const Environment = "https://sv-sit-marvel.filmstaden.se/"; // Set the environment to the SIT environment
+
+//test.describe.configure({ retries: 2 });
+
+test('Control giftcard-saldo', async ({ page }) => {
+  //This test would be better if we had a specific present card that ALWAYS had a specific balance
+  await page.goto(Environment);
+  await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+  await page.getByRole('link', { name: 'Stockholm' }).first().click();
+  await page.getByRole('button', { name: 'Mer ' }).click();
+  await page.getByRole('link', { name: 'Presentkort' }).click();
+  await page.getByPlaceholder('Presentkortsnummer').fill('fsfesfse');
+  await page.getByRole('button', { name: 'Visa saldo' }).click();
+  await page.waitForTimeout(3000);
+  await expect(page.getByRole('dialog')).toContainText('Kortet kan inte hittas');
+  await page.getByRole('button', { name: '' }).click();
+  await page.getByPlaceholder('Presentkortsnummer').fill('48395577913');
+  await page.getByRole('button', { name: 'Visa saldo' }).click();
+  await expect(page.getByRole('dialog')).toContainText('Presentkortssaldo');
+  await expect(page.getByText('Presentkortssaldo')).toBeVisible();
+  await page.getByText('Presentkortssaldo').click({
+    button: 'right'
+  });
+  await page.getByRole('button', { name: '' }).click();
+  await expect(page.getByRole('main')).toContainText('Presentkort');
+});
+
+test('Search town and movies', async ({ page }) => {
+  await page.goto(Environment);
+  await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+  await page.getByRole('textbox').fill('dwjao');
+  await expect(page.getByRole('main')).toContainText('Inga träffar');
+  await page.getByRole('textbox').fill('Göteborg');
+  await expect(page.getByRole('main')).toContainText('Göteborg');
+  await page.locator('ul').filter({ hasText: /^Göteborg$/ }).getByRole('link').click();
+
+  await page.getByPlaceholder('Sök på filmens namn').fill('star wars');
+  await expect(page.getByRole('link', { name: 'Star Wars: The Rise of' })).toBeVisible();
+  await page.getByRole('link', { name: 'Star Wars: The Rise of' }).click();
+  await expect(page.getByRole('main')).toContainText('Star Wars');
+  await expect(page.getByLabel('Läs mer')).toBeVisible();
+  await page.locator('div').filter({ hasText: /^UpptäckGå på bioMedlemsskapetMerLogga inGöteborg$/ }).getByRole('link').first().click();
+  await page.getByPlaceholder('Sök på filmens namn').fill('fhebsuipfsehf');
+  await expect(page.getByText('Ingen träff!Vi kunde inte')).toBeVisible();
+  await expect(page.getByLabel('', { exact: true }).locator('div')).toContainText('Ingen träff!');
+  await page.getByRole('button', { name: '' }).click();
+
+  await page.getByRole('button', { name: 'Göteborg' }).click();
+  await page.getByPlaceholder('Sök stad').fill('');
+  await expect(page.getByLabel('Välj din biostad').getByRole('heading')).toContainText('Välj din biostad');
+  await page.getByPlaceholder('Sök stad').fill('fwaoifjawoi');
+  await expect(page.getByLabel('Välj din biostad')).toContainText('Inga träffar');
+  await page.getByPlaceholder('Sök stad').press('ControlOrMeta+a');
+  await page.getByPlaceholder('Sök stad').fill('Göteborg');
+  await page.getByPlaceholder('Sök stad').press('ControlOrMeta+a');
+  await page.getByPlaceholder('Sök stad').fill('alingsås');
+  await page.getByRole('button', { name: 'Välj stad Alingsås' }).click();
+  await expect(page.locator('#gatsby-focus-wrapper')).toContainText('Alingsås');
+
+});
+
+test('404-page', async ({ page }) => {
+await page.goto(Environment + '404/');
+await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+await expect(page.locator('h1')).toContainText('Oj hoppsan! Nu hittade vi inte det du letar efter');
+await expect(page.getByRole('link', { name: 'Hitta film och köp biljetter' })).toBeVisible();
+await expect(page.getByRole('link', { name: 'Gå till startsidan ' })).toBeVisible();
+await expect(page.getByRole('link', { name: 'Till Filmstadens kundservice ' })).toBeVisible();
+await page.getByRole('link', { name: 'Hitta film och köp biljetter' }).click();
+await expect(page.locator('h1')).toContainText('På bio nu');
+
+});
+
+test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
+  
+  test('Card purchase', async ({ page }) => {
+   // test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
+    let randomMovie = Math.floor(Math.random() * 7); // Generate a random number between 0 and 6
+    
+    await page.goto(Environment);
+    await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+    await page.getByRole('link', { name: 'Stockholm' }).first().click();
+    await expect(page.locator('#gatsby-focus-wrapper')).toContainText('Logga in');
+    await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
+  
+    while (!(await page.locator("//li//li//li//li[1]//a[1]").count() > 0)) { // Loop until a movie that actually have a date is selected
+      await page.waitForTimeout(500);
+      await page.locator("//picture[@id='mainNavigationLogotype']//img[@class='w-auto h-full']").click(); // Click on the main navigation back to the startpage
+      randomMovie = Math.floor(Math.random() * 7); // Generate a new random number between 0 and 6
+      await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
+      await page.waitForTimeout(250);
+    };
+    await page.locator("//li//li//li//li[1]//a[1]").nth(0).click(); // Click on the first available date
+  
+    await expect(page.getByRole('main')).toContainText('Ordinarie');
+  
+    // Loop until ordinarie tickets is equal to 1
+    while ((await page.locator('#stepper-inputfield_Ordinarie').inputValue()) !== "1") { 
+      await page.locator('//span[@class="icomoon icon-collapse-solid  inline-block align-middle text-icon-size-40 w-[2.5rem] h-[2.5rem] leading-none"]').nth(0).click(); //first - button
+      if ((await page.locator('#stepper-inputfield_Ordinarie')).inputValue() == "0") { // Check if the ordinarie tickets is 0
+        await page.locator('//span[@class="icomoon icon-expand-solid  inline-block align-middle text-icon-size-40 w-[2.5rem] h-[2.5rem] leading-none"]').nth(0).click(); //first + button
+     }
+    };
+    
+    await expect(page.locator("//div[@class='shrink-0 text-right font-bold']")).toContainText('1 st');
+  
+
+    /* Check salongsinfo
+    This should be broken out to a test of itself and it needs a while loop to check for
+    a show that actually have salongsinfo
+    await page.getByRole('button', { name: 'Salongsinformation' }).click();
+    await expect(page.getByRole('dialog')).toContainText('Salongsinformation');
+    await page.getByRole('button', { name: 'Stäng' }).click();
+    */
+
+    await page.getByPlaceholder('Fyll i din e-postadress').fill('phox.warlock7@mailinator.com');
+    await page.waitForTimeout(500);
+    
+  
+    // Check if the age limit acceptance is present
+    if (await page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' }).count() > 0) { 
+      await page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' }).first().click(); // Click the acceptance of the age limit
+    } else if (await page.locator('label').filter({ hasText: 'Jag intygar att alla i sä' }).count() > 0) {
+      await page.locator('label').filter({ hasText: 'Jag intygar att alla i sä' }).first().click(); // Click the acceptance of the age limit
+    };
+  
+    //Navigera vidare till Nets och genomför köp
+    await page.getByRole('button', { name: 'Fortsätt till kortbetalning' }).click();
+    await expect(page.locator('#NETSHeader')).toContainText('Betala med kontokort');
+    await page.getByPlaceholder('0000 0000 0000').fill('4925000000000004');
+    await page.getByLabel('month').selectOption('12');
+    await page.getByLabel('year').selectOption('28');
+    await page.getByPlaceholder('000', { exact: true }).fill('123');
+    await page.getByRole('button', { name: 'Betala' }).click();
+  
+    //Kontrollera köpets referensnummer
+    await expect(page.locator("//h6[normalize-space()='Referensnummer']")).toContainText('Referensnummer');
+    await page.getByRole('link', { name: 'Visa biljetter' }).click();
+    await expect(page.getByRole('main'),).toContainText('Antal biobiljetter:');
+    await page.getByRole('link', { name: ' Till filmstaden.se' }).click();
+    await expect(page.getByRole('main')).toContainText('Vilken film vill du se?');
+    
+  });
+
+  test('Discountcode FR purchase + control the confirmation email', async ({ page }, testInfo) => {
+    test.setTimeout(90000); // Set timeout to 120 seconds for the whole test
+    const namespace = "xw50xu01olrr";
+    const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
+   // let slowExpect = expect.configure({ timeout: 10000 }); // Set timeout to 10 seconds for individual expect calls
+    let randomMovie = Math.floor(Math.random() * 7); // Generate a random number between 0 and 6
+    let testEmailAddress = `test.${Date.now()}`+testInfo.project.name+`FRpurchase@${namespace}.mailisk.net`;
+
+    // Save the start time of the test
+    let testStartTime = new Date();
+    // Change start time format for the email filtering later
+    let timeFrom = Math.floor(testStartTime.getTime() / 1000); // Unix timestamp in seconds
+  
+    //Open both the filmstaden page
+    await page.goto(Environment);
+  
+    //Accept cookies and navigate to the Stockholm startpage
+    await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+    await page.getByRole('link', { name: 'Stockholm' }).first().click();
+    await expect(page.locator('#gatsby-focus-wrapper')).toContainText('Logga in'); // Check if the page is the correct one and that the user is not logged in
+    await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
+  
+    // Loop until a movie that actually have shows available is found and selected
+    while (!(await page.locator("//li//li//li//li[1]//a[1]").count() > 0)) { 
+      await page.waitForTimeout(500);
+      await page.locator("#mainNavigationLogotype").click(); // Click on the main navigation back to the startpage
+      randomMovie = Math.floor(Math.random() * 7); // Generate a new random number between 0 and 6
+      await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
+      await page.waitForTimeout(250);
+    };
+  
+    // Click on the first available date/show
+    await page.locator("//li//li//li//li[1]//a[1]").first().click();
+  
+    //Make sure there are Ordinarie tickets available for sale
+    await expect(page.getByRole('main')).toContainText('Ordinarie');
+  
+    // Loop until ordinarie tickets is equal to 1
+    while ((await page.locator('#stepper-inputfield_Ordinarie').inputValue()) !== "1") { 
+      await page.locator('//span[@class="icomoon icon-collapse-solid  inline-block align-middle text-icon-size-40 w-[2.5rem] h-[2.5rem] leading-none"]').nth(0).click(); //first - button
+      if ((await page.locator('#stepper-inputfield_Ordinarie')).inputValue() == "0") { // Check if the ordinarie tickets is 0
+        await page.locator('//span[@class="icomoon icon-expand-solid  inline-block align-middle text-icon-size-40 w-[2.5rem] h-[2.5rem] leading-none"]').nth(0).click(); //first + button
+     }
+    };
+    
+    //Double check to make sure the amount of tickets is 1
+    await expect(page.locator("//div[@class='shrink-0 text-right font-bold']")).toContainText('1 st');
+  
+    //Test discount error message and add a correct discount code
+    await page.getByRole('button', { name: 'Lös in in rabattkod' }).click();
+    await page.getByRole('button', { name: ' Probem med rabattkoden' }).click();
+    await expect(page.getByLabel('Probem med rabattkoden')).toBeVisible();
+    await expect(page.getByLabel('Probem med rabattkoden')).toContainText('Endast ett erbjudande per biljett');
+    await page.getByPlaceholder('Ange kod').fill('faresgrdsg');
+    await page.getByRole('button', { name: 'Aktivera' }).click();
+    await expect(page.locator('form')).toContainText('Rabatten hittades inte');
+    await page.getByPlaceholder('Ange kod').press('ControlOrMeta+a');
+    await page.getByPlaceholder('Ange kod').fill('FR');
+    await page.getByRole('button', { name: 'Aktivera' }).click();
+    await expect(page.getByRole('main')).toContainText('0.00 kr');
+    await expect(page.getByRole('main')).toContainText('Ingen betalnings behövs. Njut av din filmupplevelse!');
+  
+    //Add email
+    await page.getByPlaceholder('Fyll i din e-postadress').fill(testEmailAddress);
+  
+    // Check if the age limit acceptance is present
+    if (await page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' }).count() > 0) { 
+      await page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' }).first().click(); // Click the acceptance of the age limit
+    } else if (await page.locator('label').filter({ hasText: 'Jag intygar att alla i sä' }).count() > 0) {
+      await page.locator('label').filter({ hasText: 'Jag intygar att alla i sä' }).first().click(); // Click the acceptance of the age limit
+    };
+  
+    //Finish the purchase
+    await page.getByRole('button', { name: 'Fortsätt'}).click();
+  
+    //Make sure you end up on the receipt page and save the reference number for email verification later
+    await expect(page.locator("//h6[normalize-space()='Referensnummer']")).toContainText('Referensnummer');
+    let refNumber = await page.locator('h5.mb-0.h4').textContent();
+    await page.getByRole('link', { name: 'Visa biljetter' }).click();
+    await expect(page.getByRole('main'),).toContainText('Antal biobiljetter:');
+    await page.getByRole('link', { name: ' Till filmstaden.se' }).click();
+    await expect(page.getByRole('main')).toContainText('Vilken film vill du se?');
+    
+    // Wait for the verification email to arrive
+    let emailContent;
+    try {
+      const { data: emails } = await mailisk.searchInbox(namespace, {
+        to_addr_prefix: testEmailAddress,
+        from_timestamp: timeFrom,
+      });
+
+      const email = emails[0];
+      // Extract the entire email content
+      emailContent = email.text;
+      if (!emailContent) {
+      throw new Error("Email content not found.");
+      }
+      expect(emailContent).toBeDefined();
+    } catch (error) {
+      console.error("Error fetching emails:", error);
+      throw error; // Re-throw the error to fail the test
+    }
+
+    // Extract text content without HTML tags
+    const plainTextContent = emailContent.replace(/<[^>]*>/g, '');
+
+    // Check that the email contains the correct reference number and price
+    expect(plainTextContent).toContain(refNumber);
+    expect(plainTextContent).toContain("0,00 kr");
+    
+  });
+});
+
+test.describe.parallel("2FA login tests", () => {
+  const namespace = "xw50xu01olrr";
+  const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
+  let testPassword = "1234Test1234";
+  let testEmailAddress;
+
+  // Tests the proper 2Factor authentication flow
+  test("2FA login", async ({page}, testInfo) => {
+    
+    // Set the test email based on the browser
+    testEmailAddress = `PermanentUser`+testInfo.project.name+`1@${namespace}.mailisk.net`;
+    
+    // Save the start time of the test
+    let testStartTime = new Date();
+    // Change start time format for the email filtering later
+    let timeFrom = Math.floor(testStartTime.getTime() / 1000); // Unix timestamp in seconds
+
+    // Go to the page and click past cookie concent and select Stockholm
+    await page.goto('https://sv-sit-marvel.filmstaden.se/');
+    await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+    await page.getByRole('link', { name: 'Stockholm' }).first().click();
+
+    // Perform login
+    await page.getByRole('link', { name: 'Logga in menuitem logo Logga' }).click();
+    await page.getByPlaceholder('E‑postadress').fill(testEmailAddress);
+    await page.getByPlaceholder('Lösenord').fill(testPassword);
+    await page.getByRole('button', { name: 'Logga in' }).click();
+    await page.getByRole('button', { name: 'Skicka verifieringskod' }).click()
+    
+    // Wait for the verification email to arrive
+    let code;
+    try {
+      const { data: emails } = await mailisk.searchInbox(namespace, {
+        to_addr_prefix: testEmailAddress,
+        from_timestamp: timeFrom,
+      });
+
+      const email = emails[0];
+      // Extract the verification code from the email
+      const matches = email.text.match(/\d+/g);
+      if (matches && matches.length > 1) {
+        code = matches[3]; // Take the fourth sequence of digits (this is the code)
+      } else {
+        throw new Error("Verification code not found in the email.");
+      }
+      expect(code).toBeDefined();
+    } catch (error) {
+      console.error("Error fetching emails:", error);
+      throw error; // Re-throw the error to fail the test
+    }
+
+    // Fill in the verification code and continue the login flow
+    await page.getByPlaceholder('Verifieringskod').fill(code);
+    await page.getByRole('button', { name: 'Verifiera koden' }).click();
+    await page.waitForTimeout(1000);
+    await page.getByRole('button', { name: 'Fortsätt' }).click();
+
+    // Assert that the login was successful by checking for the user name
+    await page.waitForTimeout(2000);
+    const textContent = await page.locator('.text-lg.font-bold').textContent();
+    expect(textContent).toContain("Playwright AutomaticTest");
+
+  });
+});
+
+test.describe("Create Account and delete account", () => {
+
+  test("Sign up, verify email, login, cancel membership", async ({ page },{ request }, testInfo) => {
+    test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
+    const namespace = "xw50xu01olrr";
+    const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
+    
+    // Set the test email based on date and browser, making sure it's always unique for each test run and browser
+    const testEmailAddress = `test.${Date.now()}.${testInfo.project.name}.login@${namespace}.mailisk.net`;
+    const testPassword = "1234Test1234";
+
+    // Save the start time of the test
+    let testStartTime = new Date();
+    let timeFrom = Math.floor(testStartTime.getTime() / 1000); // Unix timestamp in seconds
+    const country = 'se';
+
+    // Set the verification errorMessageText CAN BE REMOVED IF API VERIFICATION WORKS
+    let errorMessageText = '          E‑postadressen eller lösenordet är felaktigt.';
+
+    // Create a new page context for the social security number page
+    let socialSecurityNumberPage = await page.context().newPage();
+    // Navigate to the social security number page and get the number
+    await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
+    await socialSecurityNumberPage.getByLabel('Jag samtycker').click();
+    let socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
+    // Close the social security number page
+    await socialSecurityNumberPage.close();
+
+    // Navigate to the Filmstaden page and start the sign-up process
+    await page.goto('https://sv-sit-marvel.filmstaden.se/');
+    await page.getByRole('button', { name: 'No thanks' }).click();
+    await page.getByRole('link', { name: 'Stockholm' }).first().click();
+    await page.getByRole('link', { name: 'Logga in menuitem logo Logga' }).click();
+    await page.getByRole('link', { name: 'Bli medlem' }).click();
+    await page.getByPlaceholder('E‑postadress').fill(testEmailAddress);
+    await page.getByRole('button', { name: 'Skicka verifieringskod' }).click();
+
+    // Wait for the verification email to arrive
+    let code;
+    try {
+      const { data: emails } = await mailisk.searchInbox(namespace, {
+        to_addr_prefix: testEmailAddress,
+        from_timestamp: timeFrom,
+      });
+
+      const email = emails[0];
+      // Extract the verification code from the email
+      const matches = email.text.match(/\d+/g);
+      if (matches && matches.length > 1) {
+        code = matches[3]; // Take the second sequence of digits
+      } else {
+        throw new Error("Verification code not found in the email.");
+      }
+      expect(code).toBeDefined();
+    } catch (error) {
+      console.error("Error fetching emails:", error);
+      throw error; // Re-throw the error to fail the test
+    }
+
+    // Complete the first page of the sign-up process
+    await page.getByPlaceholder('Verifieringskod').fill(code);
+    await page.getByLabel('Verifiera koden').click();
+    await page.getByPlaceholder('Nytt lösenord').fill(testPassword);
+    await page.getByPlaceholder('Bekräfta lösenordet').fill(testPassword);
+    await page.getByLabel('Bli medlem').click();
+    await expect(page).toHaveURL("https://sv-sit-marvel.filmstaden.se/skapa-konto/");
+    
+    // Fill in the next signup form
+    await page.getByPlaceholder('Förnamn').fill('Förnamn');
+    await page.getByPlaceholder('Efternamn').fill('Efternamn');
+    await page.getByPlaceholder('Mobilnummer').fill('0737889944');
+    await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
+    await page.locator('#termsAndConditions').check();
+    await page.locator('#subscriptionsOptIn').check();
+    await page.getByRole('button', { name: 'Fortsätt' }).click();
+    await page.waitForTimeout(1000);
+
+    // Wait for the Avsluta Medlemskap button to be visible before continuing to make sure
+    // we're on the correct page
+    //await expect(page.getByRole('button', { name: 'Avsluta medlemskap' })).toBeVisible();
+    await page.waitForURL("https://sv-sit-marvel.filmstaden.se/mina-sidor/");
+
+    // Some shennanigans to get a new socialSecurityNumber
+    /*let i = 1;
+    while (i > 0){
+      let continueButtonCount = await page.getByRole('button', { name: 'Fortsätt' }).count();
+      if (continueButtonCount > 0){
+        break;
+      }
+      
+      console.log("Hämtar nytt personnr, det gamla var: "+socialSecurityNumber);
+
+      // Create a new page context for the social security number page
+      socialSecurityNumberPage = await page.context().newPage();
+      // Navigate to the social security number page and get the number
+      await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
+      //await socialSecurityNumberPage.getByLabel('Jag samtycker').click();
+      socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
+      // Close the social security number page
+      await socialSecurityNumberPage.close();
+      if (continueButtonCount > 0){
+        break;
+      }
+      await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
+      await page.getByRole('button', { name: 'Fortsätt' }).click();
+      i++;
+    };*/
+
+    // Save the userID and set variables for the API call at the end of the tes
+    // Locate the element containing the 6-digit/letter code
+    //const codeElement = await page.locator('p.text-sm.text-weak;').nth(0);
+    let codeElement = await page.locator("div[class='flex'] p[class='text-sm text-weak']").nth(0);
+    // Extract the text content
+    let userID = await codeElement.textContent();
+    // Log the extracted code for debugging
+    console.log('Extracted userID:', userID);
+    // Perform assertions or further actions with the extracted code
+    expect(userID).toBeDefined();
+    expect(userID).toMatch(/^[A-Z0-9]{6}$/); // Example assertion to check the format
+    const apiUrl = `https://inte-services.cinema-api.com/Preference/validatefriend/${country}?code=${userID}`;
+
+    // Control Mina Sidor, that is has the correct elements
+    await expect(page.getByRole('main')).toContainText('Inställningar');
+    await expect(page.getByRole('main')).toContainText('Kvar till guldmedlem');
+    await page.locator("//button[@class='block h-full w-full']").click();
+    await expect(page.getByRole('heading', { name: 'Din enhets skärmljusstyrka', exact: true })).toBeVisible();
+    await page.getByRole('button', { name: '' }).click();
+
+    // Check that the correct elements are visible under the profile "tab"
+    await page.getByRole('button', { name: ' Profil' }).click();
+    await expect(page.locator('form')).toContainText('Återställ lösenord här');
+    await expect(page.locator('form')).toContainText('Byt din e-postadress här');
+    await expect(page.getByLabel('Profil').getByRole('button')).toContainText('Spara telefonnummer');
+    
+
+    // Check that the checkboxes are clickable and that they are not checked after clicking
+    await page.getByRole('button', { name: ' Kundkommunikation' }).click();
+    await expect(page.getByLabel('Kundkommunikation')).toContainText('Medlemsinformation och filmnyheter');
+    await page.getByLabel('Påminnelser, aktuella hä').uncheck();
+    await page.getByLabel('Inbjudningar och tävlingar').uncheck();
+    await page.getByLabel('Biljettsläpp och erbjudanden').uncheck();
+    await page.getByLabel('Medlemsinformation och').uncheck();
+    await expect(page.getByLabel('Medlemsinformation och')).not.toBeChecked();
+    await expect(page.getByLabel('Biljettsläpp och erbjudanden')).not.toBeChecked();
+    await expect(page.getByLabel('Inbjudningar och tävlingar')).not.toBeChecked();
+    await expect(page.getByLabel('Påminnelser, aktuella hä')).not.toBeChecked();
+
+    // Add a friend and check that the friend is added
+    await page.getByRole('button', { name: ' Poängdelning med vänner' }).click();
+    await page.getByPlaceholder('XXX-XXX').fill('GF3UR2');
+    await page.getByPlaceholder('Namn').fill('Phoxfake');
+    await page.getByRole('button', { name: 'Lägg till ny vän' }).click();
+    await expect(page.getByLabel('Phoxfake')).not.toBeChecked();
+
+    // Cancel the membership
+    await page.getByRole('button', { name: 'Avsluta medlemskap' }).click();
+    await expect(page.getByRole('dialog')).toContainText('Är du säker på att du vill avsluta medlemskap?');
+    await page.getByRole('button', { name: 'Ja, avsluta mitt konto' }).click();
+
+    //await context.clearCookies({ domain: 'https://sv-sit-marvel.filmstaden.se/'});
+    await context.clearCookies(); // Try this if the API stuff doesn't work, if API works then this can be removed
+    //await context.clearStorageState();
+    //await context.clearPermissions();
+    //await context.clearOrigins();
+    
+    /*//await test.step("Login with deleted account", async () => {
+      // Try to login with the deleted account
+
+      const { browser } = await import('playwright');
+      const context2 = await browser.newContext();
+      const newLoginPage = await context2.newPage();
+      await newLoginPage.goto('https://sv-sit-marvel.filmstaden.se/');
+      await newLoginPage.getByRole('link', { name: 'Stockholm' }).first().click();
+      await newLoginPage.getByRole('link', { name: 'Logga in menuitem logo Logga' }).click();
+      await newLoginPage.getByPlaceholder('E‑postadress').fill(testEmailAddress);
+      await newLoginPage.getByPlaceholder('Lösenord').fill(testPassword);
+      await newLoginPage.getByRole('button', { name: 'Logga in' }).click();
+      await expect(newLoginPage.locator("div[class='error pageLevel'] p")).toContainText(errorMessageText);
+      
+      // Cancel the login attempt
+      await newLoginPage.getByRole('link', { name: 'Avbryt' }).click();
+      await expect(page).toHaveURL('https://sv-sit-marvel.filmstaden.se/');
+      await newLoginPage.close();
+    //});*/
+
+
+    // Make the API call to check if the user exists
+    const response = await request.get(apiUrl);
+    // Check that the response status is 200 (OK)
+    expect(response.status()).toBe(200);
+    // Read the response body
+    const responseBody = await response.json();
+    // Perform assertions on the response body
+    console.log(responseBody); // Print the response body for debugging
+    expect(responseBody).toBe(false); // Check that the user does not exist anymore
+    
+    /*
+    // Try to login with the deleted account
+    await page.getByRole('link', { name: 'Logga in menuitem logo Logga' }).click();
+    await page.locator("//input[@id='signInName']").fill(testEmailAddress);
+    await page.locator("//input[@id='password']").fill(testPassword);
+    await page.getByRole('button', { name: 'Logga in' }).click();
+    
+    //Loop that is used to check if the error message is displayed and if it is, it will break the loop, this is needed due to caching issues on the site
+    while (true) {
+      await page.waitForTimeout(500);
+      if (await (await page.locator("div[class='error pageLevel'] p").filter({ hasText: errorMessageText })).count() > 0) {
+        break; // Exit the loop immediately if the condition is met
+      }
+
+      // If you end up on the "Bli medlem" page instead due to caching issues, go back
+      if (await page.getByRole('button', { name: 'Skicka verifieringskod' }).count() > 0){
+        await page.goBack();
+      };
+
+      await page.locator("//input[@id='signInName']").fill(testEmailAddress);
+      if (await page.locator("div[class='error pageLevel'] p").filter({ hasText: errorMessageText }).count() > 0) {
+        break; // Exit the loop immediately if the condition is met
+      }
+      await page.locator("//input[@id='password']").fill(testPassword);
+      if (await page.locator("div[class='error pageLevel'] p").filter({ hasText: errorMessageText }).count() > 0) {
+        break; // Exit the loop immediately if the condition is met
+      }
+      await page.getByRole('button', { name: 'Logga in' }).click();
+      
+    }
+    await expect(page.locator("div[class='error pageLevel'] p")).toContainText(errorMessageText);
+    
+    // Cancel the login attempt
+    await page.getByRole('link', { name: 'Avbryt' }).click();
+    await expect(page).toHaveURL('https://sv-sit-marvel.filmstaden.se/');
+    */
+  });
+});
+
+// A test group for tests that require the user to be logged in NOT USED ATM
+test.describe.serial("Logged In State Tests", () => {
+  test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
+  const namespace = "xw50xu01olrr";
+  const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
+  const testEmailAddress = 'PermanentUser1@xw50xu01olrr.mailisk.net';
+  const testPassword = "Test1234";
+ 
+
+  test.beforeAll(async ({ page }) => {
+    // Save the date and time of the tests start for later email filtering
+    let testStartTime = new Date();
+
+    // Perform login
+    await page.goto('https://sv-sit-marvel.filmstaden.se/');
+    await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+    await page.getByRole('link', { name: 'Stockholm' }).first().click();
+    await page.getByRole('link', { name: 'Logga in menuitem logo Logga' }).click();
+    await page.getByPlaceholder('E‑postadress').fill(testEmailAddress);
+    await page.getByPlaceholder('Lösenord').fill(testPassword);
+    await page.getByRole('button', { name: 'Logga in' }).click();
+    await page.getByRole('button', { name: 'Skicka verifieringskod' }).click();
+
+    // Calculate the time range for the email search
+    let timeFrom = Math.floor(testStartTime.getTime() / 1000); // Unix timestamp in seconds
+    
+    // Wait for the verification email to arrive
+    let code;
+    try {
+      const { data: emails } = await mailisk.searchInbox(namespace, {
+        to_addr_prefix: testEmailAddress,
+        from_timestamp: timeFrom,
+      });
+
+      const email = emails[0];
+      // Extract the verification code from the email
+      const matches = email.text.match(/\d+/g);
+      if (matches && matches.length > 1) {
+        code = matches[3]; // Take the second sequence of digits
+      } else {
+        throw new Error("Verification code not found in the email.");
+      }
+      expect(code).toBeDefined();
+    } catch (error) {
+      console.error("Error fetching emails:", error);
+      throw error; // Re-throw the error to fail the test
+    }
+
+    await page.getByPlaceholder('Verifieringskod').fill(code);
+    await page.getByRole('button', { name: 'Verifiera koden' }).click();
+    await page.waitForTimeout(1000);
+    await page.getByRole('button', { name: 'Fortsätt' }).click();
+
+    // Wait for navigation or some element that indicates login success
+    await page.waitForSelector("//div[@class='text-lg font-bold']");
+  });
+
+});
