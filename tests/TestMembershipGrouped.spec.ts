@@ -5,7 +5,7 @@ test.describe("User Account Tests", () => {
   let page;
   let testEmailAddress;
   const testPassword = "1234Test1234";
-  const namespace = "xw50xu01olrr";
+  const namespace = "jdifc2r0pd1o";
   const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
   const errorMessageText = 'E‑postadressen eller lösenordet är felaktigt.';
 
@@ -44,7 +44,7 @@ test.describe("User Account Tests", () => {
       // Extract the verification code from the email
       const matches = email.text.match(/\d+/g);
       if (matches && matches.length > 1) {
-        code = matches[3]; // Take the second sequence of digits
+        code = matches[4]; // Take the fifth sequence of digits
       } else {
         throw new Error("Verification code not found in the email.");
       }

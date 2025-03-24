@@ -4,7 +4,7 @@ import { MailiskClient } from "mailisk";
 test.describe("Create Account", () => {
   test("Should sign up, verify email, and login a new user", async ({ page }) => {
     test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
-    const namespace = "xw50xu01olrr";
+    const namespace = "jdifc2r0pd1o";
     const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
     const testEmailAddress = `test.${Date.now()}@${namespace}.mailisk.net`;
     const testPassword = "1234Test1234";
@@ -40,7 +40,7 @@ test.describe("Create Account", () => {
       // Extract the verification code from the email
       const matches = email.text.match(/\d+/g);
       if (matches && matches.length > 1) {
-        code = matches[3]; // Take the second sequence of digits
+        code = matches[4]; // Take the fifth sequence of digits
       } else {
         throw new Error("Verification code not found in the email.");
       }
