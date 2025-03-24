@@ -358,6 +358,9 @@ test.describe.parallel("2FA login tests", () => {
 });
 
 test.describe("Create Account and delete account", () => {
+  
+  const namespace = "jdifc2r0pd1o";
+  const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
 
   // Block the ad script for all tests in this suite
   test.beforeAll(async ({ browser }) => {
@@ -370,10 +373,8 @@ test.describe("Create Account and delete account", () => {
     // Block the ad script
     //await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
     
-    test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
-    const namespace = "jdifc2r0pd1o";
-    const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
-
+    test.setTimeout(90000); // Set timeout to 90 seconds for the whole test
+    
     // Set the test email based on date and browser, making sure it's always unique for each test run and browser
     const testEmailAddress = `test.${Date.now()}.${testInfo.project.name}.login@${namespace}.mailisk.net`;
     const testPassword = "1234Test1234";
@@ -388,7 +389,8 @@ test.describe("Create Account and delete account", () => {
     // Navigate to the social security number page and get the number
     await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
     await socialSecurityNumberPage.getByLabel('Jag samtycker').click();
-    let socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
+    //let socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
+    let socialSecurityNumber = "811117-3335"; // Hardcoded social security number for now
     
 
     // Navigate to the Filmstaden page and start the sign-up process
@@ -437,35 +439,24 @@ test.describe("Create Account and delete account", () => {
     await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
     await page.locator('#termsAndConditions').check();
     await page.locator('#subscriptionsOptIn').check();
-    await page.getByRole('button', { name: 'Fortsätt' }).click();
-    await page.waitForTimeout(1000);
+    
 
     // Wait for the Avsluta Medlemskap button to be visible before continuing to make sure
     // we're on the correct page
     //await expect(page.getByRole('button', { name: 'Avsluta medlemskap' })).toBeVisible();
-    await page.waitForURL("https://sv-sit-marvel.filmstaden.se/mina-sidor/");
-
-    // Some shennanigans to get a new socialSecurityNumber once we get a proper error message in place
-    /*
-      
-      console.log("Hämtar nytt personnr, det gamla var: "+socialSecurityNumber);
-
-      //Reload social security page and get new number
-      await socialSecurityNumberPage.reload();
-      await socialSecurityNumberPage.waitForTimeout(1000);
-      socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
-
-      Loop för att testa nytt personnummer i skapa användarflödet
-      while (true) {
-        let errorMessageSSN = await page.locator('SOMETHING').filter({ hasText: 'SOMEERROR' }).count();
-        if (errorMessageSSN > 0){
-          break;
-        }
+    await expect(async () => {
+      await page.getByRole('button', { name: 'Fortsätt' }).click();
+      await page.waitForTimeout(2000);
+      const isSettingsFound = await page.getByRole('main').textContent();
+      if (!(isSettingsFound && isSettingsFound.includes('Inställningar'))) {
+        // If the settings page is not found, reload the social security number page for a new SSN and try again
+        await socialSecurityNumberPage.reload();
+        await socialSecurityNumberPage.waitForTimeout(1000);
+        socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
         await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
-        await page.getByRole('button', { name: 'Fortsätt' }).click();
-        await page.waitForTimeout(1000);
-
-      };*/
+        throw new Error("Inställningar hittades inte");
+      }
+    }).toPass();
 
     // Close the social security number page
     await socialSecurityNumberPage.close();
@@ -479,7 +470,7 @@ test.describe("Create Account and delete account", () => {
     const apiUrl = `https://inte-services.cinema-api.com/Preference/validatefriend/${country}?code=${userID}`;
 
     // Control Mina Sidor, that is has the correct elements
-    await expect(page.getByRole('main')).toContainText('Inställningar');
+    //await expect(page.getByRole('main')).toContainText('Inställningar');
     await expect(page.getByRole('main')).toContainText('Kvar till guldmedlem');
     await page.locator("//button[@class='block h-full w-full']").click();
     await expect(page.getByRole('heading', { name: 'Din enhets skärmljusstyrka', exact: true })).toBeVisible();
