@@ -1,5 +1,6 @@
 import { test, expect} from '@playwright/test';
 import { MailiskClient } from "mailisk";
+import { NotFoundPage } from '../../pages/filmstaden_int/404page';
 
 const Environment = "https://sv-sit-marvel.filmstaden.se/"; // Set the environment to the SIT environment
 
@@ -70,21 +71,6 @@ test('Search town and movies', async ({ page, context }) => {
   await page.getByPlaceholder('Sök stad').fill('alingsås');
   await page.getByRole('button', { name: 'Välj stad Alingsås' }).click();
   await expect(page.locator('#gatsby-focus-wrapper')).toContainText('Alingsås');
-
-});
-
-test('404-page', async ({ page, context }) => {
-// Block the ad script
-await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
-
-await page.goto(Environment + '404/');
-await page.getByRole('button', { name: 'Yes it’s okay' }).click();
-await expect(page.locator('h1')).toContainText('Oj hoppsan! Nu hittade vi inte det du letar efter');
-await expect(page.getByRole('link', { name: 'Hitta film och köp biljetter' })).toBeVisible();
-await expect(page.getByRole('link', { name: 'Gå till startsidan ' })).toBeVisible();
-await expect(page.getByRole('link', { name: 'Till Filmstadens kundservice ' })).toBeVisible();
-await page.getByRole('link', { name: 'Hitta film och köp biljetter' }).click();
-await expect(page.locator('h1')).toContainText('På bio nu');
 
 });
 
@@ -284,11 +270,10 @@ test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
   });
 });
 
-test.describe.parallel("2FA login tests", () => {
+test.describe.parallel("2FA tests", () => {
   const namespace = "jdifc2r0pd1o";
   const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
-  let testPassword = "1234Test1234";
-  let testEmailAddress;
+  const testPassword = "1234Test1234";
 
   // Block the ad script for all tests in this suite
   test.beforeAll(async ({ browser }) => {
@@ -298,11 +283,8 @@ test.describe.parallel("2FA login tests", () => {
 
   // Tests the proper 2Factor authentication flow
   test("2FA login", async ({page}, testInfo) => {
-    // Block the ad script
-    //await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
-
     // Set the test email based on the browser
-    testEmailAddress = `PermanentUser`+testInfo.project.name+`login@${namespace}.mailisk.net`;
+    const testEmailAddress = `PermanentUser`+testInfo.project.name+`login@${namespace}.mailisk.net`;
     
     // Save the start time of the test
     let testStartTime = new Date();
@@ -355,24 +337,9 @@ test.describe.parallel("2FA login tests", () => {
     expect(textContent).toContain("Playwright AutomaticTest");
 
   });
-});
 
-test.describe("Create Account and delete account", () => {
-  
-  const namespace = "jdifc2r0pd1o";
-  const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
-
-  // Block the ad script for all tests in this suite
-  test.beforeAll(async ({ browser }) => {
-    const context = await browser.newContext();
-    await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
-  });
-
-
-  test("Create and delete account", async ({ page , context, request }, testInfo) => {
-    // Block the ad script
-    //await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
-    
+  // Tests the 2Factor sign up and deletion of account
+  test("Create and delete account", async ({ page , request }, testInfo) => {    
     test.setTimeout(90000); // Set timeout to 90 seconds for the whole test
     
     // Set the test email based on date and browser, making sure it's always unique for each test run and browser
@@ -389,8 +356,8 @@ test.describe("Create Account and delete account", () => {
     // Navigate to the social security number page and get the number
     await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
     await socialSecurityNumberPage.getByLabel('Jag samtycker').click();
-    //let socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
-    let socialSecurityNumber = "811117-3335"; // Hardcoded social security number for now
+    let socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
+    //let socialSecurityNumber = "811117-3335"; // Hardcoded social security number for now
     
 
     // Navigate to the Filmstaden page and start the sign-up process
@@ -446,15 +413,22 @@ test.describe("Create Account and delete account", () => {
     //await expect(page.getByRole('button', { name: 'Avsluta medlemskap' })).toBeVisible();
     await expect(async () => {
       await page.getByRole('button', { name: 'Fortsätt' }).click();
-      await page.waitForTimeout(2000);
+      await page.waitForTimeout(2000); // This hard wait can be removed later once we have an error message in place
       const isSettingsFound = await page.getByRole('main').textContent();
       if (!(isSettingsFound && isSettingsFound.includes('Inställningar'))) {
         // If the settings page is not found, reload the social security number page for a new SSN and try again
         await socialSecurityNumberPage.reload();
         await socialSecurityNumberPage.waitForTimeout(1000);
         socialSecurityNumber = await socialSecurityNumberPage.locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)').textContent();
-        await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
-        throw new Error("Inställningar hittades inte");
+    
+        try {
+          // Try to fill the social security number field
+          await page.getByPlaceholder('Personnummer').fill(socialSecurityNumber);
+        } catch (error) {
+          console.log("Could not find the 'Personnummer' field, moving on...");
+        }
+  
+        throw new Error("Kunde ej skapa användare, testar nytt personnr");
       }
     }).toPass();
 
@@ -481,7 +455,6 @@ test.describe("Create Account and delete account", () => {
     await expect(page.locator('form')).toContainText('Återställ lösenord här');
     await expect(page.locator('form')).toContainText('Byt din e-postadress här');
     await expect(page.getByLabel('Profil').getByRole('button')).toContainText('Spara telefonnummer');
-    
 
     // Check that the checkboxes are clickable and that they are not checked after clicking
     await page.getByRole('button', { name: ' Kundkommunikation' }).click();
@@ -507,18 +480,29 @@ test.describe("Create Account and delete account", () => {
     await expect(page.getByRole('dialog')).toContainText('Är du säker på att du vill avsluta medlemskap?');
     await page.getByRole('button', { name: 'Ja, avsluta mitt konto' }).click();
 
-
-    // Wait for 10 seconds before making the API call
-    await page.waitForTimeout(10000); 
-    // Make the API call to check if the user exists
-    const response = await request.get(apiUrl);
-    // Check that the response status is 200 (OK)
-    await expect(response.status()).toBe(200);
-    // Read the response body
-    const responseBody = await response.json();
-    // Perform assertions on the response body
-    await expect(responseBody).toBeFalsy(); // Check that the user does not exist anymore
+    // Check that the user is deleted
+    await expect(async () => {
+      // Make the API call to check if the user exists
+      const response = await request.get(apiUrl);
+      // Check that the response status is 200 (OK)
+      await expect(response.status()).toBe(200);
+      // Read the response body
+      const responseBody = await response.json();
+      // Perform assertion on the response body
+      await expect(responseBody).toBeFalsy(); // Check that the user does not exist anymore
+    }).toPass({timeout: 10000});
    
+  });
+});
+
+test.describe("Template", () => {
+  const namespace = "jdifc2r0pd1o";
+  const mailisk = new MailiskClient({ apiKey: "umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY" });
+
+  // Block the ad script for all tests in this suite
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
   });
 });
 
