@@ -1,16 +1,15 @@
 import { test, expect} from '@playwright/test';
 import { MailiskClient } from "mailisk";
-import { NotFoundPage } from '../../pages/filmstaden_int/404page';
 
 const Environment = "https://sv-sit-marvel.filmstaden.se/"; // Set the environment to the SIT environment
 
 //test.describe.configure({ retries: 2 });
 
-test('Control giftcard-saldo', async ({ page, context }) => {
+test('Control giftcard-saldo', async ({ page }) => {
   // Block the ad script
-  await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
+  await page.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
   
-  //This test would be better if we had a specific present card that ALWAYS had a specific balance
+  //This test would be better if we had a specific gift card that ALWAYS had a specific balance
   await page.goto(Environment);
   await page.getByRole('button', { name: 'Yes it’s okay' }).click();
   await page.getByRole('link', { name: 'Stockholm' }).first().click();
@@ -37,9 +36,9 @@ test('Control giftcard-saldo', async ({ page, context }) => {
   await expect(page.getByRole('main')).toContainText('Presentkort');
 });
 
-test('Search town and movies', async ({ page, context }) => {
+test('Search town and movies', async ({ page }) => {
   // Block the ad script
-  await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
+  await page.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
 
   await page.goto(Environment);
   await page.getByRole('button', { name: 'Yes it’s okay' }).click();
@@ -65,9 +64,6 @@ test('Search town and movies', async ({ page, context }) => {
   await expect(page.getByLabel('Välj din biostad').getByRole('heading')).toContainText('Välj din biostad');
   await page.getByPlaceholder('Sök stad').fill('fwaoifjawoi');
   await expect(page.getByLabel('Välj din biostad')).toContainText('Inga träffar');
-  await page.getByPlaceholder('Sök stad').press('ControlOrMeta+a');
-  await page.getByPlaceholder('Sök stad').fill('Göteborg');
-  await page.getByPlaceholder('Sök stad').press('ControlOrMeta+a');
   await page.getByPlaceholder('Sök stad').fill('alingsås');
   await page.getByRole('button', { name: 'Välj stad Alingsås' }).click();
   await expect(page.locator('#gatsby-focus-wrapper')).toContainText('Alingsås');
@@ -77,12 +73,11 @@ test('Search town and movies', async ({ page, context }) => {
 test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
   
   // Block the ad script for all tests in this suite
-  test.beforeAll(async ({ browser }) => {
-    const context = await browser.newContext();
-    await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
+  test.beforeEach(async ({ page }) => {
+    await page.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
   });
 
-  test('Card purchase', async ({ page, context }) => {
+  test('Card purchase', async ({ page }) => {
 
    // test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
     let randomMovie = Math.floor(Math.random() * 7); // Generate a random number between 0 and 6
@@ -145,7 +140,10 @@ test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
     await page.getByRole('button', { name: 'Betala' }).click();
   
     //Kontrollera köpets referensnummer
-    await expect(page.locator("//h6[normalize-space()='Referensnummer']")).toContainText('Referensnummer');
+    await expect(async () => {
+      await expect(page.locator("//h6[normalize-space()='Referensnummer']")).toContainText('Referensnummer');
+    }).toPass({timeout: 15000});
+
     await page.getByRole('link', { name: 'Visa biljetter' }).click();
     await expect(page.getByRole('main'),).toContainText('Antal biobiljetter:');
     await page.getByRole('link', { name: ' Till filmstaden.se' }).click();
@@ -189,7 +187,9 @@ test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
     await page.locator("//li//li//li//li[1]//a[1]").first().click();
   
     //Make sure there are Ordinarie tickets available for sale
-    await expect(page.getByRole('main')).toContainText('Ordinarie');
+    await expect(async () => {
+      await expect(page.getByRole('main')).toContainText('Ordinarie');
+    }).toPass({timeout: 10000});
   
     // Loop until ordinarie tickets is equal to 1
     while ((await page.locator('#stepper-inputfield_Ordinarie').inputValue()) !== "1") { 
@@ -276,9 +276,8 @@ test.describe.parallel("2FA tests", () => {
   const testPassword = "1234Test1234";
 
   // Block the ad script for all tests in this suite
-  test.beforeAll(async ({ browser }) => {
-    const context = await browser.newContext();
-    await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
+  test.beforeEach(async ({ page }) => {
+    await page.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
   });
 
   // Tests the proper 2Factor authentication flow
@@ -514,6 +513,8 @@ test.describe.serial("Logged In State Tests", () => {
   const testEmailAddress = 'PermanentUser1@jdifc2r0pd1o.mailisk.net';
   const testPassword = "Test1234";
  
+
+  //test.use({ storageState: 'auth.json' }); // Reuse the saved authentication state
 
   test.beforeAll(async ({ page }) => {
     // Save the date and time of the tests start for later email filtering
