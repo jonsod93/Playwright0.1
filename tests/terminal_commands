@@ -4,3 +4,9 @@ npx playwright codegen https://opensource-demo.orangehrmlive.com/web/index.php/a
 
 allure generate ./allure-results -o allure-report --clean
 allure open ./allure-report
+
+
+
+await expect(async () => {
+
+}).toPass({timeout: 15000});

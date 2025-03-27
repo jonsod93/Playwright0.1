@@ -7,7 +7,6 @@ Köp/Pengar
 Medlemskap
   - Login/Logout
   - Mina sidor
-  - Skapa konto
   - Glömt lösenord
   - Uppdatera profil
   - Mina biljetter
@@ -33,5 +32,4 @@ Navigation
   - Meny
 
 Errors
-  - Felmeddelanden
-  - 404
+  - Negativa tester, felmeddelanden, sök hittar inget, felaktigt kortnr (testar ifs nets men ändå), 3D secure stuff? 

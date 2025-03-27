@@ -1,18 +1,23 @@
 import { Page } from '@playwright/test';
+import { BasePage } from './BasePage';
+import { MainNavigation } from './MainNavigation';
 
-export class StartPage {
+export class StartPage extends BasePage {
   private page: Page;
+  private moviePosters: any;
+  private movieSearchField: any;
+  private yesToCookiesButton: any;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
-  }
-
-  async navigateToStartPage(environment: string) {
-    await this.page.goto(environment);
+    this.moviePosters = this.page.locator("div[class='group/poster']");
+    this.movieSearchField = this.page.getByPlaceholder('Sök på filmens namn');
+    this.yesToCookiesButton = this.page.getByRole('button', { name: 'Yes it’s okay' });
   }
 
   async acceptCookies() {
-    await this.page.getByRole('button', { name: 'Yes it’s okay' }).click();
+    await this.yesToCookiesButton.click();
   }
 
   async searchTown(townName: string) {
@@ -24,7 +29,7 @@ export class StartPage {
   }
 
   async searchMovie(movieName: string) {
-    await this.page.getByPlaceholder('Sök på filmens namn').fill(movieName);
+    await this.movieSearchField.fill(movieName);
   }
 
   async clickMovieLink(movieName: string) {
@@ -32,18 +37,13 @@ export class StartPage {
   }
 
   async clearMovieSearchField() {
-    await this.page.getByPlaceholder('Sök på filmens namn').fill('');
+    await this.movieSearchField.fill('');
   }
 
-  async clearCitySearchField() {
-    await this.page.getByPlaceholder('Sök stad').fill('');
+  async selectRandomMovie() {
+    let randomMovie = Math.floor(Math.random() * 7);
+    await this.moviePosters.nth(randomMovie).click();
+    return randomMovie;
   }
 
-  async fillCitySearchField(cityName: string) {
-    await this.page.getByPlaceholder('Sök stad').fill(cityName);
-  }
-
-  async selectCityFromResults(cityName: string) {
-    await this.page.getByRole('button', { name: `Välj stad ${cityName}` }).click();
-  }
 }

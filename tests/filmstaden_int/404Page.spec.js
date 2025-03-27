@@ -1,9 +1,12 @@
 import { test, expect} from '@playwright/test';
 import { NotFoundPage } from '../../pages/filmstaden_int/404page';
+import * as allure from "allure-js-commons";
 
 const Environment = "https://sv-sit-marvel.filmstaden.se/"; // Set the environment to the SIT environment
 
 test('404-page', async ({ page, context }) => {
+  await allure.epic('Error Pages');
+  await allure.feature('404 Page');
   // Block the ad script
   await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
 

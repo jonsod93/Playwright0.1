@@ -1,9 +1,11 @@
+import { BasePage } from './BasePage';
 import { Page } from '@playwright/test';
 
-export class NotFoundPage {
+export class NotFoundPage extends BasePage {
   private page: Page;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
   }
 
