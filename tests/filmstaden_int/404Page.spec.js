@@ -1,23 +1,22 @@
 import { test, expect} from '@playwright/test';
+import { LandingPage } from '../../pages/filmstaden_int/Landingpage';
 import { NotFoundPage } from '../../pages/filmstaden_int/404page';
 import * as allure from "allure-js-commons";
 
 const Environment = "https://sv-sit-marvel.filmstaden.se/"; // Set the environment to the SIT environment
 
-test('404-page', async ({ page, context }) => {
+test('404-page', async ({ page }) => {
   await allure.epic('Error Pages');
   await allure.feature('404 Page');
-  // Block the ad script
-  await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
 
   // Create an instance of the Page Object
+  const landingPage = new LandingPage(page);
   const notFoundPage = new NotFoundPage(page);
 
-  // Use the Page Object methods
+  await page.goto(Environment);
+  await landingPage.acceptCookies();
   await notFoundPage.navigateTo404(Environment);
-  await notFoundPage.acceptCookies();
 
-  // Assertions in the spec file
   await expect(page.locator('h1')).toContainText('Oj hoppsan! Nu hittade vi inte det du letar efter');
   await expect(page.getByRole('link', { name: 'Hitta film och köp biljetter' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Gå till startsidan ' })).toBeVisible();
