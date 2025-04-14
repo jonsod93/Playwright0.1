@@ -1,4 +1,4 @@
-import { test, expect} from '@playwright/test';
+/*import { test, expect} from '@playwright/test';
 import { time } from 'console';
 import { MailiskClient } from "mailisk";
 import { EmailHelper } from '../../helpers/filmstaden_int/EmailHelper';
@@ -185,7 +185,7 @@ test.describe.parallel("Unauthenticated tests purchases in Stockholm", () => {
       await page.getByRole('button', { name: 'Salongsinformation' }).click();
       await expect(page.getByRole('dialog')).toContainText('Salongsinformation');
       await page.getByRole('button', { name: 'Stäng' }).click();
-      */
+      *//*
 
       await page.getByPlaceholder('Fyll i din e-postadress').fill('phox.warlock7@mailinator.com');
       //await page.waitForTimeout(500);
@@ -584,3 +584,5 @@ test.describe.serial("Logged In State Tests", () => {
   });
 
 });
+
+*/

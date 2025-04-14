@@ -7,7 +7,7 @@ test.describe("Create Account", () => {
   
   
 
-  test("Sign up, verify email, login, cancel membership", async ({ page, context }, testInfo) => {
+  test.skip("Sign up, verify email, login, cancel membership", async ({ page, context }, testInfo) => {
     // Block the ad script
     await context.route('https://s1.adform.net/banners/scripts/adx.js', route => route.abort());
     

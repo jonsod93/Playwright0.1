@@ -1,14 +1,17 @@
-import { Page } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
 
-export class NotFoundPage extends BasePage {
-  private page: Page;
-  private findMoviesButton: any;
+export class NotFoundPage extends DefaultPageWithNavigation {
+  public pageTitle: any;
+  public findMoviesLink: any;
+  public goToStartLink: any;
+  public customerServiceLink: any;
 
-  constructor(page: Page) {
+  constructor(page) {
     super(page);
-    this.page = page;
-    this.findMoviesButton = this.page.getByRole('link', { name: 'Hitta film och köp biljetter' })
+    this.pageTitle = this.page.locator('h1');
+    this.findMoviesLink = this.page.getByRole('link', { name: 'Hitta film och köp biljetter' });
+    this.goToStartLink = this.page.getByRole('link', { name: 'Gå till startsidan ' });
+    this.customerServiceLink = this.page.getByRole('link', { name: 'Till Filmstadens kundservice ' });
   }
 
   async navigateTo404(environment: string) {
@@ -16,6 +19,6 @@ export class NotFoundPage extends BasePage {
   }
 
   async clickFindMoviesLink() {
-    await this.findMoviesButton.click();
+    await this.findMoviesLink.click();
   }
 }

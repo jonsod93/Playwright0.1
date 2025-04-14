@@ -1,7 +1,6 @@
-import { Page } from '@playwright/test';
+import { DefaultPage } from './DefaultPage';
 
-export class MainNavigation {
-  private page: Page;
+export class DefaultPageWithNavigation extends DefaultPage {
   private homeButton: any;
   private discoverButton: any;
   private goingToTheCinemaButton: any;
@@ -23,10 +22,13 @@ export class MainNavigation {
   private customerServiceButton: any;
   private loginButton: any;
   private citySearchField: any;
+  public citySearchSidearHeading: any;
+  public citySearchNoResultsMessage: any;
+  public citySearchResults: any;
   
 
-  constructor(page: Page) {
-    this.page = page;
+  constructor(page) {
+    super(page);
     this.homeButton = this.page.locator("(//a)[1]");
     this.discoverButton = this.page.getByRole('link', { name: 'Upptäck' });
     this.goingToTheCinemaButton = this.page.getByRole('button', { name: 'Gå på bio ' });
@@ -48,6 +50,9 @@ export class MainNavigation {
     this.customerServiceButton = this.page.getByRole('link', { name: 'Kundservice' });
     this.loginButton = this.page.getByRole('link', { name: 'Logga in menuitem logo Logga' });
     this.citySearchField = this.page.getByPlaceholder('Sök stad');
+    this.citySearchSidearHeading = this.page.getByRole('heading', { name: 'Välj din biostad' });
+    this.citySearchNoResultsMessage = this.page.getByLabel('Välj din biostad')
+    this.citySearchResults = this.page.locator("span[class='text-sm font-bold']")
   }
 
   async clickHome() {

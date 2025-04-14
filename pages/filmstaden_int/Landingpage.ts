@@ -1,14 +1,17 @@
-import { BasePage } from './BasePage';
+import { DefaultPage } from './DefaultPage';
 
-export class LandingPage extends BasePage {
+export class LandingPage extends DefaultPage {
     private cookieButton: any;
     private stockholmLink: any;
+    public mainContentLocator: any;
+    public goteborgButton: any;
     
     constructor(page) {
       super(page);
-      this.page = page;
       this.cookieButton = this.page.getByRole('button', { name: 'Yes it’s okay' });
       this.stockholmLink = this.page.getByRole('link', { name: 'Stockholm' });
+      this.mainContentLocator = this.page.getByRole('main');
+      this.goteborgButton = this.page.getByRole('button', { name: 'Göteborg' });
     }
   
     async navigateToSite(url) {

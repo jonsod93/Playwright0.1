@@ -15,7 +15,7 @@ export class EmailHelper {
   }
 
   // Method to get the namespace
-  async getNamespace() {
+  getNamespace(): string {
     return this.namespace;
   }
 

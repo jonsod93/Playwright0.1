@@ -1,53 +1,53 @@
 import { test, expect } from '@playwright/test';
+import { LandingPage } from '../../pages/filmstaden_int/Landingpage';
+import { StartPage } from '../../pages/filmstaden_int/StartPage';
+import { MoviePage } from '../../pages/filmstaden_int/MoviePage';
+import { ShowPage } from '../../pages/filmstaden_int/ShowPage';
+import { EnvironmentData } from '../../testData/environmentData';
+import * as allure from "allure-js-commons";
 
 
+test.describe.parallel("Tests for the Showpage", () => {
+  let landingPage;
+  let startPage;
+  let moviePage;
+  let showPage;
+
+  test.beforeEach(async ({ page }) => {
+    landingPage = new LandingPage(page);
+    startPage = new StartPage(page);
+    moviePage = new MoviePage(page);
+    showPage = new ShowPage(page);
+
+    await page.goto(EnvironmentData.SIT.URL);
+    await landingPage.acceptCookies();
+    await landingPage.selectStockholm();
+  });
 
 
-
-  test('Salongsinfo verification', async ({ page }) => {
-    //SETUP
-    let randomMovie = Math.floor(Math.random() * 7); // Generate a random number between 0 and 6
+  test('Saloninfo verification', async ({ page }) => {
+    await test.step("Initial setup of test specific variables and tags", async () => {
+      await allure.epic('Showpage');
+      await allure.feature('Information about the salon');
+    });
     
-    async function retryFindingShows() {
-      await page.goto(Environment);
-      randomMovie = Math.floor(Math.random() * 7); // Generate a new random number between 0 and 6
-      await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
-
-      while (!(await page.locator("//li//li//li//li[1]//a[1]").count() > 0)) { // Loop until a movie that actually has a date is selected
-        await page.waitForTimeout(500);
-        await page.locator("(//a)[1]").click(); // Click on the main navigation back to the startpage
-        randomMovie = Math.floor(Math.random() * 7); // Generate a new random number between 0 and 6
-        await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
-        await page.waitForTimeout(250);
-      };
-      await page.locator("//li//li//li//li[1]//a[1]").nth(0).click(); // Click on the first available date
-    }
-
-    await test.step("Navigate to a suitable movie", async () => {
-      await navigateToStockholm(page);
-      await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
-
-      while (!(await page.locator("//li//li//li//li[1]//a[1]").count() > 0)) { // Loop until a movie that actually has a date is selected
-        await page.waitForTimeout(500);
-        await page.locator("(//a)[1]").click(); // Click on the main navigation back to the startpage
-        randomMovie = Math.floor(Math.random() * 7); // Generate a new random number between 0 and 6
-        await page.locator("div[class='group/poster']").nth(randomMovie).click(); // Click on the Nth movie
-        await page.waitForTimeout(250);
-      };
-      await page.locator("//li//li//li//li[1]//a[1]").nth(0).click(); // Click on the first available date
+    await test.step("Navigate to a movie with shows", async () => {
+      await expect(startPage.loginButton).toBeVisible();
+      await startPage.selectRandomMovie();
+      await moviePage.selectFirstAvailableShowtime(startPage.selectRandomMovie.bind(startPage));
     });
   
-    await test.step("Control the salongsinformattion", async () => {
+    await test.step("Control the salon information", async () => {
 
-      let salongsinfoButton = await page.getByRole('button', { name: 'Salongsinformation' }).count();
-      while (salongsinfoButton === 0) {
-        await retryFindingShows();
-        await page.waitForTimeout(1000);
-        salongsinfoButton = await page.getByRole('button', { name: 'Salongsinformation' }).count();
-      }
-      await page.getByRole('button', { name: 'Salongsinformation' }).click();
-      await expect(page.getByRole('dialog')).toContainText('Salongsinformation');
-      await page.getByRole('button', { name: 'Stäng' }).click();
+      //Not all shows have salon information, so we need to check if the button is present before clicking it
+      await showPage.findShowWithSalonInformation(
+        moviePage.selectFirstAvailableShowtime.bind(moviePage),
+        startPage.selectRandomMovie.bind(startPage)
+      );
+      await showPage.clickSalonInformationButton();
+      await expect(showPage.dialogLocator).toContainText('Salongsinformation');
+      await showPage.closeSalonInformationButton();
 
     });
   });
+});

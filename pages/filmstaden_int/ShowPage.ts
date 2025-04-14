@@ -1,6 +1,6 @@
-import { BasePage } from './BasePage';
+import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
 
-export class ShowPage extends BasePage {
+export class ShowPage extends DefaultPageWithNavigation {
     private ticketStepper: any;
     private emailField: any;
     private ageLimitCheckbox: any;
@@ -13,11 +13,17 @@ export class ShowPage extends BasePage {
     private discountActivateButton: any;
     private discountPopupButton: any;
     private noPaymentNeededButton: any;
+    public amountOfTicketsLabel: any;
+    public mainContentLocator: any;
+    public discountCodeInfo: any;
+    public formLocator: any;
+    public salonInformationButton: any;
+    public dialogLocator: any;
+    public closeDialogButton: any;
     
     
     constructor(page) {
         super(page);
-        this.page = page;
         this.ticketStepper = this.page.locator('#stepper-inputfield_Ordinarie');
         this.emailField = this.page.getByPlaceholder('Fyll i din e-postadress');
         this.ageLimitCheckbox = this.page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' });
@@ -29,7 +35,14 @@ export class ShowPage extends BasePage {
         this.discountInfoButton = this.page.getByRole('button', { name: ' Probem med rabattkoden' });
         this.discountCodeField = this.page.getByPlaceholder('Ange kod');
         this.discountActivateButton = this.page.getByRole('button', { name: 'Aktivera' });
-        this.discountPopupButton = this.page.getByRole('button', { name: 'Lös in in rabattkod' })
+        this.discountPopupButton = this.page.getByRole('button', { name: 'Lös in in rabattkod' });
+        this.amountOfTicketsLabel = this.page.locator("//div[@class='shrink-0 text-right font-bold']");
+        this.mainContentLocator = this.page.getByRole('main');
+        this.discountCodeInfo = this.page.getByLabel('Probem med rabattkoden');
+        this.formLocator = this.page.locator('form');
+        this.salonInformationButton = this.page.getByRole('button', { name: 'Salongsinformation' });
+        this.dialogLocator = this.page.getByRole('dialog');
+        this.closeDialogButton = this.page.getByRole('button', { name: 'Stäng' });
       }
   
     async selectOneTicket() {
@@ -76,5 +89,25 @@ export class ShowPage extends BasePage {
     async finishWithoutPaying() {
       await this.noPaymentNeededButton.click();
     }
+
+    async clickSalonInformationButton() {
+      await this.salonInformationButton.click();
+    }
+
+    async closeSalonInformationButton() {
+        await this.closeDialogButton.click();
+    }
+
+    async findShowWithSalonInformation(
+      selectFirstAvailableShowtime: (selectRandomMovie: () => Promise<void>) => Promise<void>,
+      selectRandomMovie: () => Promise<void>
+  ) {
+      let salonInfoButtonCount = await this.salonInformationButton.count();
+      while (salonInfoButtonCount === 0) {
+          await selectFirstAvailableShowtime(selectRandomMovie);
+          await this.page.waitForTimeout(1000);
+          salonInfoButtonCount = await this.salonInformationButton.count();
+      }
+  }
 
   }

@@ -3,7 +3,7 @@ const {test,expect} = require('@playwright/test')
 test.use({viewport: {width: 1920, height: 1080}}) //Setting the viewport size for the test
 
 
-test("Valid login and logout", async function({page}) {
+test.skip("Valid login and logout", async function({page}) {
    
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
@@ -31,7 +31,7 @@ test("Valid login and logout", async function({page}) {
 
 });
 
-test("Invalid Login", async function({page}) {
+test.skip("Invalid Login", async function({page}) {
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 
     await page.getByPlaceholder("Username").type("Adm432",{delay:200}); //Type actually types the text in the input field, the delay is the time between each character

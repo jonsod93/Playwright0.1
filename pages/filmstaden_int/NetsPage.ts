@@ -1,6 +1,6 @@
-import { BasePage } from './BasePage';
+import { DefaultPage } from './DefaultPage';
 
-export class NetsPage extends BasePage {
+export class NetsPage extends DefaultPage {
     private cardNumberField: any;
     private monthDropdown: any;
     private yearDropdown: any;
@@ -9,8 +9,7 @@ export class NetsPage extends BasePage {
     private cancelButton: any;
 
     constructor(page) {
-        super(page);
-        this.page = page;    
+        super(page);  
         this.cardNumberField = this.page.getByPlaceholder('0000 0000 0000');
         this.monthDropdown = this.page.getByLabel('month');
         this.yearDropdown = this.page.getByLabel('year');

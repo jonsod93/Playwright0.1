@@ -1,27 +1,18 @@
-import { Page } from '@playwright/test';
-import { BasePage } from './BasePage';
-import { MainNavigation } from './MainNavigation';
+import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
 
-export class StartPage extends BasePage {
-  private page: Page;
+export class StartPage extends DefaultPageWithNavigation {
   private moviePosters: any;
   private movieSearchField: any;
-  private yesToCookiesButton: any;
+  public mainContentLocator: any;
+  public errorMessageMovieSearch: any;
 
-  constructor(page: Page) {
+
+  constructor(page) {
     super(page);
-    this.page = page;
     this.moviePosters = this.page.locator("div[class='group/poster']");
     this.movieSearchField = this.page.getByPlaceholder('Sök på filmens namn');
-    this.yesToCookiesButton = this.page.getByRole('button', { name: 'Yes it’s okay' });
-  }
-
-  async acceptCookies() {
-    await this.yesToCookiesButton.click();
-  }
-
-  async searchTown(townName: string) {
-    await this.page.getByRole('textbox').fill(townName);
+    this.mainContentLocator = this.page.getByRole('main');
+    this.errorMessageMovieSearch = this.page.getByText('Ingen träff!Vi kunde inte');
   }
 
   async selectTownFromResults(townName: string) {
@@ -30,6 +21,11 @@ export class StartPage extends BasePage {
 
   async searchMovie(movieName: string) {
     await this.movieSearchField.fill(movieName);
+  }
+
+  async getMovieTitleLink(movieName: string) {
+    let locator = await this.page.getByRole('link', { name: movieName });
+    return locator;
   }
 
   async clickMovieLink(movieName: string) {
