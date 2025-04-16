@@ -9,7 +9,7 @@ export class LandingPage extends DefaultPage {
     constructor(page) {
       super(page);
       this.cookieButton = this.page.getByRole('button', { name: 'Yes it’s okay' });
-      this.stockholmLink = this.page.getByRole('link', { name: 'Stockholm' });
+      this.stockholmLink = this.page.getByRole('link', { name: 'Stockholm' }).first();
       this.mainContentLocator = this.page.getByRole('main');
       this.goteborgButton = this.page.getByRole('button', { name: 'Göteborg' });
     }
@@ -33,10 +33,12 @@ export class LandingPage extends DefaultPage {
       }
   
     async selectStockholm() {
-      try {
-        await this.stockholmLink.first().click({ timeout: 2000 });
-      } catch {
-        console.log("Stockholm link not found");
+      while (await this.stockholmLink.count() > 0) {
+        try {
+            await this.stockholmLink.click({ timeout: 2000 });
+        } catch {
+          console.log("Stockholm link not found");
+        }
       }
     }
 
