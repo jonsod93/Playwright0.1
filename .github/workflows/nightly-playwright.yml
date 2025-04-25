@@ -35,13 +35,13 @@ jobs:
         run: npm run report
 
       - name: Upload Allure results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
         with:
           name: allure-results
           path: allure-results
 
       - name: Upload updated history
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
         with:
           name: allure-history
           path: allure-report/history
@@ -64,7 +64,7 @@ jobs:
         run: npm run build
 
       - name: Download Allure results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
         with:
           name: allure-results
           path: allure-results
