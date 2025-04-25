@@ -12,10 +12,10 @@ jobs:
     if: github.event.schedule != '0 4 * * *'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3@3235b876344d2a9aa001b8d1453c930bba69e610
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610
         with:
           node-version: '20'
 
@@ -43,13 +43,13 @@ jobs:
         run: npm run report
 
       - name: Upload Allure results
-        uses: actions/upload-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
+        uses: actions/upload-artifact@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
         with:
           name: allure-results
           path: allure-results
 
       - name: Upload updated history
-        uses: actions/upload-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
+        uses: actions/upload-artifact@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
         with:
           name: allure-history
           path: allure-report/history
@@ -59,10 +59,10 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3@f43a0e5ff2bd294095638e18286ca9a3d1956744
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3@3235b876344d2a9aa001b8d1453c930bba69e610
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610
         with:
           node-version: '20'
 
@@ -73,7 +73,7 @@ jobs:
         run: npm run build
 
       - name: Download Allure results
-        uses: actions/download-artifact@v3@15f052837536d9eb6c49aa8f7a4183c331df0a2b
+        uses: actions/download-artifact@15f052837536d9eb6c49aa8f7a4183c331df0a2b
         with:
           name: allure-results
           path: allure-results
