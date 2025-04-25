@@ -47,7 +47,6 @@ jobs:
           path: allure-report/history
 
   generate-report:
-    if: github.event.schedule == '0 4 * * *'
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
@@ -69,13 +68,6 @@ jobs:
         with:
           name: allure-results
           path: allure-results
-
-      - name: Download previous allure history
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-history
-          path: allure-report/history
-        continue-on-error: true
 
       - name: Run pre-run setup (merges history, creates executor)
         run: npm run pre-run
