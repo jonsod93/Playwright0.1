@@ -25,12 +25,12 @@ jobs:
       - name: Build helper scripts
         run: npm run build
 
-      - name: Download previous allure history (if available)
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-history
-          path: allure-report/history
-        continue-on-error: true
+      - name: Download previous allure history (ignore if missing)
+        run: |
+          echo "Looking for previous 'allure-history' artifact..."
+          gh run download -n allure-history -D allure-report/history || echo "No history available. Skipping."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run pre-run setup
         run: npm run pre-run
