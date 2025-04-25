@@ -12,10 +12,10 @@ jobs:
     if: github.event.schedule != '0 4 * * *'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3@3235b876344d2a9aa001b8d1453c930bba69e610
         with:
           node-version: '20'
 
@@ -24,6 +24,14 @@ jobs:
 
       - name: Build helper scripts
         run: npm run build
+
+      # Skipped for first run: no history exists yet
+      # - name: Download previous allure history
+      #   uses: actions/download-artifact@v3@15f052837536d9eb6c49aa8f7a4183c331df0a2b
+      #   with:
+      #     name: allure-history
+      #     path: allure-report/history
+      #   continue-on-error: true
 
       - name: Run pre-run setup
         run: npm run pre-run
@@ -47,13 +55,14 @@ jobs:
           path: allure-report/history
 
   generate-report:
+    # NOTE: No time filter so it runs on manual trigger
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3@f43a0e5ff2bd294095638e18286ca9a3d1956744
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3@3235b876344d2a9aa001b8d1453c930bba69e610
         with:
           node-version: '20'
 
@@ -64,7 +73,7 @@ jobs:
         run: npm run build
 
       - name: Download Allure results
-        uses: actions/download-artifact@v3@2f8b97bb7f1f2ef86ea69f0a37dd67acb8c52de4
+        uses: actions/download-artifact@v3@15f052837536d9eb6c49aa8f7a4183c331df0a2b
         with:
           name: allure-results
           path: allure-results
