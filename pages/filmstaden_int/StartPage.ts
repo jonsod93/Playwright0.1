@@ -6,8 +6,7 @@ export class StartPage extends DefaultPageWithNavigation {
   public mainContentLocator: any;
   public errorMessageMovieSearch: any;
 
-
-  constructor(page) {
+  constructor(page: any) {
     super(page);
     this.moviePosters = this.page.locator("div[class='group/poster']");
     this.movieSearchField = this.page.getByPlaceholder('Sök på filmens namn');
@@ -16,7 +15,11 @@ export class StartPage extends DefaultPageWithNavigation {
   }
 
   async selectTownFromResults(townName: string) {
-    await this.page.locator('ul').filter({ hasText: new RegExp(`^${townName}$`) }).getByRole('link').click();
+    await this.page
+      .locator('ul')
+      .filter({ hasText: new RegExp(`^${townName}$`) })
+      .getByRole('link')
+      .click();
   }
 
   async searchMovie(movieName: string) {
@@ -30,6 +33,7 @@ export class StartPage extends DefaultPageWithNavigation {
 
   async clickMovieLink(movieName: string) {
     await this.page.getByRole('link', { name: movieName }).click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   async clearMovieSearchField() {
@@ -39,7 +43,7 @@ export class StartPage extends DefaultPageWithNavigation {
   async selectRandomMovie() {
     let randomMovie = Math.floor(Math.random() * 7);
     await this.moviePosters.nth(randomMovie).click();
+    await this.page.waitForLoadState('networkidle');
     return randomMovie;
   }
-
 }

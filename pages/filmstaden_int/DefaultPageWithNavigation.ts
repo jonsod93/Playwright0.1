@@ -25,34 +25,55 @@ export class DefaultPageWithNavigation extends DefaultPage {
   public citySearchSidearHeading: any;
   public citySearchNoResultsMessage: any;
   public citySearchResults: any;
-  
 
   constructor(page) {
     super(page);
-    this.homeButton = this.page.locator("(//a)[1]");
+    this.homeButton = this.page.locator('(//a)[1]');
     this.discoverButton = this.page.getByRole('link', { name: 'Upptäck' });
-    this.goingToTheCinemaButton = this.page.getByRole('button', { name: 'Gå på bio ' });
-    this.membershipButton = this.page.getByRole('link', { name: 'Medlemsskapet' });
+    this.goingToTheCinemaButton = this.page.getByRole('button', {
+      name: 'Gå på bio ',
+    });
+    this.membershipButton = this.page.getByRole('link', {
+      name: 'Medlemsskapet',
+    });
     this.moreButton = this.page.getByRole('link', { name: 'Mer ' });
     this.profileButton = this.page.locator('a[href="/mina-sidor/"]');
     this.cityPickerButton = this.page.locator('div.px-8.pr-12 > button');
     this.cinemasButton = this.page.getByRole('link', { name: 'Biografer' });
     this.onCinemaNowButton = this.page.getByRole('link', { name: 'På Bio Nu' });
-    this.upcomingButton = this.page.getByRole('link', { name: 'Kommande filmer' });
-    this.kidsAndFamilyButton = this.page.getByRole('link', { name: 'Barn och Familj' });
-    this.cinemaExperienceButton = this.page.getByRole('link', { name: 'Bioupplevelsen' });
-    this.classicsButton = this.page.getByRole('link', { name: 'Klassiker på Bio' });
+    this.upcomingButton = this.page.getByRole('link', {
+      name: 'Kommande filmer',
+    });
+    this.kidsAndFamilyButton = this.page.getByRole('link', {
+      name: 'Barn och Familj',
+    });
+    this.cinemaExperienceButton = this.page.getByRole('link', {
+      name: 'Bioupplevelsen',
+    });
+    this.classicsButton = this.page.getByRole('link', {
+      name: 'Klassiker på Bio',
+    });
     this.offersButton = this.page.getByRole('link', { name: 'Erbjudanden' });
     this.giftcardButton = this.page.getByRole('link', { name: 'Presentkort' });
-    this.foodAndDrinkButton = this.page.getByRole('link', { name: 'Mat och Dryck' });
+    this.foodAndDrinkButton = this.page.getByRole('link', {
+      name: 'Mat och Dryck',
+    });
     this.newsButton = this.page.getByRole('link', { name: 'Nyheter' });
     this.companyButton = this.page.getByRole('link', { name: 'Företag' });
-    this.customerServiceButton = this.page.getByRole('link', { name: 'Kundservice' });
-    this.loginButton = this.page.getByRole('link', { name: 'Logga in menuitem logo Logga' });
+    this.customerServiceButton = this.page.getByRole('link', {
+      name: 'Kundservice',
+    });
+    this.loginButton = this.page.getByRole('link', {
+      name: 'Logga in menuitem logo Logga',
+    });
     this.citySearchField = this.page.getByPlaceholder('Sök stad');
-    this.citySearchSidearHeading = this.page.getByRole('heading', { name: 'Välj din biostad' });
-    this.citySearchNoResultsMessage = this.page.getByLabel('Välj din biostad')
-    this.citySearchResults = this.page.locator("span[class='text-sm font-bold']")
+    this.citySearchSidearHeading = this.page.getByRole('heading', {
+      name: 'Välj din biostad',
+    });
+    this.citySearchNoResultsMessage = this.page.getByLabel('Välj din biostad');
+    this.citySearchResults = this.page.locator(
+      "span[class='text-sm font-bold']"
+    );
   }
 
   async clickHome() {
@@ -156,6 +177,8 @@ export class DefaultPageWithNavigation extends DefaultPage {
   }
 
   async selectCityFromResults(cityName: string) {
-    await this.page.getByRole('button', { name: `Välj stad ${cityName}` }).click();
+    await this.page
+      .getByRole('button', { name: `Välj stad ${cityName}` })
+      .click();
   }
 }

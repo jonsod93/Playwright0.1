@@ -10,3 +10,11 @@ export class TestUserGeneric {
   static readonly password = '1234Test1234';
   static readonly email = 'test@mailinator.com';
 }
+
+export class TestUserLogin {
+  static readonly firstName = 'Playwright';
+  static readonly lastName = 'AutomaticTest';
+  static readonly phoneNumber = '0737889944';
+  static readonly password = '1234Test1234';
+  static readonly email = '';
+}

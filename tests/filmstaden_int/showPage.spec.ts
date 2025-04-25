@@ -4,10 +4,9 @@ import { StartPage } from '../../pages/filmstaden_int/StartPage';
 import { MoviePage } from '../../pages/filmstaden_int/MoviePage';
 import { ShowPage } from '../../pages/filmstaden_int/ShowPage';
 import { EnvironmentData } from '../../testData/environmentData';
-import * as allure from "allure-js-commons";
+import * as allure from 'allure-js-commons';
 
-
-test.describe.parallel("Tests for the Showpage", () => {
+test.describe.parallel('Tests for the Showpage', () => {
   let landingPage;
   let startPage;
   let moviePage;
@@ -19,26 +18,24 @@ test.describe.parallel("Tests for the Showpage", () => {
     moviePage = new MoviePage(page);
     showPage = new ShowPage(page);
 
-    await page.goto(EnvironmentData.SIT.URL);
+    await page.goto('/');
     await landingPage.acceptCookies();
     await landingPage.selectStockholm();
   });
 
-
   test('Saloninfo verification', async ({ page }) => {
-    await test.step("Initial setup of test specific variables and tags", async () => {
+    await test.step('Initial setup of test specific variables and tags', async () => {
       await allure.epic('Showpage');
       await allure.feature('Information about the salon');
     });
-    
-    await test.step("Navigate to a movie with shows", async () => {
+
+    await test.step('Navigate to a movie with shows', async () => {
       await expect(startPage.loginButton).toBeVisible();
       await startPage.selectRandomMovie();
       await moviePage.selectFirstAvailableShowtime(startPage.selectRandomMovie.bind(startPage));
     });
-  
-    await test.step("Control the salon information", async () => {
 
+    await test.step('Control the salon information', async () => {
       //Not all shows have salon information, so we need to check if the button is present before clicking it
       await showPage.findShowWithSalonInformation(
         moviePage.selectFirstAvailableShowtime.bind(moviePage),
@@ -47,7 +44,6 @@ test.describe.parallel("Tests for the Showpage", () => {
       await showPage.clickSalonInformationButton();
       await expect(showPage.dialogLocator).toContainText('Salongsinformation');
       await showPage.closeSalonInformationButton();
-
     });
   });
 });

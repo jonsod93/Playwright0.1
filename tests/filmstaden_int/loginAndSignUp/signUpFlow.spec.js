@@ -7,43 +7,40 @@ import { ProfilePage } from '../../../pages/filmstaden_int/ProfilePage';
 import { EmailHelper } from '../../../helpers/filmstaden_int/EmailHelper';
 import { TestUserGeneric } from '../../../testData/testUser';
 import { EnvironmentData } from '../../../testData/environmentData';
-import * as allure from "allure-js-commons";
+import * as allure from 'allure-js-commons';
 
-test.describe.parallel("2FA tests", () => {
-    let landingPage;
-    let startPage;
-    let loginPage;
-    let signUpPage;
-    let profilePage;
-    let emailHelper;
-    let namespace;
-    let socialSecurityNumber;
-    let timeFrom;
-    let testEmailAddress;
-    const country = 'se';
+test.describe.parallel('2FA tests', () => {
+  let landingPage;
+  let startPage;
+  let loginPage;
+  let signUpPage;
+  let profilePage;
+  let emailHelper;
+  let namespace;
+  let socialSecurityNumber;
+  let timeFrom;
+  let testEmailAddress;
+  const country = 'se';
 
-  
-    test.beforeEach(async ({ page }) => {
-      landingPage = new LandingPage(page);
-      startPage = new StartPage(page);
-      loginPage = new LoginFlowPage(page);
-      signUpPage = new SignUpFlowPage(page);
-      profilePage = new ProfilePage(page);
-      emailHelper = new EmailHelper();
-      namespace = await emailHelper.getNamespace();
-      
-  
-      await page.goto(EnvironmentData.SIT.URL);
-      await landingPage.acceptCookies();
-      await landingPage.selectStockholm();
-    });
+  test.beforeEach(async ({ page }) => {
+    landingPage = new LandingPage(page);
+    startPage = new StartPage(page);
+    loginPage = new LoginFlowPage(page);
+    signUpPage = new SignUpFlowPage(page);
+    profilePage = new ProfilePage(page);
+    emailHelper = new EmailHelper();
+    namespace = await emailHelper.getNamespace();
+
+    await page.goto('/');
+    await landingPage.acceptCookies();
+    await landingPage.selectStockholm();
+  });
 
   // Tests the 2Factor sign up and deletion of account
-  test("Create and delete account", async ({ page , request }, testInfo) => {  
-    
-    await test.step("Initial setup of variables and tags", async () => {
+  test('Create and delete account', async ({ page, request }, testInfo) => {
+    await test.step('Initial setup of variables and tags', async () => {
       await allure.epic('Login and Sign up');
-      await allure.feature('Create and delete account');  
+      await allure.feature('Create and delete account');
       test.setTimeout(90000); // Set timeout to 90 seconds for the whole test
       // Save the start time of the test
       let testStartTime = new Date();
@@ -51,28 +48,28 @@ test.describe.parallel("2FA tests", () => {
       // Set the test email based on date and browser, making sure it's always unique for each test run and browser
       testEmailAddress = `test.${Date.now()}.${testInfo.project.name}.login@${namespace}.mailisk.net`;
     });
-    
-    await test.step("Navigate to and start Sign Up Flow", async () => {
+
+    await test.step('Navigate to and start Sign Up Flow', async () => {
       await startPage.clickLogin();
       await loginPage.clickSignUpButton();
     });
-    
-    await test.step("First signup step: Fill Email and verify with email code", async () => {
+
+    await test.step('First signup step: Fill Email and verify with email code', async () => {
       await signUpPage.fillEmail(testEmailAddress);
       await signUpPage.clickSendCode();
       const code = await emailHelper.getSignUpCode(testEmailAddress, timeFrom, namespace);
       await signUpPage.fillCode(code);
       await signUpPage.clickVerifyCode();
     });
-    
-    await test.step("Second signup step: Fill Password and Confirm Password", async () => {
+
+    await test.step('Second signup step: Fill Password and Confirm Password', async () => {
       await signUpPage.fillPassword(TestUserGeneric.password);
       await signUpPage.fillConfirmPassword(TestUserGeneric.password);
       await signUpPage.clickContinue();
     });
-    
-    await test.step("Third signup step: Provide the rest of user information and finish signup", async () => {
-      await expect(page).toHaveURL("https://sv-sit-marvel.filmstaden.se/skapa-konto/");
+
+    await test.step('Third signup step: Provide the rest of user information and finish signup', async () => {
+      await expect(page).toHaveURL('/skapa-konto/');
       await signUpPage.fillFirstName(TestUserGeneric.firstName);
       await signUpPage.fillLastName(TestUserGeneric.lastName);
       await signUpPage.fillPhoneNumber(TestUserGeneric.phoneNumber);
@@ -85,24 +82,24 @@ test.describe.parallel("2FA tests", () => {
 
       // Make sure we end up on the profile page
       await expect(async () => {
-          await expect(profilePage.mainContentLocator).toContainText('Kvar till guldmedlem');
+        await expect(page).toHaveURL('/mina-sidor/');
       }).toPass();
     });
 
-    await test.step("Verify the QR-Code functionality", async () => {
+    await test.step('Verify the QR-Code functionality', async () => {
       await profilePage.clickQR();
       await expect(profilePage.QRCodeInfoLocator).toBeVisible();
       await profilePage.closeQR();
     });
 
-    await test.step("Verify the profile accordion", async () => {
+    await test.step('Verify the profile accordion', async () => {
       await profilePage.clickProfileAccordion();
       await expect(profilePage.formContentLocator).toContainText('Återställ lösenord här');
       await expect(profilePage.formContentLocator).toContainText('Byt din e-postadress här');
       await expect(profilePage.savePhoneNumberButton).toContainText('Spara telefonnummer');
     });
 
-    await test.step("Verify the communication accordion", async () => {
+    await test.step('Verify the communication accordion', async () => {
       await profilePage.clickCommunicationAccordion();
       await expect(profilePage.communicationLabel).toContainText('Medlemsinformation och filmnyheter');
       await profilePage.uncheckReminders();
@@ -115,7 +112,7 @@ test.describe.parallel("2FA tests", () => {
       await expect(profilePage.remindersCheckbox).not.toBeChecked();
     });
 
-    await test.step("Verify the friend accordion", async () => {
+    await test.step('Verify the friend accordion', async () => {
       await profilePage.clickFriendsAccordion();
       await profilePage.fillFriendCode('GF3UR2');
       await profilePage.fillFriendName('PhoxFake');
@@ -123,7 +120,7 @@ test.describe.parallel("2FA tests", () => {
       await expect(page.getByLabel('Phoxfake')).not.toBeChecked();
     });
 
-    await test.step("Delete the account and verify that it is gone", async () => {
+    await test.step('Delete the account and verify that it is gone', async () => {
       // Save the userID and build the API URL for checking if the user exists
       let userID = await profilePage.getUserID();
       await expect(userID).toBeDefined();
@@ -133,7 +130,9 @@ test.describe.parallel("2FA tests", () => {
       // Cancel the membership
       await profilePage.clickCancelMembership();
       await expect(async () => {
-          await expect(profilePage.cancelMembershipDialogLocator).toContainText('Är du säker på att du vill avsluta medlemskap?');
+        await expect(profilePage.cancelMembershipDialogLocator).toContainText(
+          'Är du säker på att du vill avsluta medlemskap?'
+        );
       }).toPass();
       await profilePage.clickConfirmCancel();
 
@@ -144,7 +143,7 @@ test.describe.parallel("2FA tests", () => {
         await expect(response.status()).toBe(200);
         const responseBody = await response.json();
         await expect(responseBody).toBeFalsy(); // Check that the user does not exist anymore
-      }).toPass({timeout: 10000});
+      }).toPass({ timeout: 10000 });
     });
   });
 });

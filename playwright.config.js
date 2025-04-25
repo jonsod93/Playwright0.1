@@ -1,5 +1,17 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { EnvironmentData } from './testData/environmentData';
+
+// Load environment variables from .env file
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+// Fetch the base URL dynamically from EnvironmentData
+const currentEnvironment = EnvironmentData.getCurrent();
+const baseURL = currentEnvironment.URL;
 
 /**
  * Read environment variables from file.
@@ -17,15 +29,15 @@ export default defineConfig({
   globalSetup: './tests/global-setup',
   /* Run tests in files in parallel */
   fullyParallel: true,
-  timeout: 1000*60*1,
+  timeout: 1000 * 60 * 1,
   expect: {
     /* Set the default timeout for each test */
-    timeout: 1000*10,
+    timeout: 1000 * 10,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry failed tests up to 3 times */
-  retries: 0,
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -33,12 +45,12 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: baseURL, // Dynamically set the base URL based on the .env file
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     viewport: { width: 1920, height: 1080 },
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
-    trace: "on",
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: 'on',
     launchOptions: {
       slowMo: 50,
     },
@@ -48,12 +60,13 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
+      use: {
+        ...devices['Desktop Chrome'],
         viewport: { width: 1920, height: 1080 },
-        screenshot:"only-on-failure",
-        video:"retain-on-failure",
-        trace:"on"
-       },
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        trace: 'on',
+      },
     },
 
     /*{
@@ -94,4 +107,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-

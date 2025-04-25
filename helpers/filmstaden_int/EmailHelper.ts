@@ -9,9 +9,9 @@ export class EmailHelper {
   constructor() {
     const apiKey = 'umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY';
     this.mailisk = new MailiskClient({ apiKey });
-    this.loginIndex = 3; // Amount of number groups in the namespace
+    this.loginIndex = 2; // Amount of number groups in the namespace
     this.signUpIndex = this.loginIndex + 1;
-    this.namespace = 'jdifc2r0pd1o';
+    this.namespace = 'mk4soayafs1u';
   }
 
   // Method to get the namespace
@@ -44,12 +44,12 @@ export class EmailHelper {
 
   // Method to get the login verification code
   async getLoginCode(email: string, fromTimestamp: number): Promise<string> {
-    return await this.getVerificationCode(email, fromTimestamp, this.loginIndex, this.namespace); // Use index 3 for login (amount of number groups in namespace)
+    return await this.getVerificationCode(email, fromTimestamp, this.loginIndex); // Use index 3 for login (amount of number groups in namespace)
   }
 
   // Method to get the sign-up verification code
   async getSignUpCode(email: string, fromTimestamp: number): Promise<string> {
-    return await this.getVerificationCode(email, fromTimestamp, this.signUpIndex, this.namespace); // Use index 4 for sign-up (amount of number groups in namespace + 1)
+    return await this.getVerificationCode(email, fromTimestamp, this.signUpIndex); // Use index 4 for sign-up (amount of number groups in namespace + 1)
   }
 
   // Private method to handle the common logic between getLoginCode and getSignUpCode
