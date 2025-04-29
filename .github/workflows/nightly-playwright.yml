@@ -130,7 +130,7 @@ jobs:
           subject: '🧪 Allure Report: Nightly Test Summary'
           to: ${{ secrets.REPORT_RECIPIENT }}
           from: Playwright Bot <${{ secrets.EMAIL_USERNAME }}>
-          body: |
+          html_body: |
             <h2>✅ Nightly Playwright Test Report</h2>
             <p><strong>Summary:</strong></p>
             <ul>
