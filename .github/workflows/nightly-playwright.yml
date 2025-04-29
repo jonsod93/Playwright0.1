@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-tests:
-    if: github.event.schedule != '0 4 * * *' || github.event_name == 'workflow_dispatch'
+    if: (github.event_name == 'schedule' && github.event.schedule != '0 4 * * *') || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
