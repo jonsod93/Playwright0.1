@@ -76,7 +76,7 @@ jobs:
         run: npm run build
 
       - name: Download Allure results
-        uses: actions/download-artifact@v3.0.2
+        uses: actions/download-artifact@v4
         with:
           name: allure-results
           path: allure-results
