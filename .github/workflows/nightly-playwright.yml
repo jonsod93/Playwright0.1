@@ -77,6 +77,13 @@ jobs:
 
       - name: Build helper scripts
         run: npm run build
+      
+      - name: Download previous allure history
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-history
+          path: allure-report/history
+        continue-on-error: true
 
       - name: Download Allure results
         uses: actions/download-artifact@v4
