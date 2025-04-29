@@ -34,9 +34,8 @@ jobs:
 
       - name: Download previous allure history from gh-pages
         run: |
-          git fetch origin gh-pages:gh-pages
-          git checkout gh-pages
-          git checkout gh-pages -- allure-report/history
+          git fetch origin gh-pages
+          git restore --source=origin/gh-pages --staged --worktree -- allure-report/history || true
         continue-on-error: true
 
       - name: Run pre-run setup
@@ -89,9 +88,8 @@ jobs:
       
       - name: Download previous allure history from gh-pages
         run: |
-          git fetch origin gh-pages:gh-pages
-          git checkout gh-pages
-          git checkout gh-pages -- allure-report/history
+          git fetch origin gh-pages
+          git restore --source=origin/gh-pages --staged --worktree -- allure-report/history || true
         continue-on-error: true
 
       - name: Download Allure results
