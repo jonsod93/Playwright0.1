@@ -9,9 +9,10 @@
     "report": "allure generate --clean allure-results -o allure-report",
     "test:allure": "npm run build && npm run pre-run && (npm run test || set TEST_FAILED=true) && npm run report && npm run serve-report && (if defined TEST_FAILED exit /b 1)",
     "serve-report": "allure open allure-report",
+    "test:allure:ci": "npm run build && npm run pre-run && (npm run test || export TEST_FAILED=true) && npm run report && npm run serve-report && [ \"$TEST_FAILED\" = true ] && exit 1 || true",
     "lint": "eslint . --ext .ts,.js",
     "format": "prettier --write .",
-    "build": "tsc scripts/pre-run.ts --outDir dist && (if exist dist\\pre-run.js (if exist dist\\pre-run.cjs del dist\\pre-run.cjs) & ren dist\\pre-run.js pre-run.cjs)"
+    "build": "tsc scripts/pre-run.ts --outDir dist && node -e \"const fs = require('fs'); const path = require('path'); const jsPath = path.join('dist', 'pre-run.js'); const cjsPath = path.join('dist', 'pre-run.cjs'); if (fs.existsSync(jsPath)) fs.renameSync(jsPath, cjsPath);\""
   },
   "keywords": [],
   "author": "",
