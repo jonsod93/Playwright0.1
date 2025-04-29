@@ -48,14 +48,14 @@ jobs:
         run: ls -R allure-report || echo "No report directory found"
 
       - name: Upload Allure results
-        if: success()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: allure-results
 
       - name: Upload updated history
-        if: success()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-history

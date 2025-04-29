@@ -7,7 +7,6 @@ import { NetsPage } from '../../../pages/filmstaden_int/NetsPage';
 import { ReceiptPage } from '../../../pages/filmstaden_int/ReceiptPage';
 import { TestUser } from '../../../testData/testUser';
 import { ValidVisa } from '../../../testData/paymentOptions';
-import { EnvironmentData } from '../../../testData/environmentData';
 import * as allure from 'allure-js-commons';
 
 test.describe.parallel('Unauthenticated Card Purchase Tests', () => {
