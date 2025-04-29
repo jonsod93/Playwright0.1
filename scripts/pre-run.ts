@@ -8,8 +8,8 @@ const executorPath = path.join(allureResultsDir, 'executor.json');
 
 // Ensure the allure-results directory exists
 if (!fs.existsSync(allureResultsDir)) {
-  console.error('Error: allure-results directory does not exist.');
-  process.exit(1);
+  console.log('⚠️ allure-results directory does not exist. Creating it...');
+  fs.mkdirSync(allureResultsDir, { recursive: true }); // Create the allure-results directory
 }
 
 // Ensure history directories exist
