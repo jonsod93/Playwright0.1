@@ -32,11 +32,11 @@ jobs:
       - name: Build helper scripts
         run: npm run build
 
-      - name: Download previous allure history
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-history
-          path: allure-report/history
+      - name: Download previous allure history from gh-pages
+        run: |
+          git fetch origin gh-pages:gh-pages
+          git checkout gh-pages
+          git checkout gh-pages -- allure-report/history
         continue-on-error: true
 
       - name: Run pre-run setup
@@ -87,11 +87,11 @@ jobs:
       - name: Build helper scripts
         run: npm run build
       
-      - name: Download previous allure history
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-history
-          path: allure-report/history
+      - name: Download previous allure history from gh-pages
+        run: |
+          git fetch origin gh-pages:gh-pages
+          git checkout gh-pages
+          git checkout gh-pages -- allure-report/history
         continue-on-error: true
 
       - name: Download Allure results
