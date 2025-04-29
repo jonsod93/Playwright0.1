@@ -17,7 +17,7 @@ if (!fs.existsSync(allureHistoryDir)) {
   console.log('Creating history directory in allure-report...');
   fs.mkdirSync(allureHistoryDir, { recursive: true });
 }
-
+ 
 if (!fs.existsSync(resultsHistoryDir)) {
   console.log('Creating history directory in allure-results...');
   fs.mkdirSync(resultsHistoryDir, { recursive: true });
