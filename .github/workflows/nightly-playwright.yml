@@ -15,8 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check directory structure
-        run: |
-          ls -R
+        run: ls -R
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.8.1
@@ -32,10 +31,11 @@ jobs:
       - name: Build helper scripts
         run: npm run build
 
-      - name: Download previous allure history from gh-pages
-        run: |
-          git fetch origin gh-pages
-          git restore --source=origin/gh-pages --staged --worktree -- allure-report/history || true
+      - name: Download previous allure history (from artifact)
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-history
+          path: allure-report/history
         continue-on-error: true
 
       - name: Run pre-run setup
@@ -91,8 +91,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check directory structure
-        run: |
-          ls -R
+        run: ls -R
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.8.1
@@ -105,10 +104,11 @@ jobs:
       - name: Build helper scripts
         run: npm run build
 
-      - name: Download previous allure history from gh-pages
-        run: |
-          git fetch origin gh-pages
-          git restore --source=origin/gh-pages --staged --worktree -- allure-report/history || true
+      - name: Download previous allure history (from artifact)
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-history
+          path: allure-report/history
         continue-on-error: true
 
       - name: Download Allure results
@@ -118,7 +118,7 @@ jobs:
           path: allure-results
 
       - name: View contents of history.json
-        run: cat allure-results/history/history.json || echo "Missing history.json"
+        run: cat allure-report/history/history.json || echo "Missing history.json"
 
       - name: Run pre-run setup (merges history, creates executor)
         run: npm run pre-run
