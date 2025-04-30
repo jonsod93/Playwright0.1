@@ -3,8 +3,8 @@ name: Nightly Playwright Tests
 on:
   schedule:
     - cron: '0 23 * * *' # 01:00 CEST
-    - cron: '0 2 * * *'  # 04:00 CEST
-    - cron: '0 4 * * *'  # 06:00 CEST
+    - cron: '0 2 * * *' # 04:00 CEST
+    - cron: '0 4 * * *' # 06:00 CEST
   workflow_dispatch:
 
 jobs:
@@ -85,7 +85,7 @@ jobs:
 
       - name: Build helper scripts
         run: npm run build
-      
+
       - name: Download previous allure history from gh-pages
         run: |
           git fetch origin gh-pages
@@ -111,6 +111,12 @@ jobs:
             echo "Report directory does not exist"
             echo "skip_deploy=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Add .nojekyll
+        run: touch allure-report/.nojekyll
+
+      - name: Debug history before deploy
+        run: ls -R allure-report/history || echo "No history folder before deploy"
 
       - name: Deploy to GitHub Pages
         if: steps.check_report.outputs.skip_deploy != 'true'
