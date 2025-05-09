@@ -1,0 +1,6198 @@
+# Test info
+
+- Name: 404-page tests >> Test that 404-page has the correct elements
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/404Page.spec.js:19:3
+
+# Error details
+
+```
+Error: Timed out 10000ms waiting for expect(locator).toContainText(expected)
+
+Locator: locator('h1')
+Expected string: "DKWPAOK KPFKPOAESKFOPEÄKP 32489"
+Received string: "På bio nu"
+Call log:
+  - expect.toContainText with timeout 10000ms
+  - waiting for locator('h1')
+    12 × locator resolved to <h1 data-contentful-field-id="heading" data-contentful-entry-id="6wcyyn66OID40TbehoLeUt">På bio nu</h1>
+       - unexpected value "På bio nu"
+
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/404Page.spec.js:36:44
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/404Page.spec.js:33:5
+```
+
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "temp logotype":
+    - /url: /stockholm/
+    - img "temp logotype"
+  - link "Upptäck":
+    - /url: /stockholm/
+  - button "Gå på bio "
+  - link "Medlemsskapet":
+    - /url: /medlem/
+  - button "Mer "
+  - link "Logga in menuitem logo Logga in":
+    - /url: https://inte-services.cinema-api.com/redirect/externalSignUpOrIn/se?redirectUrl=https://sv-sit-marvel.filmstaden.se/mina-sidor/
+    - text: Logga in
+    - img "menuitem logo Logga in"
+  - button "Stockholm"
+- main:
+  - list:
+    - listitem:
+      - heading "På bio nu" [level=1]
+    - listitem
+  - heading "Välj dag du vill gå på bio" [level=2]
+  - radio "Idag 9 maj" [checked]
+  - text: Idag 9 maj
+  - radio "lördag 10 maj"
+  - text: lördag 10 maj
+  - radio "söndag 11 maj"
+  - text: söndag 11 maj
+  - radio "måndag 12 maj"
+  - text: måndag 12 maj
+  - radio "tisdag 13 maj"
+  - text: tisdag 13 maj
+  - radio "onsdag 14 maj"
+  - text: onsdag 14 maj
+  - radio "torsdag 15 maj"
+  - text: torsdag 15 maj
+  - radio "fredag 16 maj"
+  - text: fredag 16 maj
+  - radio "lördag 17 maj"
+  - text: lördag 17 maj
+  - radio "söndag 18 maj"
+  - text: söndag 18 maj
+  - radio "tisdag 1 jul"
+  - text: tisdag 1 jul
+  - radio "onsdag 2 jul"
+  - text: onsdag 2 jul
+  - radio "torsdag 3 jul"
+  - text: torsdag 3 jul
+  - radio "fredag 4 jul"
+  - text: fredag 4 jul
+  - heading "Biografer" [level=3]
+  - checkbox "Alla" [checked]
+  - text: Alla
+  - checkbox "Grand Lidingö"
+  - text: Grand Lidingö
+  - checkbox "Grand Stockholm"
+  - text: Grand Stockholm
+  - checkbox "Heron City"
+  - text: Heron City
+  - checkbox "Kista"
+  - text: Kista
+  - checkbox "Rigoletto"
+  - text: Rigoletto
+  - checkbox "Råsunda"
+  - text: Råsunda
+  - checkbox "Saga"
+  - text: Saga
+  - checkbox "Scandinavia"
+  - text: Scandinavia
+  - checkbox "Sergel"
+  - text: Sergel
+  - checkbox "Sickla"
+  - text: Sickla
+  - checkbox "Sture"
+  - text: Sture
+  - checkbox "Söder"
+  - text: Söder
+  - checkbox "Täby"
+  - text: Täby
+  - checkbox "Victoria"
+  - text: Victoria
+  - checkbox "Vällingby"
+  - text: Vällingby
+  - button "Visa filter"
+  - heading "Sortera på:" [level=3]
+  - list:
+    - listitem:
+      - radio "Tid" [checked]
+      - text: Tid
+    - listitem:
+      - radio "Filmer A-Ö"
+      - text: Filmer A-Ö
+  - paragraph: 551 föreställningar
+  - list:
+    - listitem:
+      - heading "12:00" [level=4]
+      - list:
+        - listitem:
+          - link "1917":
+            - /url: /film/1917/
+            - img "1917"
+            - img "1917"
+          - heading "1917" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 58 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 6 54 platser • 54 kvar eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/97538ca7-f2ce-4db1-81dd-83a1997eb50d/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 13 VIP 35 platser • 35 kvar eng tal, sve text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a792d290-9e16-4d1c-988b-ede1d8f4be4e/
+        - listitem:
+          - link "A Clockwork Orange - Klassiker":
+            - /url: /film/a-clockwork-orange-klassiker/
+            - img "A Clockwork Orange - Klassiker"
+            - img "A Clockwork Orange - Klassiker"
+          - heading "A Clockwork Orange - Klassiker" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 17 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 4 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/01a5a7c3-49f7-4c79-a68d-701996bdf93c/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a6eec7bd-0406-4cda-a68a-bdc62bbbe213/
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2ae3a35c-244c-42ab-b436-a37f19471ed9/
+        - listitem:
+          - link "Akira - Klassiker":
+            - /url: /film/akira-klassiker/
+            - img "Akira - Klassiker"
+            - img "Akira - Klassiker"
+          - heading "Akira - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 4 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 10 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3c42e50e-e26f-45ed-b760-fd166367658b/
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba4b646e-4179-4b95-8baa-d8e2099db89d/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/79a11e25-c983-4aae-94e8-940c7be3d9fc/
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/90874b71-2f5f-421a-8d9e-266b3894e2ad/
+        - listitem:
+          - link "Babyteeth":
+            - /url: /film/babyteeth/
+            - img "Babyteeth"
+            - img "Babyteeth"
+          - heading "Babyteeth" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 57 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 13 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/331ebe00-428e-4db6-acc5-446f7655213e/
+        - listitem:
+          - link "David Copperfields äventyr och iakttagelser":
+            - /url: /film/david-copperfields-aventyr-och-iakttagelser/
+            - img "David Copperfields äventyr och iakttagelser"
+            - img "David Copperfields äventyr och iakttagelser"
+          - heading "David Copperfields äventyr och iakttagelser" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 59 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/270a8b09-77fc-4d01-8b6a-dedfc24cf063/
+        - listitem:
+          - link "Det blåser upp en vind - Klassiker":
+            - /url: /film/det-blaser-upp-en-vind-klassiker/
+            - img "Det blåser upp en vind - Klassiker"
+            - img "Det blåser upp en vind - Klassiker"
+          - heading "Det blåser upp en vind - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 6 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 8 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/82017ffb-b4d1-4a3b-ab69-1ffd374a2361/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 9 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ab3a6c12-631e-4575-bc24-3f1f9b6d020e/
+        - listitem:
+          - link "Det levande slottet - Klassiker":
+            - /url: /film/det-levande-slottet-klassiker/
+            - img "Det levande slottet - Klassiker"
+            - img "Det levande slottet - Klassiker"
+          - heading "Det levande slottet - Klassiker" [level=3]
+          - paragraph: Anime
+          - text: 2 tim 0 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 4 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/71ad848d-c025-4adb-969d-1273492ce0c2/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 10 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2d475205-9524-491c-8c32-54cd7b31b2d6/
+            - listitem:
+              - text: Victoria Stockholm Salong 2 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cbe230aa-5238-44cc-96f1-e7993ad2a468/
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/046acdef-602b-4f75-ab53-ddf2ba7e53da/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2c41515e-e6e4-4077-b0ca-da0898305abc/
+        - listitem:
+          - link "En del av mitt hjärta":
+            - /url: /film/en-del-av-mitt-hjarta/
+            - img "En del av mitt hjärta"
+            - img "En del av mitt hjärta"
+          - heading "En del av mitt hjärta" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 58 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 12 VIP Platsinformation saknas sve tal, sve text Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b7a28f7f-c8f8-4e80-b6ef-2c6a7b3df606/
+        - listitem:
+          - link "Falling":
+            - /url: /film/falling/
+            - img "Falling"
+            - img "Falling"
+          - heading "Falling" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 52 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ef879853-386b-4533-aea2-7ff60314af90/
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0e21f764-511e-4bc3-94af-30db5cf3251d/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0381a826-b1f0-40d6-b709-4865194e3999/
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1e74f868-f99b-4e67-b55d-5c1b356df460/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/49e85db4-6e32-4c89-a52f-07ea060cce58/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3deafd44-c865-479e-bb76-a6b03acd8b58/
+        - listitem:
+          - link "Goonies – Dödsskallegänget - Klassiker":
+            - /url: /film/goonies-dodsskalleganget-klassiker/
+            - img "Goonies – Dödsskallegänget - Klassiker"
+            - img "Goonies – Dödsskallegänget - Klassiker"
+          - heading "Goonies – Dödsskallegänget - Klassiker" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 14 VIP (18-årsgräns) Platsinformation saknas eng tal, sve text Klassiker VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e1298fd0-992a-4e53-aab5-28c193455808/
+        - listitem:
+          - link "Greenland":
+            - /url: /film/greenland/
+            - img "Greenland"
+            - img "Greenland"
+          - heading "Greenland" [level=3]
+          - paragraph: Action
+          - text: 2 tim 0 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/22f78889-41e1-42b2-b4f9-2724b38ff73e/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f99abd9d-754e-4f03-8f4a-2254f1822308/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e99b3dac-7d28-42fb-b498-f4ed2ced8bbc/
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/80081b04-5f0d-450c-a5a7-291a9ed2d7c2/
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e6187d4a-eba7-42b9-b87f-50005222d5ab/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/edbc3a88-5e65-4bc1-b759-1f2b3ae87f72/
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/060672b0-015b-4038-b166-246dbfa4680a/
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/76b07fc4-b0bf-4a07-8206-61b37ed837c8/
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/20cef662-d472-4ba3-bcf9-1d7a5c2324fc/
+        - listitem:
+          - link "Knives Out":
+            - /url: /film/knives-out/
+            - img "Knives Out"
+            - img "Knives Out"
+          - heading "Knives Out" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 11 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b980fa31-fd99-4089-ab7a-a2858fa93eb2/
+        - listitem:
+          - link "La La Land":
+            - /url: /film/la-la-land/
+            - img "La La Land"
+            - img "La La Land"
+          - heading "La La Land" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 8 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6135b865-3b85-4e9b-a097-91887eb8ee8d/
+        - listitem:
+          - link "Lejonkungen":
+            - /url: /film/lejonkungen/
+            - img "Lejonkungen"
+            - img "Lejonkungen"
+          - heading "Lejonkungen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 58 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 9 Platsinformation saknas eng tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b94c24d8-82d6-4d61-bb63-39ef44cebc75/
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2e54136e-a5b1-4631-9b0a-6577f751aed9/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cf44466e-4fc6-4923-a8c4-b025516501ee/
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f5202c3e-974d-4048-b1cd-7ffa821755c9/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/885d9167-bda1-4673-a403-9aafd7870be5/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/aefb9b15-3e68-4eee-8ecc-ec9bb4b64adf/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/178e5b17-8f0e-49c9-b96c-6a8749703a00/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/52978e81-ede1-4b87-b9ef-a00a2b06d4e4/
+        - listitem:
+          - 'link "Mamma Mia: Here We Go Again - Singalong"':
+            - /url: /film/mamma-mia-here-we-go-again-singalong/
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+          - 'heading "Mamma Mia: Here We Go Again - Singalong" [level=3]'
+          - paragraph: Musikal
+          - text: 1 tim 54 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 14 VIP Platsinformation saknas eng tal, eng text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bd69eb5a-bcb8-44c0-a707-7f8ae7ef7894/
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6add1095-3e20-4f09-90f4-904a5fbc5d64/
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/22532ba3-e725-4c2b-bf09-84e9bd55ef5f/
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e9665b5f-24c8-4af3-a234-103bd30a4818/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1f2553c2-ecda-4167-ac1b-d9fdaa31b464/
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2aa924a4-5202-4b14-96c8-f56076815de6/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/50f36238-7115-4a41-8826-d8a24f3ffc6d/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/735816e2-20e5-48c2-9eb2-e43b68747db5/
+        - listitem:
+          - link "Parasit":
+            - /url: /film/parasit/
+            - img "Parasit"
+            - img "Parasit"
+          - heading "Parasit" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 12 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 3 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4231cd94-4668-40da-8071-55fdb921300f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 8 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6a040304-fe74-42f5-9eb1-7729eaa7fae4/
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/97a8e1a5-de6f-4c47-986f-d4d3c0b9328e/
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6230f770-c482-4607-a708-30a3e9f8368a/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1fbc1876-e73d-41fa-a7ec-1dab4dcdcd79/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/eed41e66-3d3e-4968-9913-f367a41ae505/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/02df4714-b8dd-4915-80ad-79eb9563148f/
+        - listitem:
+          - 'link "Phil Lynott: Songs For While I''m Away"':
+            - /url: /film/phil-lynott-songs-for-while-im-away/
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+          - 'heading "Phil Lynott: Songs For While I''m Away" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 53 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ac49d2b5-f42b-4f34-85b5-63d8490cc3fe/
+            - listitem:
+              - text: Victoria Stockholm Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d8fc6172-99bc-49ea-b140-c408c5764db2/
+        - listitem:
+          - link "Poltergeist - Klassiker":
+            - /url: /film/poltergeist-klassiker/
+            - img "Poltergeist - Klassiker"
+            - img "Poltergeist - Klassiker"
+          - heading "Poltergeist - Klassiker" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 54 min 15+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/12fc4795-8cae-45fa-83d9-7eb30133660c/
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3831460e-f863-4800-939b-1cfe34223fd9/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dec96d35-2d65-4abe-aadb-e865d20df623/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5d17fcf7-d33c-45ea-b36a-ec21e0f94d1a/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/328adcaf-ff35-42f3-82a3-4b06c3ce8df5/
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a154406f-0af6-4410-9a6d-00c2abbe4e12/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ac64537c-af72-41c5-9e19-49c34d2675e4/
+        - listitem:
+          - link "Prinsessan Mononoke - Klassiker":
+            - /url: /film/prinsessan-mononoke-klassiker/
+            - img "Prinsessan Mononoke - Klassiker"
+            - img "Prinsessan Mononoke - Klassiker"
+          - heading "Prinsessan Mononoke - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 14 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 4 - "Bergman" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1120932c-3a0f-4315-b933-e1f7bd1635e0/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/af6874aa-e46b-4e95-adb5-9686d14639de/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ca7c2c8b-7445-4c6e-957f-0e49549040e1/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f7b11b9f-eab2-4909-95b6-63fe22573862/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/096a6a98-56df-4cb7-bc4b-8cf66ec0b92b/
+        - listitem:
+          - link "Ronja Rövardotter - Klassiker":
+            - /url: /film/ronja-rovardotter-klassiker/
+            - img "Ronja Rövardotter - Klassiker"
+            - img "Ronja Rövardotter - Klassiker"
+          - heading "Ronja Rövardotter - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 2 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 16 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/325cd886-5cec-4b04-bc8c-ef2508100e3f/
+        - listitem:
+          - link "Rymdimperiet slår tillbaka - Klassiker":
+            - /url: /film/rymdimperiet-slar-tillbaka-klassiker/
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+          - heading "Rymdimperiet slår tillbaka - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 2 tim 4 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 2 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b38290c0-75a5-412e-9d54-204cc5b8fa64/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 4 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d8aa584a-d25c-4b89-b8f0-d1f96755ca8f/
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5aecec2f-ae98-4790-a78a-7896a5e1aabd/
+        - listitem:
+          - link "Skönheten och odjuret":
+            - /url: /film/skonheten-och-odjuret/
+            - img "Skönheten och odjuret"
+            - img "Skönheten och odjuret"
+          - heading "Skönheten och odjuret" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 9 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b6d02067-5e40-4194-abfc-b203020a7784/
+            - listitem:
+              - text: Filmstaden Sergel Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/69b956d3-5877-4a0f-b1cd-6aa31fde7b00/
+        - listitem:
+          - link "Spirited Away - Klassiker":
+            - /url: /film/spirited-away-klassiker/
+            - img "Spirited Away - Klassiker"
+            - img "Spirited Away - Klassiker"
+          - heading "Spirited Away - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 5 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 15 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/86d62e23-0748-437c-840f-e3b1566a9e48/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/33c798a2-ef4b-44d8-8858-7e30467fbafd/
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cd03945c-2f81-4c05-b9a5-cbc50849b04b/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c313d798-3eb7-40a5-82d7-b46ac6968c71/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f5a0337e-b2d3-4a43-b91e-f5c889faa3b4/
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/134e704d-746d-412d-a583-c3c4a07bbd8a/
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/435e53b8-8aa7-4d27-b0d2-16af3fda6dae/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c9306738-4387-4178-b816-da4bfb8ebd02/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a393f800-8eb0-442c-b3f7-4e88bb7401b1/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b867879e-c626-4101-96d3-9252a8b41b2c/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e690dbca-3740-45b6-970f-706ecd102d30/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5fa3ba1f-96fc-470e-86b9-705e3bef154c/
+        - listitem:
+          - link "Unga kvinnor":
+            - /url: /film/unga-kvinnor/
+            - img "Unga kvinnor"
+            - img "Unga kvinnor"
+          - heading "Unga kvinnor" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 15 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 8 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/445a220f-3c51-4e3a-ad4d-c0484962144a/
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/12751719-f60e-46fc-83ec-6c018f132de5/
+        - listitem:
+          - link "Våga drömma":
+            - /url: /film/vaga-dromma/
+            - img "Våga drömma"
+            - img "Våga drömma"
+          - heading "Våga drömma" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 53 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/097988b8-ed96-4fc1-8ca8-92043575cbe9/
+            - listitem:
+              - text: Filmstaden Kista Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cdfb0775-a4be-4668-940e-4ad0560259a4/
+            - listitem:
+              - text: Filmstaden Råsunda Salong 3 - "Sickan" Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/261d7e83-8d32-4084-8945-3453c426a3ae/
+            - listitem:
+              - text: Filmstaden Sickla Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c89efe61-4af9-4127-9790-350fd4ba8782/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/da849d7e-a553-435d-b5fb-048acbee27e2/
+        - listitem:
+          - link "Weathering with You":
+            - /url: /film/weathering-with-you/
+            - img "Weathering with You"
+            - img "Weathering with You"
+          - heading "Weathering with You" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 1 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7f54de69-47fd-46fb-932e-b8645a2c8bcc/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/984cc133-57d1-447c-9471-c3af4c3a28f3/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/22a2b11a-34dc-424f-8048-38415c817198/
+    - listitem:
+      - heading "13:52" [level=4]
+      - list:
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ec774ef1-c859-48e0-9f1f-9f61a029f8d7/
+    - listitem:
+      - heading "13:59" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bb46e272-4485-4140-a808-9a6cada7da82/
+    - listitem:
+      - heading "14:02" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fdd5c277-86b0-452d-8b0b-ec1209bdde1a/
+    - listitem:
+      - heading "14:07" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/219ad15b-0141-456b-838e-7a3a77a09c71/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f07fb544-ddb3-41a7-854c-c62d03684a3e/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/de81151c-22ca-428c-a28b-ebb38f24aca6/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/145841d9-8800-4682-8139-031f26f06d9b/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/506af12a-123f-422c-af61-c559e32e15cb/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b6dc6a6c-f20b-4b39-abb5-be3a5ef318dd/
+    - listitem:
+      - heading "14:08" [level=4]
+      - list:
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e16fba6a-96ac-4c66-b507-b511edce3a7f/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8d2adf27-4117-4e7d-8eac-2dc8792358a0/
+    - listitem:
+      - heading "14:11" [level=4]
+      - list:
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bc9d0ff4-2380-409d-8f87-5c9df76eccd0/
+    - listitem:
+      - heading "14:12" [level=4]
+      - list:
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e5e68372-b8b5-492b-939a-e4f31e52e43f/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/568d8383-2d46-41ec-a68a-c97fccfc72c4/
+    - listitem:
+      - heading "14:13" [level=4]
+      - list:
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/67453bf2-fc1a-4729-8ce7-0cee770eff85/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9464209e-1371-468c-92c0-2f5db41d1080/
+    - listitem:
+      - heading "14:14" [level=4]
+      - list:
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d4c6f84b-1788-41b1-a87a-ee8586fd1f25/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/832d9a2e-7c71-423f-8630-c27466609232/
+    - listitem:
+      - heading "14:15" [level=4]
+      - list:
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4156df25-bec8-48fd-814e-a99917ff9969/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b8778d6d-aa38-45f5-bb6b-73ff47899c8b/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/48a9deff-d324-420e-94ca-1f36fa431296/
+    - listitem:
+      - heading "14:16" [level=4]
+      - list:
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/10784c43-32fd-4b42-9f1f-73a7ccd4614a/
+    - listitem:
+      - heading "14:17" [level=4]
+      - list:
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c8e62396-e827-4301-bf6e-8868a1a0fdb7/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7bd3f0a6-cf67-4210-a49a-e48fc6cc4292/
+    - listitem:
+      - heading "14:19" [level=4]
+      - list:
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9a088cba-313a-4897-9d4b-709c57565e72/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7b7fff43-2590-4843-8ff7-cd97ed988783/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6e5e8cd3-a234-4483-8281-38b7e93a276d/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a7e934d0-282e-4b66-9cd8-a387dc148fbc/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/174e3f45-acf5-4827-8092-bc5c751b8443/
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/51cbbce7-e2ba-4fc8-897c-34410e0476f3/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a5de7580-5913-4fb6-a358-f4aced735e8c/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/31d58486-90bf-4e01-bfce-5969cc133472/
+    - listitem:
+      - heading "14:20" [level=4]
+      - list:
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4bae3a7b-c68a-45c9-a713-b34b8f404397/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/07b87bd2-131a-48c1-a651-4766fde17c4f/
+    - listitem:
+      - heading "14:21" [level=4]
+      - list:
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/01e2acc8-9fa5-40a7-8313-963a0bed7c1b/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6fa712aa-d1fc-4ce5-8196-fa62ef13c5bf/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c7d48628-85de-4ebd-b120-8421168380fa/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8ad611b5-c0d6-4715-b8e2-85baf1d616d0/
+    - listitem:
+      - heading "14:22" [level=4]
+      - list:
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a2ae8a34-95a2-4d85-a3d7-fd807312f01b/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5b524235-bf30-4e9a-959e-a78e2a8f0007/
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6dbadb66-9797-4f67-929c-3333d03fd665/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8f33ea47-bf6d-4fc0-848e-b2bddf418255/
+    - listitem:
+      - heading "14:23" [level=4]
+      - list:
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5e231300-754f-4720-9690-92d97971fcba/
+    - listitem:
+      - heading "14:24" [level=4]
+      - list:
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4b8817c1-d24b-4d07-a1a8-c3bfc7fd0235/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/996bd53c-3f5a-492e-a973-c48835fbecf2/
+    - listitem:
+      - heading "14:25" [level=4]
+      - list:
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/82b19fc5-d22e-4b4d-838b-b387aaa08049/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/66b8c1b6-957b-462d-a6e4-e652db108902/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6fdd6a88-4fb9-4083-a265-63e71c24ee4c/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f723ce4d-b487-4ea2-8866-1bbcdcec0521/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bba6a138-8498-48de-8d04-dca858ec5b38/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3d7e1fb5-9357-4b34-a372-ee13bb1dc91a/
+    - listitem:
+      - heading "14:26" [level=4]
+      - list:
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1c746c2a-b546-4af9-b5dd-8f6437b66d95/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/203e6175-73ad-4c81-bfc6-795b6202803b/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4f1d0368-b542-4efa-bce8-af45ef48c42d/
+    - listitem:
+      - heading "14:27" [level=4]
+      - list:
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2006eceb-3fb5-425f-8ccc-258031fc3676/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5a661ee8-117a-4cc2-af53-c6348a05320a/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ddfb8da3-322d-407e-bfe4-e4407a97bdce/
+    - listitem:
+      - heading "14:29" [level=4]
+      - list:
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/69c58c63-f6ec-49a5-a311-728bfd6bc59d/
+    - listitem:
+      - heading "14:30" [level=4]
+      - list:
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b6ef2d19-b300-4aa7-b9e2-a6240f1dd5c8/
+    - listitem:
+      - heading "14:32" [level=4]
+      - list:
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3ac3d26c-c7fb-4269-b898-f85a5ac16a5b/
+    - listitem:
+      - heading "14:37" [level=4]
+      - list:
+        - listitem:
+          - link "Falling":
+            - /url: /film/falling/
+            - img "Falling"
+            - img "Falling"
+          - heading "Falling" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 52 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/000ab979-27a2-42b8-a2a9-178659231e8a/
+    - listitem:
+      - heading "14:38" [level=4]
+      - list:
+        - listitem:
+          - 'link "Phil Lynott: Songs For While I''m Away"':
+            - /url: /film/phil-lynott-songs-for-while-im-away/
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+          - 'heading "Phil Lynott: Songs For While I''m Away" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 53 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8993ee6b-413b-494c-8622-370c1fa181ad/
+            - listitem:
+              - text: Victoria Stockholm Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/39b8b2ca-523c-4cc4-a7cb-6aad904365c9/
+        - listitem:
+          - link "Våga drömma":
+            - /url: /film/vaga-dromma/
+            - img "Våga drömma"
+            - img "Våga drömma"
+          - heading "Våga drömma" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 53 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/522573bd-991f-4f2d-b612-59482b411d3e/
+            - listitem:
+              - text: Filmstaden Kista Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d118a4f5-5b27-43e4-be87-869b66779657/
+            - listitem:
+              - text: Filmstaden Råsunda Salong 3 - "Sickan" Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/383c93f1-927d-4c37-af94-81a3b945a69c/
+            - listitem:
+              - text: Filmstaden Sickla Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8de9eea9-bd0a-4aa3-8e3c-78d890f62595/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/df8184c7-eda2-4c59-a960-796f20155750/
+    - listitem:
+      - heading "14:39" [level=4]
+      - list:
+        - listitem:
+          - link "Goonies – Dödsskallegänget - Klassiker":
+            - /url: /film/goonies-dodsskalleganget-klassiker/
+            - img "Goonies – Dödsskallegänget - Klassiker"
+            - img "Goonies – Dödsskallegänget - Klassiker"
+          - heading "Goonies – Dödsskallegänget - Klassiker" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 14 VIP (18-årsgräns) Platsinformation saknas eng tal, sve text Klassiker VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1c994260-c923-4b91-8e80-19b57b5f8bb3/
+        - listitem:
+          - 'link "Mamma Mia: Here We Go Again - Singalong"':
+            - /url: /film/mamma-mia-here-we-go-again-singalong/
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+          - 'heading "Mamma Mia: Here We Go Again - Singalong" [level=3]'
+          - paragraph: Musikal
+          - text: 1 tim 54 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 14 VIP Platsinformation saknas eng tal, eng text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e1bb0093-f553-4cf0-91f4-5fcd266546ac/
+        - listitem:
+          - link "Poltergeist - Klassiker":
+            - /url: /film/poltergeist-klassiker/
+            - img "Poltergeist - Klassiker"
+            - img "Poltergeist - Klassiker"
+          - heading "Poltergeist - Klassiker" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 54 min 15+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/75a1ed27-364c-42c3-b9b7-733178063741/
+        - listitem:
+          - link "Weathering with You":
+            - /url: /film/weathering-with-you/
+            - img "Weathering with You"
+            - img "Weathering with You"
+          - heading "Weathering with You" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 1 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a98657fe-6fb0-4a87-9135-ea2b6fcfd1e5/
+    - listitem:
+      - heading "14:41" [level=4]
+      - list:
+        - listitem:
+          - link "En del av mitt hjärta":
+            - /url: /film/en-del-av-mitt-hjarta/
+            - img "En del av mitt hjärta"
+            - img "En del av mitt hjärta"
+          - heading "En del av mitt hjärta" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 58 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 12 VIP Platsinformation saknas sve tal, sve text Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b4adc611-5980-4fcb-b740-85b49851a140/
+    - listitem:
+      - heading "14:43" [level=4]
+      - list:
+        - listitem:
+          - link "1917":
+            - /url: /film/1917/
+            - img "1917"
+            - img "1917"
+          - heading "1917" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 58 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 13 VIP Platsinformation saknas eng tal, sve text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a112c5ff-2d67-45cd-b14b-a5d2944ad41d/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba75842d-9ddf-4e02-8341-bbdb03b6b46e/
+        - listitem:
+          - link "Babyteeth":
+            - /url: /film/babyteeth/
+            - img "Babyteeth"
+            - img "Babyteeth"
+          - heading "Babyteeth" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 57 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 13 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5844d6de-5d40-4f39-9c74-a0518c700c4f/
+        - listitem:
+          - link "Lejonkungen":
+            - /url: /film/lejonkungen/
+            - img "Lejonkungen"
+            - img "Lejonkungen"
+          - heading "Lejonkungen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 58 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 9 Platsinformation saknas eng tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/10640f51-f1b6-4643-b16d-53cdb84597ee/
+    - listitem:
+      - heading "14:44" [level=4]
+      - list:
+        - listitem:
+          - link "David Copperfields äventyr och iakttagelser":
+            - /url: /film/david-copperfields-aventyr-och-iakttagelser/
+            - img "David Copperfields äventyr och iakttagelser"
+            - img "David Copperfields äventyr och iakttagelser"
+          - heading "David Copperfields äventyr och iakttagelser" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 59 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/96912688-bd82-48a5-a532-ba5ef44a887f/
+    - listitem:
+      - heading "14:45" [level=4]
+      - list:
+        - listitem:
+          - link "Det levande slottet - Klassiker":
+            - /url: /film/det-levande-slottet-klassiker/
+            - img "Det levande slottet - Klassiker"
+            - img "Det levande slottet - Klassiker"
+          - heading "Det levande slottet - Klassiker" [level=3]
+          - paragraph: Anime
+          - text: 2 tim 0 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 4 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c2b2dfe1-88f5-4520-a8a2-373ab8b68ed3/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 10 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b9d6abe0-72bc-46e8-89e3-2adba0e766b6/
+            - listitem:
+              - text: Victoria Stockholm Salong 2 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4062454a-c697-49d0-b277-d346bf2a0bd3/
+        - listitem:
+          - link "Greenland":
+            - /url: /film/greenland/
+            - img "Greenland"
+            - img "Greenland"
+          - heading "Greenland" [level=3]
+          - paragraph: Action
+          - text: 2 tim 0 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e9fc3977-379a-4c20-8c6d-38110c52e876/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7e30fc1c-cbfa-464a-8c23-c2066ab8cdbe/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/432b8191-accf-4bdf-a326-af6387a752ad/
+    - listitem:
+      - heading "14:47" [level=4]
+      - list:
+        - listitem:
+          - link "Ronja Rövardotter - Klassiker":
+            - /url: /film/ronja-rovardotter-klassiker/
+            - img "Ronja Rövardotter - Klassiker"
+            - img "Ronja Rövardotter - Klassiker"
+          - heading "Ronja Rövardotter - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 2 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 16 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/71b91fcb-3a1b-4a24-a69d-e7ee86448f6e/
+    - listitem:
+      - heading "14:49" [level=4]
+      - list:
+        - listitem:
+          - link "Akira - Klassiker":
+            - /url: /film/akira-klassiker/
+            - img "Akira - Klassiker"
+            - img "Akira - Klassiker"
+          - heading "Akira - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 4 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 10 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/944f8e18-e672-4bed-b4b4-62c3e323cb5e/
+        - listitem:
+          - link "Rymdimperiet slår tillbaka - Klassiker":
+            - /url: /film/rymdimperiet-slar-tillbaka-klassiker/
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+          - heading "Rymdimperiet slår tillbaka - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 2 tim 4 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 2 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ef0f9fa1-f320-4233-8eac-7697ba9c4af9/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 4 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8981e85e-f649-47e4-9ec3-efb2da7a5489/
+    - listitem:
+      - heading "14:50" [level=4]
+      - list:
+        - listitem:
+          - link "Spirited Away - Klassiker":
+            - /url: /film/spirited-away-klassiker/
+            - img "Spirited Away - Klassiker"
+            - img "Spirited Away - Klassiker"
+          - heading "Spirited Away - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 5 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 15 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4fbf870b-3e62-4034-9075-4068d34494c6/
+    - listitem:
+      - heading "14:51" [level=4]
+      - list:
+        - listitem:
+          - link "Det blåser upp en vind - Klassiker":
+            - /url: /film/det-blaser-upp-en-vind-klassiker/
+            - img "Det blåser upp en vind - Klassiker"
+            - img "Det blåser upp en vind - Klassiker"
+          - heading "Det blåser upp en vind - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 6 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 8 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4eda4460-a024-488e-9c9f-256feaca2ee2/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 9 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fa1a3b14-c5cf-4aca-8111-6f3f3eef05fa/
+    - listitem:
+      - heading "14:53" [level=4]
+      - list:
+        - listitem:
+          - link "La La Land":
+            - /url: /film/la-la-land/
+            - img "La La Land"
+            - img "La La Land"
+          - heading "La La Land" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 8 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d3c07dd8-1b3b-4e5e-8664-c83f02995023/
+    - listitem:
+      - heading "14:54" [level=4]
+      - list:
+        - listitem:
+          - link "Skönheten och odjuret":
+            - /url: /film/skonheten-och-odjuret/
+            - img "Skönheten och odjuret"
+            - img "Skönheten och odjuret"
+          - heading "Skönheten och odjuret" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 9 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/27d9b470-44ce-4fbd-bd16-1271c2418d8a/
+            - listitem:
+              - text: Filmstaden Sergel Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ca55888e-0f37-4210-ad34-b2ed65f140b7/
+    - listitem:
+      - heading "14:56" [level=4]
+      - list:
+        - listitem:
+          - link "Knives Out":
+            - /url: /film/knives-out/
+            - img "Knives Out"
+            - img "Knives Out"
+          - heading "Knives Out" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 11 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3508d116-2f33-4fd4-8766-8c760d7ce724/
+    - listitem:
+      - heading "14:57" [level=4]
+      - list:
+        - listitem:
+          - link "Parasit":
+            - /url: /film/parasit/
+            - img "Parasit"
+            - img "Parasit"
+          - heading "Parasit" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 12 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 3 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/06cfccb7-74df-4257-b985-bea9df1bff5f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 8 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cae9630a-3ed1-44da-88ca-60d121f78158/
+    - listitem:
+      - heading "15:00" [level=4]
+      - list:
+        - listitem:
+          - link "Unga kvinnor":
+            - /url: /film/unga-kvinnor/
+            - img "Unga kvinnor"
+            - img "Unga kvinnor"
+          - heading "Unga kvinnor" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 15 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 8 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9ae2119b-3d2e-4a13-bf14-de851ecfd3ab/
+    - listitem:
+      - heading "15:01" [level=4]
+      - list:
+        - listitem:
+          - link "A Clockwork Orange - Klassiker":
+            - /url: /film/a-clockwork-orange-klassiker/
+            - img "A Clockwork Orange - Klassiker"
+            - img "A Clockwork Orange - Klassiker"
+          - heading "A Clockwork Orange - Klassiker" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 17 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 4 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/50d86146-4aa8-46c4-899d-aef547e30e6e/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6ba1b425-a32b-449c-a140-4989f2f04e89/
+    - listitem:
+      - heading "15:02" [level=4]
+      - list:
+        - listitem:
+          - link "Prinsessan Mononoke - Klassiker":
+            - /url: /film/prinsessan-mononoke-klassiker/
+            - img "Prinsessan Mononoke - Klassiker"
+            - img "Prinsessan Mononoke - Klassiker"
+          - heading "Prinsessan Mononoke - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 14 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 4 - "Bergman" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2a4d826f-1b35-44b6-b8a6-9ddc34bec32e/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a5657018-63d4-4455-a8b7-3b1ea86dee4e/
+    - listitem:
+      - heading "15:44" [level=4]
+      - list:
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a542f6fe-1692-4df7-83c2-2335ec28cfbc/
+    - listitem:
+      - heading "15:58" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b1989c67-a509-4f0b-8e8e-fb9185bd0f87/
+    - listitem:
+      - heading "16:04" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4323ebdf-b488-494b-964a-3473d1683a88/
+    - listitem:
+      - heading "16:14" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/32cec500-b5a8-484d-a2a7-d50a25026880/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d0f34ebf-b6d8-4985-82b6-1f2da0c1667a/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/56b09ddd-2229-4074-9f09-5de65b32b070/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/21b3ad01-4711-43e4-89ca-3e5495310870/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/78c719c1-02d8-41ea-98b5-b7aebfcc5332/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ed1f295f-7fe3-4c45-ab3d-60af69fbca65/
+    - listitem:
+      - heading "16:16" [level=4]
+      - list:
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4eb3af90-bc73-43f8-94f0-686125a82862/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f3d7ac26-50c5-49f3-9a76-9155ed3b926b/
+    - listitem:
+      - heading "16:22" [level=4]
+      - list:
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f45eedda-49b5-47bf-a22b-757e4a14aa7e/
+    - listitem:
+      - heading "16:24" [level=4]
+      - list:
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4bbed7ec-1a4f-4f34-87b7-2e9a2530742e/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/390d23a0-ac79-4cd1-924f-dbca9e227da6/
+    - listitem:
+      - heading "16:26" [level=4]
+      - list:
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ca74660c-5c0e-42fb-a173-45cbeae0058f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cef0a3ad-e593-4d46-bfef-381f92ba3586/
+    - listitem:
+      - heading "16:28" [level=4]
+      - list:
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ffcfdb14-52ea-4d9b-b648-e36de57711c6/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e72d7218-5bdb-4e81-8215-fb300814f9f1/
+    - listitem:
+      - heading "16:30" [level=4]
+      - list:
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7f391dcd-bfc4-45b6-8ac2-ce8e70c8443f/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1139ae1b-4881-4358-b4ab-3fb294823695/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a0e44be7-e367-4568-a259-0ddff33b24ca/
+    - listitem:
+      - heading "16:32" [level=4]
+      - list:
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cf83239c-6898-44b2-be07-d194e3a4db25/
+    - listitem:
+      - heading "16:34" [level=4]
+      - list:
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1b30691d-503e-4338-86b1-f71b716fe23c/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/58c716f3-6a1d-4399-9c22-ab43d552e585/
+    - listitem:
+      - heading "16:38" [level=4]
+      - list:
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1ba1c140-e004-4aef-93bd-0b80bcb61a0e/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a1a277a2-0307-418b-b4bc-fce40938064a/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/00f968c8-3674-47c0-8779-e19c79c8612e/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8f90c2ee-9e1e-480f-b51a-ae192309ac5c/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/50795884-ceda-4383-8068-65ebc79e661c/
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/56cda1d0-4f2a-414e-abb0-cacdc6524ae4/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8e9169b4-3574-47a0-9bc9-9aedba45ef8e/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/439df315-6070-42fa-9fab-a681947be026/
+    - listitem:
+      - heading "16:40" [level=4]
+      - list:
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/145b4aff-e3a5-41b3-bc32-69a1f6351cb4/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9ad24967-5f0e-4076-a6cd-7e247958ca67/
+    - listitem:
+      - heading "16:42" [level=4]
+      - list:
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b93716c6-6230-4ab6-8369-4862211c2f9d/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5878b536-2efd-4304-a7dd-59611bc40db9/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d45fdf36-be9b-41d4-ac9d-89a37013f91b/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0b067d89-99ce-4c75-8c01-98564bc69b20/
+    - listitem:
+      - heading "16:44" [level=4]
+      - list:
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2df837b8-9c99-49b7-9244-cfa8544f708f/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/07bb6664-d5df-4f3c-be6c-d4b6d9198ad9/
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c319dfdb-7123-4075-a04c-e6349f6632ca/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1006193b-56f0-4229-8c29-685470576f2c/
+    - listitem:
+      - heading "16:46" [level=4]
+      - list:
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fbd4344e-fced-44d3-a991-37ea9698c106/
+    - listitem:
+      - heading "16:48" [level=4]
+      - list:
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/50e78e43-99ee-48cd-bcb2-914f2e70301a/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/42e377cf-bd1d-40e0-b225-c38e4ed0d9d2/
+    - listitem:
+      - heading "16:50" [level=4]
+      - list:
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fc9ace52-9ecb-43ac-867b-6d0fea5342a8/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4104630e-3e8a-4323-ad3d-ec7b005371a6/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ef69bcfd-cbb6-40db-959a-1b8b531c01bc/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bc7300e9-3025-4ce1-a168-948a887d7252/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4005e0b0-1c30-4cef-9f98-8565b233ad0f/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/15701e97-974e-4b2c-9281-29013f40465a/
+    - listitem:
+      - heading "16:52" [level=4]
+      - list:
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fc85e3bb-3440-469f-87d7-1e59c18faa54/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cfa8518f-b43d-4b44-a575-52b837c54cb0/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/253adcd2-5e30-4d59-9bad-5d0fe2705c2e/
+    - listitem:
+      - heading "16:54" [level=4]
+      - list:
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7f91447f-8f88-45a9-bf8b-919bedde5cc6/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/194fa765-d1fc-4984-bf8f-77637b2b82d4/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a5bc1756-3a72-4433-bc67-5fd053af8c53/
+    - listitem:
+      - heading "16:58" [level=4]
+      - list:
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f52e7b3d-1be7-4102-9ffd-8871e701e95c/
+    - listitem:
+      - heading "17:00" [level=4]
+      - list:
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dd49aa2d-6363-4ffc-a9d5-59098a1557e3/
+    - listitem:
+      - heading "17:04" [level=4]
+      - list:
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ea320ad6-ee03-44d0-bccb-135f0fea143c/
+    - listitem:
+      - heading "17:14" [level=4]
+      - list:
+        - listitem:
+          - link "Falling":
+            - /url: /film/falling/
+            - img "Falling"
+            - img "Falling"
+          - heading "Falling" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 52 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f0b65756-521c-42b5-bcb1-bc3e6d34ade9/
+    - listitem:
+      - heading "17:16" [level=4]
+      - list:
+        - listitem:
+          - 'link "Phil Lynott: Songs For While I''m Away"':
+            - /url: /film/phil-lynott-songs-for-while-im-away/
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+          - 'heading "Phil Lynott: Songs For While I''m Away" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 53 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/955efe3e-c76b-48a9-b79d-0ce894cdbc6b/
+            - listitem:
+              - text: Victoria Stockholm Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2a46d51b-c384-45be-b17a-d7f4ae907be3/
+        - listitem:
+          - link "Våga drömma":
+            - /url: /film/vaga-dromma/
+            - img "Våga drömma"
+            - img "Våga drömma"
+          - heading "Våga drömma" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 53 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/418e3b89-2bf5-4a03-be43-ba86555149d8/
+            - listitem:
+              - text: Filmstaden Kista Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e2e14ca5-1bd6-4c0c-b34d-e69b9a73b499/
+            - listitem:
+              - text: Filmstaden Råsunda Salong 3 - "Sickan" Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2d171cee-6898-47b2-91bf-2a7108863422/
+            - listitem:
+              - text: Filmstaden Sickla Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0c4c4119-deec-4cbc-a43b-7017f3464602/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b47417b8-66c8-402e-b974-bab153465da2/
+    - listitem:
+      - heading "17:18" [level=4]
+      - list:
+        - listitem:
+          - link "Goonies – Dödsskallegänget - Klassiker":
+            - /url: /film/goonies-dodsskalleganget-klassiker/
+            - img "Goonies – Dödsskallegänget - Klassiker"
+            - img "Goonies – Dödsskallegänget - Klassiker"
+          - heading "Goonies – Dödsskallegänget - Klassiker" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 14 VIP (18-årsgräns) Platsinformation saknas eng tal, sve text Klassiker VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/37964a54-e347-4659-a70f-d8d55cb52971/
+        - listitem:
+          - 'link "Mamma Mia: Here We Go Again - Singalong"':
+            - /url: /film/mamma-mia-here-we-go-again-singalong/
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+          - 'heading "Mamma Mia: Here We Go Again - Singalong" [level=3]'
+          - paragraph: Musikal
+          - text: 1 tim 54 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 14 VIP Platsinformation saknas eng tal, eng text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/67e6315f-51c0-46ef-ad05-29ffaf36fe5e/
+        - listitem:
+          - link "Poltergeist - Klassiker":
+            - /url: /film/poltergeist-klassiker/
+            - img "Poltergeist - Klassiker"
+            - img "Poltergeist - Klassiker"
+          - heading "Poltergeist - Klassiker" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 54 min 15+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/783afcab-c8b9-4ffe-b5cd-f20b8b7662f5/
+        - listitem:
+          - link "Weathering with You":
+            - /url: /film/weathering-with-you/
+            - img "Weathering with You"
+            - img "Weathering with You"
+          - heading "Weathering with You" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 1 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f3dbc51a-e72c-49fd-b0bb-713fa4941083/
+    - listitem:
+      - heading "17:22" [level=4]
+      - list:
+        - listitem:
+          - link "En del av mitt hjärta":
+            - /url: /film/en-del-av-mitt-hjarta/
+            - img "En del av mitt hjärta"
+            - img "En del av mitt hjärta"
+          - heading "En del av mitt hjärta" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 58 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 12 VIP Platsinformation saknas sve tal, sve text Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a5ba5b8a-f911-4b12-8a35-15896234aca2/
+    - listitem:
+      - heading "17:26" [level=4]
+      - list:
+        - listitem:
+          - link "1917":
+            - /url: /film/1917/
+            - img "1917"
+            - img "1917"
+          - heading "1917" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 58 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0869aaef-31f0-4cdd-8e38-32fbfc92f518/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 13 VIP Platsinformation saknas eng tal, sve text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/94772364-bdb8-4fcf-abeb-0c7fdfaad1ef/
+        - listitem:
+          - link "Babyteeth":
+            - /url: /film/babyteeth/
+            - img "Babyteeth"
+            - img "Babyteeth"
+          - heading "Babyteeth" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 57 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 13 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ee972f86-c673-4a39-9444-5a627896e369/
+        - listitem:
+          - link "Lejonkungen":
+            - /url: /film/lejonkungen/
+            - img "Lejonkungen"
+            - img "Lejonkungen"
+          - heading "Lejonkungen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 58 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 9 Platsinformation saknas eng tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d47f0350-9630-4717-ba47-aa4395641688/
+    - listitem:
+      - heading "17:28" [level=4]
+      - list:
+        - listitem:
+          - link "David Copperfields äventyr och iakttagelser":
+            - /url: /film/david-copperfields-aventyr-och-iakttagelser/
+            - img "David Copperfields äventyr och iakttagelser"
+            - img "David Copperfields äventyr och iakttagelser"
+          - heading "David Copperfields äventyr och iakttagelser" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 59 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c7b02b54-b66c-4e14-9af8-db5719803a36/
+    - listitem:
+      - heading "17:30" [level=4]
+      - list:
+        - listitem:
+          - link "Det levande slottet - Klassiker":
+            - /url: /film/det-levande-slottet-klassiker/
+            - img "Det levande slottet - Klassiker"
+            - img "Det levande slottet - Klassiker"
+          - heading "Det levande slottet - Klassiker" [level=3]
+          - paragraph: Anime
+          - text: 2 tim 0 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 4 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/89c9b2d8-642c-4119-abc8-6db561206dd3/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 10 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5590eebd-ac02-4dab-8f6a-6a0a26ce678a/
+            - listitem:
+              - text: Victoria Stockholm Salong 2 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3a4309fc-daeb-4357-b633-57acbcee3f41/
+        - listitem:
+          - link "Greenland":
+            - /url: /film/greenland/
+            - img "Greenland"
+            - img "Greenland"
+          - heading "Greenland" [level=3]
+          - paragraph: Action
+          - text: 2 tim 0 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/da79646e-4fae-44cc-8720-68112a149ccd/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e8de117a-1d24-47c3-a7d9-0224040c48b4/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/01f0bc80-37c8-4790-ae10-d2b233e6b331/
+    - listitem:
+      - heading "17:34" [level=4]
+      - list:
+        - listitem:
+          - link "Ronja Rövardotter - Klassiker":
+            - /url: /film/ronja-rovardotter-klassiker/
+            - img "Ronja Rövardotter - Klassiker"
+            - img "Ronja Rövardotter - Klassiker"
+          - heading "Ronja Rövardotter - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 2 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 16 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b3eb9ad2-08f0-4336-9044-4bee80c2d0f1/
+    - listitem:
+      - heading "17:36" [level=4]
+      - list:
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bb8f267b-ca10-4dce-974c-85a05f9eb33c/
+    - listitem:
+      - heading "17:38" [level=4]
+      - list:
+        - listitem:
+          - link "Akira - Klassiker":
+            - /url: /film/akira-klassiker/
+            - img "Akira - Klassiker"
+            - img "Akira - Klassiker"
+          - heading "Akira - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 4 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 10 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6c83570c-4c0f-48e4-a203-1d4e88c787b6/
+        - listitem:
+          - link "Rymdimperiet slår tillbaka - Klassiker":
+            - /url: /film/rymdimperiet-slar-tillbaka-klassiker/
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+          - heading "Rymdimperiet slår tillbaka - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 2 tim 4 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 2 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/52a27a87-425b-4bc8-8443-885436f522c3/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 4 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/225d1a34-bd5d-462b-be30-7e9ca774e997/
+    - listitem:
+      - heading "17:40" [level=4]
+      - list:
+        - listitem:
+          - link "Spirited Away - Klassiker":
+            - /url: /film/spirited-away-klassiker/
+            - img "Spirited Away - Klassiker"
+            - img "Spirited Away - Klassiker"
+          - heading "Spirited Away - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 5 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 15 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/11948f53-3f0d-4476-9d77-01ab542abcfa/
+    - listitem:
+      - heading "17:42" [level=4]
+      - list:
+        - listitem:
+          - link "Det blåser upp en vind - Klassiker":
+            - /url: /film/det-blaser-upp-en-vind-klassiker/
+            - img "Det blåser upp en vind - Klassiker"
+            - img "Det blåser upp en vind - Klassiker"
+          - heading "Det blåser upp en vind - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 6 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 8 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f3dd3cb0-8805-4783-81f7-ba03d1fb1706/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 9 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f95c0019-a733-401d-9b0e-8f698a2279c0/
+    - listitem:
+      - heading "17:46" [level=4]
+      - list:
+        - listitem:
+          - link "La La Land":
+            - /url: /film/la-la-land/
+            - img "La La Land"
+            - img "La La Land"
+          - heading "La La Land" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 8 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8c90b743-69b7-4794-9f58-221b1cd5fe86/
+    - listitem:
+      - heading "17:48" [level=4]
+      - list:
+        - listitem:
+          - link "Skönheten och odjuret":
+            - /url: /film/skonheten-och-odjuret/
+            - img "Skönheten och odjuret"
+            - img "Skönheten och odjuret"
+          - heading "Skönheten och odjuret" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 9 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e5fe2c0c-a1e5-4c0a-b213-9b07167be889/
+            - listitem:
+              - text: Filmstaden Sergel Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/952b0012-e698-4756-8345-e42e269dc49e/
+    - listitem:
+      - heading "17:52" [level=4]
+      - list:
+        - listitem:
+          - link "Knives Out":
+            - /url: /film/knives-out/
+            - img "Knives Out"
+            - img "Knives Out"
+          - heading "Knives Out" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 11 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/eef2fbbc-4ebd-4758-b9d0-1a987461f9eb/
+    - listitem:
+      - heading "17:54" [level=4]
+      - list:
+        - listitem:
+          - link "Parasit":
+            - /url: /film/parasit/
+            - img "Parasit"
+            - img "Parasit"
+          - heading "Parasit" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 12 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 3 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/642ab565-79de-42ef-acf6-a1a21be6ff02/
+            - listitem:
+              - text: Filmstaden Sergel Salong 8 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b695fd5f-f005-445b-bc74-3e203aec76ba/
+    - listitem:
+      - heading "17:57" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3aac771d-97a6-4301-823f-6e785090ff8c/
+    - listitem:
+      - heading "18:00" [level=4]
+      - list:
+        - listitem:
+          - link "Unga kvinnor":
+            - /url: /film/unga-kvinnor/
+            - img "Unga kvinnor"
+            - img "Unga kvinnor"
+          - heading "Unga kvinnor" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 15 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 8 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/394c7e1b-7b90-4462-be94-185b9784b226/
+    - listitem:
+      - heading "18:02" [level=4]
+      - list:
+        - listitem:
+          - link "A Clockwork Orange - Klassiker":
+            - /url: /film/a-clockwork-orange-klassiker/
+            - img "A Clockwork Orange - Klassiker"
+            - img "A Clockwork Orange - Klassiker"
+          - heading "A Clockwork Orange - Klassiker" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 17 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 4 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bae13733-3e06-4a66-abee-0f3ec9a83cd1/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cba0e137-3b8e-4b15-835d-7adf866343e3/
+    - listitem:
+      - heading "18:04" [level=4]
+      - list:
+        - listitem:
+          - link "Prinsessan Mononoke - Klassiker":
+            - /url: /film/prinsessan-mononoke-klassiker/
+            - img "Prinsessan Mononoke - Klassiker"
+            - img "Prinsessan Mononoke - Klassiker"
+          - heading "Prinsessan Mononoke - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 14 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 4 - "Bergman" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/574b150e-d29e-4f4e-b6d6-771ef116c56f/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9e4021e7-2e90-48d2-aeea-7a8e347fd673/
+    - listitem:
+      - heading "18:06" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1f16f395-3261-432e-8ef9-89808a304323/
+    - listitem:
+      - heading "18:21" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6509ab2c-f5e7-40dc-8b5e-ba7bcd32775c/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0f3285df-113f-4898-baa3-9a7463fbe277/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dc836151-cad4-45f5-a0cc-64e0b6cb4c3c/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/48524f22-15c7-4a27-8ac0-3005791d3123/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/69700d7a-8ea0-43e6-b3f9-768a5639ac69/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/76fbf5a3-dd14-4997-a34b-4a0372df8bf9/
+    - listitem:
+      - heading "18:24" [level=4]
+      - list:
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/782a8c46-3c37-4eb5-b1cb-5d3c0168fa76/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5173d876-7996-4a07-8800-4fea3c306faa/
+    - listitem:
+      - heading "18:33" [level=4]
+      - list:
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9934144c-e5f7-402e-af2b-17c7dab692c7/
+    - listitem:
+      - heading "18:36" [level=4]
+      - list:
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9e0dd52c-e361-40c1-912f-7b723d8fb165/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3c8c463c-f837-4567-9d76-dd54ac074a2a/
+    - listitem:
+      - heading "18:39" [level=4]
+      - list:
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0e707ab3-d769-466f-99ee-5db91910a08e/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/eedc9e76-6043-4133-8f6b-2c5d7f86448b/
+    - listitem:
+      - heading "18:42" [level=4]
+      - list:
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d7724d6c-127d-42f5-b894-8fbf8f8234ef/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/39f5ce85-83dc-42df-b45a-e3528d7aaf2f/
+    - listitem:
+      - heading "18:45" [level=4]
+      - list:
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0f15e38d-da4a-4719-991c-9baebc57f7d2/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f501eb13-3cc7-4160-9deb-a66ef5df3bb3/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b3f52353-e583-4b99-8daa-ca41788b1603/
+    - listitem:
+      - heading "18:48" [level=4]
+      - list:
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6981ad4f-eaa9-4a7b-9c04-2324f1a87fe3/
+    - listitem:
+      - heading "18:51" [level=4]
+      - list:
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2c8d0f6e-3da5-4233-b5c8-c46ce4777ac2/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/24a1535c-87e0-4a0f-9636-ae2fcf3113c6/
+    - listitem:
+      - heading "18:57" [level=4]
+      - list:
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/741b26b2-c841-45ea-a960-0916f12e4185/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0f2299b1-3351-4924-90b7-c1b907cac6c0/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0e4bb2d7-13b9-4c69-b09b-100d9d180ad5/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a6b4c287-065e-4ea1-a826-c3c9295f7e93/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/97240196-2b65-480a-8b1a-9caa957238f1/
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ef70f8d0-ef28-4c8a-a745-04b58b384d64/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e95049fe-5bae-4dd9-a8f0-1c816f2216b0/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b322af18-0941-46c9-b06b-53fc24790408/
+    - listitem:
+      - heading "19:00" [level=4]
+      - list:
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ff9bcb04-c5a5-4f90-9725-074c6eab98f9/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a9cf39c1-112d-46dc-9373-c6649d11cc35/
+    - listitem:
+      - heading "19:03" [level=4]
+      - list:
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e858c303-9feb-42cd-ac2e-583b72439255/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5f0cfabd-21bf-4407-8fff-786771404bb4/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cf4f31dd-0c19-4d5a-89d5-f8e832eeafbb/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/30b877e0-5589-4c18-9160-6173e73641b8/
+    - listitem:
+      - heading "19:06" [level=4]
+      - list:
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/aaf5f75d-f939-4f43-8f06-a7c4848f0e00/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba3ba664-62f0-4f75-bdce-31540668854c/
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f27e1b85-3b7b-4f2f-8c94-4eae22d781e5/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3f03fdf8-61cc-43e2-9ab0-9043d2ed01fa/
+    - listitem:
+      - heading "19:09" [level=4]
+      - list:
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f7157df7-cd6a-4ea6-a889-46f22d0528c3/
+    - listitem:
+      - heading "19:12" [level=4]
+      - list:
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d1d7fcbd-4442-482f-b265-73690604339d/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bc03dc5f-8900-415c-ac33-ff4063e71381/
+    - listitem:
+      - heading "19:15" [level=4]
+      - list:
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/03cfe358-2122-45aa-b5b3-bd64b2f7236f/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2b08e94e-61e0-4ec3-b1df-b61808770b04/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/70d78811-6aeb-49f5-b871-8613c3db021d/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/be17bf4a-e506-4df7-b0e7-63fc6c0a979d/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2a3c30ce-46dc-46dd-a446-fdc0c8d698bd/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bcde9584-f9c3-410f-8e78-df5f7610bc95/
+    - listitem:
+      - heading "19:18" [level=4]
+      - list:
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/adf9f1b8-02f2-4a82-bf25-5b9b970f4f33/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8035ef56-73d9-4864-a846-7c4de810270d/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/74847e4b-5dda-4206-90a9-31f63df00b03/
+    - listitem:
+      - heading "19:21" [level=4]
+      - list:
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/32706792-c5ac-45e5-9945-3d2fecf34fa6/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/53e6f1fa-d691-4a29-b597-aa5a77fb672d/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7cfa52cc-7b6b-43d0-9075-b17bbd38795b/
+    - listitem:
+      - heading "19:27" [level=4]
+      - list:
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/677b96ce-6bd5-4ff4-a75d-c74cc887c9f5/
+    - listitem:
+      - heading "19:28" [level=4]
+      - list:
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d77ba92a-1d76-424b-b03b-cfa7ac52e3e3/
+    - listitem:
+      - heading "19:30" [level=4]
+      - list:
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9cbf3203-dcf2-4829-a7ed-3960300098a1/
+    - listitem:
+      - heading "19:36" [level=4]
+      - list:
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/40c38521-e610-4710-b161-643c1f0dcff9/
+    - listitem:
+      - heading "19:51" [level=4]
+      - list:
+        - listitem:
+          - link "Falling":
+            - /url: /film/falling/
+            - img "Falling"
+            - img "Falling"
+          - heading "Falling" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 52 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/235daf58-9404-4fdb-8d4a-6c6dba97b961/
+    - listitem:
+      - heading "19:54" [level=4]
+      - list:
+        - listitem:
+          - 'link "Phil Lynott: Songs For While I''m Away"':
+            - /url: /film/phil-lynott-songs-for-while-im-away/
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+          - 'heading "Phil Lynott: Songs For While I''m Away" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 53 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ea2b28e3-6501-42b8-a0b9-e16e2856d0d0/
+            - listitem:
+              - text: Victoria Stockholm Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f59a006a-ee04-4177-be36-675373e776b6/
+        - listitem:
+          - link "Våga drömma":
+            - /url: /film/vaga-dromma/
+            - img "Våga drömma"
+            - img "Våga drömma"
+          - heading "Våga drömma" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 53 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/13022692-1b1e-44d1-9ef7-22cccfd55752/
+            - listitem:
+              - text: Filmstaden Kista Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2bfa5329-1b27-4e0b-8bd5-dafc2cf05cbf/
+            - listitem:
+              - text: Filmstaden Råsunda Salong 3 - "Sickan" Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/027a04ce-c6cf-481e-8efa-8f8885bf6dc9/
+            - listitem:
+              - text: Filmstaden Sickla Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bdb3cef5-1c77-4fed-8460-d31428e129c7/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/89ffd164-7188-4892-9ebd-772a93dd4ee1/
+    - listitem:
+      - heading "19:56" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c31b4783-2094-4223-b213-93935d5558b3/
+    - listitem:
+      - heading "19:57" [level=4]
+      - list:
+        - listitem:
+          - link "Goonies – Dödsskallegänget - Klassiker":
+            - /url: /film/goonies-dodsskalleganget-klassiker/
+            - img "Goonies – Dödsskallegänget - Klassiker"
+            - img "Goonies – Dödsskallegänget - Klassiker"
+          - heading "Goonies – Dödsskallegänget - Klassiker" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 14 VIP (18-årsgräns) Platsinformation saknas eng tal, sve text Klassiker VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/66f4ab4d-f00a-49a6-a449-afb810b99060/
+        - listitem:
+          - 'link "Mamma Mia: Here We Go Again - Singalong"':
+            - /url: /film/mamma-mia-here-we-go-again-singalong/
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+          - 'heading "Mamma Mia: Here We Go Again - Singalong" [level=3]'
+          - paragraph: Musikal
+          - text: 1 tim 54 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 14 VIP Platsinformation saknas eng tal, eng text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/96f9f1ff-9cee-426d-92e4-69dd3724a9f2/
+        - listitem:
+          - link "Poltergeist - Klassiker":
+            - /url: /film/poltergeist-klassiker/
+            - img "Poltergeist - Klassiker"
+            - img "Poltergeist - Klassiker"
+          - heading "Poltergeist - Klassiker" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 54 min 15+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e2565c59-7a68-4ba6-928c-b5e51b79ea53/
+        - listitem:
+          - link "Weathering with You":
+            - /url: /film/weathering-with-you/
+            - img "Weathering with You"
+            - img "Weathering with You"
+          - heading "Weathering with You" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 1 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/55336ed7-25c0-4940-9d43-0f6639e31193/
+    - listitem:
+      - heading "20:03" [level=4]
+      - list:
+        - listitem:
+          - link "En del av mitt hjärta":
+            - /url: /film/en-del-av-mitt-hjarta/
+            - img "En del av mitt hjärta"
+            - img "En del av mitt hjärta"
+          - heading "En del av mitt hjärta" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 58 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 12 VIP Platsinformation saknas sve tal, sve text Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a3904d46-bb6f-4bd8-978f-8e64a7156c67/
+    - listitem:
+      - heading "20:08" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c876a89e-acc4-4ed4-8ca7-d5c82b51e0ab/
+    - listitem:
+      - heading "20:09" [level=4]
+      - list:
+        - listitem:
+          - link "1917":
+            - /url: /film/1917/
+            - img "1917"
+            - img "1917"
+          - heading "1917" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 58 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8931125a-48d6-4f65-b684-f73317f82a9b/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 13 VIP Platsinformation saknas eng tal, sve text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba74b984-0ed1-480d-ba85-068a123e9a90/
+        - listitem:
+          - link "Babyteeth":
+            - /url: /film/babyteeth/
+            - img "Babyteeth"
+            - img "Babyteeth"
+          - heading "Babyteeth" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 57 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 13 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/24e5fa27-3189-4ee9-a4ef-d82a17807062/
+        - listitem:
+          - link "Lejonkungen":
+            - /url: /film/lejonkungen/
+            - img "Lejonkungen"
+            - img "Lejonkungen"
+          - heading "Lejonkungen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 58 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 9 Platsinformation saknas eng tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d67af275-6935-4ec3-b6e5-bd7f0170d71f/
+    - listitem:
+      - heading "20:12" [level=4]
+      - list:
+        - listitem:
+          - link "David Copperfields äventyr och iakttagelser":
+            - /url: /film/david-copperfields-aventyr-och-iakttagelser/
+            - img "David Copperfields äventyr och iakttagelser"
+            - img "David Copperfields äventyr och iakttagelser"
+          - heading "David Copperfields äventyr och iakttagelser" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 59 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/df0c6ac6-45ab-4116-ac1f-ba601fc8eb03/
+    - listitem:
+      - heading "20:15" [level=4]
+      - list:
+        - listitem:
+          - link "Det levande slottet - Klassiker":
+            - /url: /film/det-levande-slottet-klassiker/
+            - img "Det levande slottet - Klassiker"
+            - img "Det levande slottet - Klassiker"
+          - heading "Det levande slottet - Klassiker" [level=3]
+          - paragraph: Anime
+          - text: 2 tim 0 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 4 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/64db908c-1ea3-448e-a19f-3e461aa78289/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 10 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9ace36b3-d416-4a77-8b25-592ee9c6bc28/
+            - listitem:
+              - text: Victoria Stockholm Salong 2 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9672c768-5b28-421e-a38e-aabfb36f4042/
+        - listitem:
+          - link "Greenland":
+            - /url: /film/greenland/
+            - img "Greenland"
+            - img "Greenland"
+          - heading "Greenland" [level=3]
+          - paragraph: Action
+          - text: 2 tim 0 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8fab897f-772a-4503-b7ba-7ab4538258c7/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/75fc9523-0ace-4831-ad2d-5fb637b81b2e/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/57f52fcc-2a73-418f-8d98-ff6275b0894c/
+    - listitem:
+      - heading "20:21" [level=4]
+      - list:
+        - listitem:
+          - link "Ronja Rövardotter - Klassiker":
+            - /url: /film/ronja-rovardotter-klassiker/
+            - img "Ronja Rövardotter - Klassiker"
+            - img "Ronja Rövardotter - Klassiker"
+          - heading "Ronja Rövardotter - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 2 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 16 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6522b2ca-2940-4850-9bc1-4a4103644637/
+    - listitem:
+      - heading "20:27" [level=4]
+      - list:
+        - listitem:
+          - link "Akira - Klassiker":
+            - /url: /film/akira-klassiker/
+            - img "Akira - Klassiker"
+            - img "Akira - Klassiker"
+          - heading "Akira - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 4 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 10 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c3023354-801d-4da4-a0ec-85f8ee346245/
+        - listitem:
+          - link "Rymdimperiet slår tillbaka - Klassiker":
+            - /url: /film/rymdimperiet-slar-tillbaka-klassiker/
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+          - heading "Rymdimperiet slår tillbaka - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 2 tim 4 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 2 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/79c7332f-f023-43b5-bb63-224149eae8ef/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 4 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7698f1cc-6884-43dd-9192-a0a35e0ab65b/
+    - listitem:
+      - heading "20:28" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/16f2a529-7cb2-4ab3-8bc8-2fdfa927412b/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/959de68b-175e-4b6c-bb3c-9a9dc081eaeb/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8c3207ff-2d20-4b91-a05c-052934b7793c/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f625535f-ad28-4234-82e3-2a0ab4dde4bb/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5014cf12-d15c-48ce-8b5e-ded4ac104ad9/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cb4dde12-0592-4e36-98a3-3e34bbd4b948/
+    - listitem:
+      - heading "20:30" [level=4]
+      - list:
+        - listitem:
+          - link "Spirited Away - Klassiker":
+            - /url: /film/spirited-away-klassiker/
+            - img "Spirited Away - Klassiker"
+            - img "Spirited Away - Klassiker"
+          - heading "Spirited Away - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 5 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 15 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8f570f3e-b71f-435b-bec1-1335bb7d7e9c/
+    - listitem:
+      - heading "20:32" [level=4]
+      - list:
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/332af64e-854e-44f7-bddc-e2842b17288e/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d8c584b5-da7b-41d2-952e-d6fade15284c/
+    - listitem:
+      - heading "20:33" [level=4]
+      - list:
+        - listitem:
+          - link "Det blåser upp en vind - Klassiker":
+            - /url: /film/det-blaser-upp-en-vind-klassiker/
+            - img "Det blåser upp en vind - Klassiker"
+            - img "Det blåser upp en vind - Klassiker"
+          - heading "Det blåser upp en vind - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 6 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 8 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c155910b-d9b9-45e0-baa0-aa59d81fefb9/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 9 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b9ea5422-bcbe-4327-94ed-a8b447db5b8e/
+    - listitem:
+      - heading "20:39" [level=4]
+      - list:
+        - listitem:
+          - link "La La Land":
+            - /url: /film/la-la-land/
+            - img "La La Land"
+            - img "La La Land"
+          - heading "La La Land" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 8 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1dd71304-fe81-48cc-a7c9-74edd9f1ac2b/
+    - listitem:
+      - heading "20:42" [level=4]
+      - list:
+        - listitem:
+          - link "Skönheten och odjuret":
+            - /url: /film/skonheten-och-odjuret/
+            - img "Skönheten och odjuret"
+            - img "Skönheten och odjuret"
+          - heading "Skönheten och odjuret" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 9 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9ce87e4d-932a-48d6-b829-b29229d6665c/
+            - listitem:
+              - text: Filmstaden Sergel Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cc1be06f-094c-4b30-b266-41a3f9f012c3/
+    - listitem:
+      - heading "20:44" [level=4]
+      - list:
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8c7eb211-0907-415d-a14a-a53fac97c8f3/
+    - listitem:
+      - heading "20:48" [level=4]
+      - list:
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1b379e8f-bdcb-4daa-bfa0-810346a64180/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fc99a078-6690-4f40-b4d9-4c359f4f53fb/
+        - listitem:
+          - link "Knives Out":
+            - /url: /film/knives-out/
+            - img "Knives Out"
+            - img "Knives Out"
+          - heading "Knives Out" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 11 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/66c2a403-dea2-4f8b-992e-5792872e7ca0/
+    - listitem:
+      - heading "20:51" [level=4]
+      - list:
+        - listitem:
+          - link "Parasit":
+            - /url: /film/parasit/
+            - img "Parasit"
+            - img "Parasit"
+          - heading "Parasit" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 12 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 3 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e7d0789f-836c-415f-aced-e514e0ca978f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 8 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7832cc37-c65b-4378-880a-669ee3a40bc9/
+    - listitem:
+      - heading "20:52" [level=4]
+      - list:
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/14561d3a-8bef-42bd-bbdb-325ca02d3dfa/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8c892eb1-9f1d-4a41-96bd-5ee51910106f/
+    - listitem:
+      - heading "20:56" [level=4]
+      - list:
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5032ddef-79b6-4e54-bc3e-98a31158fe26/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/403e37ca-8b82-4d4b-adb8-b74d9e681a06/
+    - listitem:
+      - heading "21:00" [level=4]
+      - list:
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/64c19da9-5b64-481a-840b-f1af1c8dbc85/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/037a7cf7-7253-44e8-ac68-2c12f761e791/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5602d0dd-6dd0-4fc1-8b8e-9ae0ffeba2a5/
+        - listitem:
+          - link "Unga kvinnor":
+            - /url: /film/unga-kvinnor/
+            - img "Unga kvinnor"
+            - img "Unga kvinnor"
+          - heading "Unga kvinnor" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 15 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 8 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c188e1ee-dbae-4527-abea-4670a845c3d3/
+    - listitem:
+      - heading "21:03" [level=4]
+      - list:
+        - listitem:
+          - link "A Clockwork Orange - Klassiker":
+            - /url: /film/a-clockwork-orange-klassiker/
+            - img "A Clockwork Orange - Klassiker"
+            - img "A Clockwork Orange - Klassiker"
+          - heading "A Clockwork Orange - Klassiker" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 17 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 4 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a0bcd03c-7f04-4519-a63f-f4b2d07944fb/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0c121c94-fcec-4db2-9b8d-ddc027490a32/
+    - listitem:
+      - heading "21:04" [level=4]
+      - list:
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/881ac0c3-012f-4855-a7bc-a245b7cc3b46/
+    - listitem:
+      - heading "21:06" [level=4]
+      - list:
+        - listitem:
+          - link "Prinsessan Mononoke - Klassiker":
+            - /url: /film/prinsessan-mononoke-klassiker/
+            - img "Prinsessan Mononoke - Klassiker"
+            - img "Prinsessan Mononoke - Klassiker"
+          - heading "Prinsessan Mononoke - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 14 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 4 - "Bergman" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/92890c75-9deb-461d-8950-4c28775b7eaf/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2f9baf04-9e31-4258-a3dc-77b994da26e4/
+    - listitem:
+      - heading "21:08" [level=4]
+      - list:
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1623697d-b615-4426-b478-e55f01ff9409/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d5e06c6d-2024-46a5-9cb9-d520ec1624e6/
+    - listitem:
+      - heading "21:16" [level=4]
+      - list:
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/19fb60f5-689e-4067-841f-740097084fea/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/779bb7a0-cfd6-4844-8d78-5732865cc90e/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/18319909-a9dd-4a7d-920f-f65f5e636692/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e74533a3-3bd3-464a-987e-377cb90728db/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/96adc059-cbc9-4536-b622-0137fbc3538a/
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b3dc1743-c7f6-4655-9fc2-738d5406d90f/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/37473315-704f-484f-a842-1a98586c934b/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0b0d0713-5bbd-425d-a05b-1b16fa852020/
+    - listitem:
+      - heading "21:20" [level=4]
+      - list:
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1362612f-0bfe-43d3-8ae3-2700e4988689/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/02967329-2fcf-40ec-9b65-5e4f51421aad/
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba617433-8328-4e75-9d7a-0b252855bc48/
+    - listitem:
+      - heading "21:24" [level=4]
+      - list:
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/38e5a499-8ddf-4352-9a84-337081555f4b/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/79b07c48-7430-41ed-b1a0-2815f3522dca/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/19d9be80-a1bc-42c0-9426-888e86c3cb19/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4abcad3f-94bf-4d6e-9eb2-1958ef8914b2/
+    - listitem:
+      - heading "21:28" [level=4]
+      - list:
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ca6278bc-0731-46e9-a70f-9245c94605e4/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ba8f0e9a-171d-4402-b683-296a06f93b0e/
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d159ffc2-f3cb-4410-ac81-e0aa7b6d0616/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/eb943774-7e54-4b0d-aa36-fb356ba231c0/
+    - listitem:
+      - heading "21:30" [level=4]
+      - list:
+        - listitem:
+          - link "Wonka":
+            - /url: /film/wonka/
+          - heading "Wonka" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 56 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Täby Salong 5 Platsinformation saknas eng tal, sve text Familj XL - vår största duk Bar 18 år
+              - link "Köp biljetter":
+                - /url: /bokning/kop/34a2246c-83e0-4d69-aeca-179d02707606/
+    - listitem:
+      - heading "21:32" [level=4]
+      - list:
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/51f1eb6a-cab6-48c7-85fc-edd98d57cbbf/
+    - listitem:
+      - heading "21:36" [level=4]
+      - list:
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/91fc6c8e-96fe-4d84-b030-6048c2159e7e/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8dd97f9b-16d7-4a3c-978c-6f0d1fbc7904/
+    - listitem:
+      - heading "21:40" [level=4]
+      - list:
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c26c2c06-e44d-48f1-848f-fad58cada756/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/21660d49-1861-4065-88c8-e1c2c339bcd1/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/247a7c2a-bce3-4223-930a-73e126865903/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6023761f-69d8-4cbc-ae4c-da6f22ef96c2/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d32e7bfb-5a91-485a-b9af-4390b635d3d9/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a6e03ce4-0199-45b6-9b1d-629d2b9a8675/
+    - listitem:
+      - heading "21:44" [level=4]
+      - list:
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/03a8f051-191c-4cb2-b778-b54b506c23f4/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1fe30107-9bc7-4418-b99e-b9c233513eb1/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7f31dafa-c052-49f6-b4f7-fac49896aad5/
+    - listitem:
+      - heading "21:48" [level=4]
+      - list:
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4556758a-d5b1-48ec-ad3e-8a2f87fd2b38/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/35e328be-825d-4265-b346-334faee27dc8/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b6a2f1fc-ea97-47a2-a1e2-90e1bb751d97/
+    - listitem:
+      - heading "21:55" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/04df13d0-4bd4-48eb-9175-21aba74f7690/
+    - listitem:
+      - heading "21:56" [level=4]
+      - list:
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2d583839-c733-45df-8db4-edfb7a69e50c/
+    - listitem:
+      - heading "22:00" [level=4]
+      - list:
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a5cb8dc8-9a7d-4007-aeda-36698c34de32/
+    - listitem:
+      - heading "22:08" [level=4]
+      - list:
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7d80df2d-3651-4faa-822b-816a05ed4069/
+    - listitem:
+      - heading "22:10" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fe76674f-6978-4d02-8be6-7474110f23b3/
+    - listitem:
+      - heading "22:28" [level=4]
+      - list:
+        - listitem:
+          - link "Falling":
+            - /url: /film/falling/
+            - img "Falling"
+            - img "Falling"
+          - heading "Falling" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 52 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/9b528bda-1566-4203-b7cb-9c29e52f0bd9/
+    - listitem:
+      - heading "22:32" [level=4]
+      - list:
+        - listitem:
+          - 'link "Phil Lynott: Songs For While I''m Away"':
+            - /url: /film/phil-lynott-songs-for-while-im-away/
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+            - 'img "Phil Lynott: Songs For While I''m Away"'
+          - 'heading "Phil Lynott: Songs For While I''m Away" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 53 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/66ebbe3b-1b12-48a6-9ada-6a14ca804ac9/
+            - listitem:
+              - text: Victoria Stockholm Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b8e7405d-42ad-46c0-94af-e403540d2c2f/
+        - listitem:
+          - link "Våga drömma":
+            - /url: /film/vaga-dromma/
+            - img "Våga drömma"
+            - img "Våga drömma"
+          - heading "Våga drömma" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 53 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fcbbe37f-d19b-41a2-8b07-3766e8f14d56/
+            - listitem:
+              - text: Filmstaden Kista Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dcfe64e9-d093-42e2-af10-b88e875ca6fe/
+            - listitem:
+              - text: Filmstaden Råsunda Salong 3 - "Sickan" Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b3cf5940-de0d-42f3-aac7-2408c043a173/
+            - listitem:
+              - text: Filmstaden Sickla Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7b8e8755-4f50-4623-8703-7025bc3615f4/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/900b2381-0534-425e-9f59-18b88b67cc5c/
+    - listitem:
+      - heading "22:35" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e499314f-83b7-46a7-b95b-b127f3a65857/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ebf65c4b-152f-4553-a441-335fb1e480cd/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b9c34595-39b6-40b5-aeae-e04911969f27/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2d5d4119-a8f2-44ee-a396-001b761f54fb/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a1cbcc3c-14a5-4e4c-90c9-2e3a7e3b1c6e/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/40141952-7e64-4e0f-9664-4c8c667ec9d2/
+    - listitem:
+      - heading "22:36" [level=4]
+      - list:
+        - listitem:
+          - link "Goonies – Dödsskallegänget - Klassiker":
+            - /url: /film/goonies-dodsskalleganget-klassiker/
+            - img "Goonies – Dödsskallegänget - Klassiker"
+            - img "Goonies – Dödsskallegänget - Klassiker"
+          - heading "Goonies – Dödsskallegänget - Klassiker" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 14 VIP (18-årsgräns) Platsinformation saknas eng tal, sve text Klassiker VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e003e8c9-0d94-438a-ae23-559fc1d58505/
+        - listitem:
+          - 'link "Mamma Mia: Here We Go Again - Singalong"':
+            - /url: /film/mamma-mia-here-we-go-again-singalong/
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+            - 'img "Mamma Mia: Here We Go Again - Singalong"'
+          - 'heading "Mamma Mia: Here We Go Again - Singalong" [level=3]'
+          - paragraph: Musikal
+          - text: 1 tim 54 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 14 VIP Platsinformation saknas eng tal, eng text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/171e0c24-ef9e-4cfc-876c-3b7cb06686ae/
+        - listitem:
+          - link "Poltergeist - Klassiker":
+            - /url: /film/poltergeist-klassiker/
+            - img "Poltergeist - Klassiker"
+            - img "Poltergeist - Klassiker"
+          - heading "Poltergeist - Klassiker" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 54 min 15+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/05a3384d-4eff-4f3b-8102-483315a8029d/
+        - listitem:
+          - link "Weathering with You":
+            - /url: /film/weathering-with-you/
+            - img "Weathering with You"
+            - img "Weathering with You"
+          - heading "Weathering with You" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 54 min 11+
+          - list:
+            - listitem:
+              - text: Grand Stockholm Salong 1 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/218ac7a6-51dd-4ed5-9d3e-0fe574061f14/
+    - listitem:
+      - heading "22:40" [level=4]
+      - list:
+        - listitem:
+          - link "Pettson & Findus - Juligheter":
+            - /url: /film/pettson-findus-juligheter/
+            - img "Pettson & Findus - Juligheter"
+            - img "Pettson & Findus - Juligheter"
+          - heading "Pettson & Findus - Juligheter" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 23 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 15 VIP Platsinformation saknas sve tal, sve text Familj Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/be424076-37f2-4494-824f-e2a2582487ba/
+            - listitem:
+              - text: Grand Lidingö Salong 1 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7e810bf2-8017-4047-b742-c7a871d863c7/
+    - listitem:
+      - heading "22:44" [level=4]
+      - list:
+        - listitem:
+          - link "En del av mitt hjärta":
+            - /url: /film/en-del-av-mitt-hjarta/
+            - img "En del av mitt hjärta"
+            - img "En del av mitt hjärta"
+          - heading "En del av mitt hjärta" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 58 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 12 VIP Platsinformation saknas sve tal, sve text Syntolkning VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0dce14e5-26f7-4399-8d63-010d73ad86bb/
+    - listitem:
+      - heading "22:52" [level=4]
+      - list:
+        - listitem:
+          - link "1917":
+            - /url: /film/1917/
+            - img "1917"
+            - img "1917"
+          - heading "1917" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 58 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5ae3fbb5-74ba-4d7a-b605-68b594c26e62/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 13 VIP Platsinformation saknas eng tal, sve text VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/5ee04520-eb12-4ff5-ae36-148a4eb34635/
+        - listitem:
+          - link "Babyteeth":
+            - /url: /film/babyteeth/
+            - img "Babyteeth"
+            - img "Babyteeth"
+          - heading "Babyteeth" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 57 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 13 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/736a2210-3f63-41f9-90e1-aa11976371c3/
+        - listitem:
+          - link "Lejonkungen":
+            - /url: /film/lejonkungen/
+            - img "Lejonkungen"
+            - img "Lejonkungen"
+          - heading "Lejonkungen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 58 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 9 Platsinformation saknas eng tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8a57768c-7beb-4341-8e1a-efbd88e7cfd7/
+    - listitem:
+      - heading "22:55" [level=4]
+      - list:
+        - listitem:
+          - link "Mästerdetektiven Sherlock Gnomes":
+            - /url: /film/masterdetektiven-sherlock-gnomes/
+            - img "Mästerdetektiven Sherlock Gnomes"
+            - img "Mästerdetektiven Sherlock Gnomes"
+          - heading "Mästerdetektiven Sherlock Gnomes" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 26 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 7 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/07fc2e81-91a6-4e71-b026-0d401f8723c7/
+    - listitem:
+      - heading "22:56" [level=4]
+      - list:
+        - listitem:
+          - link "David Copperfields äventyr och iakttagelser":
+            - /url: /film/david-copperfields-aventyr-och-iakttagelser/
+            - img "David Copperfields äventyr och iakttagelser"
+            - img "David Copperfields äventyr och iakttagelser"
+          - heading "David Copperfields äventyr och iakttagelser" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 59 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/17d9a360-74b3-4a28-b839-2b3a36390ebd/
+    - listitem:
+      - heading "23:00" [level=4]
+      - list:
+        - listitem:
+          - link "Andra sidan":
+            - /url: /film/andra-sidan/
+            - img "Andra sidan"
+            - img "Andra sidan"
+          - heading "Andra sidan" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 27 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4d05dae0-50b0-4bb8-bcca-6bfe170dab20/
+            - listitem:
+              - text: Victoria Stockholm Salong 4 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/35588622-0b71-463b-8e20-98e9eb4cac8a/
+        - listitem:
+          - link "Det levande slottet - Klassiker":
+            - /url: /film/det-levande-slottet-klassiker/
+            - img "Det levande slottet - Klassiker"
+            - img "Det levande slottet - Klassiker"
+          - heading "Det levande slottet - Klassiker" [level=3]
+          - paragraph: Anime
+          - text: 2 tim 0 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 4 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0c4f2450-d219-46ea-a415-7130b8451acc/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 10 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cb23d37a-123d-445e-8c05-005ba05340b6/
+            - listitem:
+              - text: Victoria Stockholm Salong 2 Platsinformation saknas sve tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b1191ec8-e01f-4478-a236-f838cae33667/
+        - listitem:
+          - link "Greenland":
+            - /url: /film/greenland/
+            - img "Greenland"
+            - img "Greenland"
+          - heading "Greenland" [level=3]
+          - paragraph: Action
+          - text: 2 tim 0 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/504862a6-ee79-489f-92a6-c2a84daacca6/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3815b91f-504c-46cd-bb9b-af98ca39277a/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d17d9170-33ae-40fd-8679-9c6fb85debb7/
+    - listitem:
+      - heading "23:05" [level=4]
+      - list:
+        - listitem:
+          - link "Lustiga små kryp":
+            - /url: /film/lustiga-sma-kryp/
+            - img "Lustiga små kryp"
+            - img "Lustiga små kryp"
+          - heading "Lustiga små kryp" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 28 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 10 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3fd02e2a-117b-4604-83cd-16dcee57df4e/
+            - listitem:
+              - text: Filmstaden Sergel Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/66afc134-29d1-46ba-ba0e-5448c75df5df/
+    - listitem:
+      - heading "23:08" [level=4]
+      - list:
+        - listitem:
+          - link "Ronja Rövardotter - Klassiker":
+            - /url: /film/ronja-rovardotter-klassiker/
+            - img "Ronja Rövardotter - Klassiker"
+            - img "Ronja Rövardotter - Klassiker"
+          - heading "Ronja Rövardotter - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 2 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 16 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/93c002d1-59e0-406e-b83b-71f5226f29a2/
+    - listitem:
+      - heading "23:10" [level=4]
+      - list:
+        - listitem:
+          - link "Familjen Bigfoot":
+            - /url: /film/familjen-bigfoot/
+            - img "Familjen Bigfoot"
+            - img "Familjen Bigfoot"
+          - heading "Familjen Bigfoot" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 29 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/11ae16ea-cec5-432e-8983-270eb61c84b6/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 2 Platsinformation saknas sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/70fed5e8-a195-4eac-9789-2adffad293eb/
+    - listitem:
+      - heading "23:12" [level=4]
+      - list:
+        - listitem:
+          - link "Pelle Svanslös":
+            - /url: /film/pelle-svanslos/
+            - img "Pelle Svanslös"
+            - img "Pelle Svanslös"
+          - heading "Pelle Svanslös" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 7 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 1 Luxe Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a261d526-ced8-4831-a933-3edca29962b4/
+    - listitem:
+      - heading "23:15" [level=4]
+      - list:
+        - listitem:
+          - link "Palm Springs":
+            - /url: /film/palm-springs/
+            - img "Palm Springs"
+            - img "Palm Springs"
+          - heading "Palm Springs" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 30 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7468cdea-c8a4-4c04-b335-1a29576dd1c3/
+            - listitem:
+              - text: Filmstaden Kista Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/01e960ea-ed60-4b43-bdb5-6cf7daaac61f/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e3b9d114-5e41-4d1c-86e8-0883684e354b/
+    - listitem:
+      - heading "23:16" [level=4]
+      - list:
+        - listitem:
+          - link "Akira - Klassiker":
+            - /url: /film/akira-klassiker/
+            - img "Akira - Klassiker"
+            - img "Akira - Klassiker"
+          - heading "Akira - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 4 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 10 Platsinformation saknas jap tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/cb514e51-40cd-49de-9487-7e89da95ebf6/
+        - listitem:
+          - link "Rymdimperiet slår tillbaka - Klassiker":
+            - /url: /film/rymdimperiet-slar-tillbaka-klassiker/
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+            - img "Rymdimperiet slår tillbaka - Klassiker"
+          - heading "Rymdimperiet slår tillbaka - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 2 tim 4 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 2 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0a51a2d3-b137-45d2-ad76-71727cb78cb0/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 4 Platsinformation saknas eng tal, Ej textad
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6fbefcb3-2b7d-4a70-8c19-5ce52bd079b4/
+    - listitem:
+      - heading "23:20" [level=4]
+      - list:
+        - listitem:
+          - link "Spirited Away - Klassiker":
+            - /url: /film/spirited-away-klassiker/
+            - img "Spirited Away - Klassiker"
+            - img "Spirited Away - Klassiker"
+          - heading "Spirited Away - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 5 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 15 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bcc55e61-9ac1-4bb9-9600-6f296f1e2418/
+        - listitem:
+          - link "Uppe på vallmokullen - Klassiker":
+            - /url: /film/uppe-pa-vallmokullen-klassiker/
+            - img "Uppe på vallmokullen - Klassiker"
+            - img "Uppe på vallmokullen - Klassiker"
+          - heading "Uppe på vallmokullen - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 31 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 11 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f642ab04-b0c0-494c-a989-72b3d1fa805d/
+    - listitem:
+      - heading "23:24" [level=4]
+      - list:
+        - listitem:
+          - link "Det blåser upp en vind - Klassiker":
+            - /url: /film/det-blaser-upp-en-vind-klassiker/
+            - img "Det blåser upp en vind - Klassiker"
+            - img "Det blåser upp en vind - Klassiker"
+          - heading "Det blåser upp en vind - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 6 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 8 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4aca54ca-95bb-423f-a12a-5d2b3c902105/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 9 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/242df861-a8af-41ea-a53c-da31801a4b31/
+    - listitem:
+      - heading "23:25" [level=4]
+      - list:
+        - listitem:
+          - link "Horizon Line":
+            - /url: /film/horizon-line/
+            - img "Horizon Line"
+            - img "Horizon Line"
+          - heading "Horizon Line" [level=3]
+          - paragraph: Thriller
+          - text: 1 tim 32 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 12 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fae6c334-f636-49b5-b5dd-6e7b5ac77879/
+        - listitem:
+          - link "Operation Nordpolen":
+            - /url: /film/operation-nordpolen/
+            - img "Operation Nordpolen"
+            - img "Operation Nordpolen"
+          - heading "Operation Nordpolen" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 32 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 2 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6f0f705e-a8b3-40c8-9855-5499f1b8ddc6/
+    - listitem:
+      - heading "23:32" [level=4]
+      - list:
+        - listitem:
+          - link "La La Land":
+            - /url: /film/la-la-land/
+            - img "La La Land"
+            - img "La La Land"
+          - heading "La La Land" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 8 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 1 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6757e9fe-a4db-4633-bcda-a260dba09f72/
+    - listitem:
+      - heading "23:35" [level=4]
+      - list:
+        - listitem:
+          - link "Greta":
+            - /url: /film/greta/
+            - img "Greta"
+            - img "Greta"
+          - heading "Greta" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 41 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 8 Platsinformation saknas eng tal, sve tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8229cf2e-d1a8-4bc0-9afd-081478968ff7/
+        - listitem:
+          - link "Lånaren Arrietty - Klassiker":
+            - /url: /film/lanaren-arrietty-klassiker/
+            - img "Lånaren Arrietty - Klassiker"
+            - img "Lånaren Arrietty - Klassiker"
+          - heading "Lånaren Arrietty - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 1 - "Anna-Lisa" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3cfe0ab2-8660-440d-89a6-7373736e260f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 9 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c9d54bd9-851d-4eff-9ed4-110a6545959f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f32f02f4-c363-495c-abbe-d87ac49b84db/
+        - listitem:
+          - link "Porco Rosso - Klassiker":
+            - /url: /film/porco-rosso-klassiker/
+            - img "Porco Rosso - Klassiker"
+            - img "Porco Rosso - Klassiker"
+          - heading "Porco Rosso - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 34 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 2 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/3a220f83-9e05-4c4e-81c2-ba7ff1b259e9/
+            - listitem:
+              - text: Filmstaden Sergel Salong 12 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fed1877a-3191-42af-85ba-3b57f3a163fe/
+            - listitem:
+              - text: Victoria Stockholm Salong 1 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dec7211a-3949-446a-8619-b83bb4e5730c/
+        - listitem:
+          - link "The New Mutants":
+            - /url: /film/the-new-mutants/
+            - img "The New Mutants"
+            - img "The New Mutants"
+          - heading "The New Mutants" [level=3]
+          - paragraph: Action
+          - text: 1 tim 34 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 5 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/faaa93a8-0950-48ac-a8dc-2aa4abffc510/
+    - listitem:
+      - heading "23:36" [level=4]
+      - list:
+        - listitem:
+          - link "Skönheten och odjuret":
+            - /url: /film/skonheten-och-odjuret/
+            - img "Skönheten och odjuret"
+            - img "Skönheten och odjuret"
+          - heading "Skönheten och odjuret" [level=3]
+          - paragraph: Familj
+          - text: 2 tim 9 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 5 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7682de46-93a3-44f4-b073-8915e9aa2579/
+            - listitem:
+              - text: Filmstaden Sergel Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/2e01541b-7171-4aff-ba9f-0cfae3be198b/
+    - listitem:
+      - heading "23:40" [level=4]
+      - list:
+        - listitem:
+          - link "Leonardo Da Vinci - Louvren":
+            - /url: /film/leonardo-da-vinci-louvren/
+            - img "Leonardo Da Vinci - Louvren"
+            - img "Leonardo Da Vinci - Louvren"
+          - heading "Leonardo Da Vinci - Louvren" [level=3]
+          - paragraph: Konst
+          - text: 1 tim 30 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 9 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6f9cb279-d1ad-44fc-b47e-9cf2efcdf56f/
+            - listitem:
+              - text: Filmstaden Sergel Salong 14 Platsinformation saknas fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8949b4f7-8002-46ab-aa71-39c3c5841588/
+    - listitem:
+      - heading "23:44" [level=4]
+      - list:
+        - listitem:
+          - link "Knives Out":
+            - /url: /film/knives-out/
+            - img "Knives Out"
+            - img "Knives Out"
+          - heading "Knives Out" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 11 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 6 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/d278aa21-25ff-40eb-af03-b7a3bda26898/
+    - listitem:
+      - heading "23:45" [level=4]
+      - list:
+        - listitem:
+          - link "Emil i Lönneberga - Klassiker":
+            - /url: /film/emil-i-lonneberga-klassiker/
+            - img "Emil i Lönneberga - Klassiker"
+            - img "Emil i Lönneberga - Klassiker"
+          - heading "Emil i Lönneberga - Klassiker" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 35 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 7 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/18dc972e-60f2-40d4-9749-ec31e7797df6/
+            - listitem:
+              - text: Grand Stockholm Salong 2 Platsinformation saknas sve tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a65d0d5f-d58f-4925-a2f2-21246f7aa7e1/
+        - listitem:
+          - 'link "Yung Lean: In My Head"':
+            - /url: /film/yung-lean-in-my-head/
+            - 'img "Yung Lean: In My Head"'
+            - 'img "Yung Lean: In My Head"'
+          - 'heading "Yung Lean: In My Head" [level=3]'
+          - paragraph: Dokumentär
+          - text: 1 tim 36 min Åldersgräns ej bestämd
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 10 Platsinformation saknas sve tal, eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c9f4d709-1a59-4705-ae5c-5b0de67113ce/
+            - listitem:
+              - text: Saga Salong 3 Platsinformation saknas sve tal, eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/db946538-1d0c-4e3f-b3f4-1992c3d615b8/
+    - listitem:
+      - heading "23:48" [level=4]
+      - list:
+        - listitem:
+          - link "Parasit":
+            - /url: /film/parasit/
+            - img "Parasit"
+            - img "Parasit"
+          - heading "Parasit" [level=3]
+          - paragraph: Komedi
+          - text: 2 tim 12 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 3 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/c8e953b6-8432-481f-85de-ae55bed69a95/
+            - listitem:
+              - text: Filmstaden Sergel Salong 8 Platsinformation saknas kor tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/aa3d472f-da05-4632-b122-a00872128127/
+    - listitem:
+      - heading "23:50" [level=4]
+      - list:
+        - listitem:
+          - link "Modigliani - skandalöst geni":
+            - /url: /film/modigliani-skandalost-geni/
+            - img "Modigliani - skandalöst geni"
+            - img "Modigliani - skandalöst geni"
+          - heading "Modigliani - skandalöst geni" [level=3]
+          - paragraph: Dokumentär
+          - text: 1 tim 37 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Sture Salong 2 Platsinformation saknas ita tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f0de5fb2-bae0-4432-b533-53ede8aae06f/
+        - listitem:
+          - link "The Angry Birds Movie 2":
+            - /url: /film/the-angry-birds-movie-2/
+            - img "The Angry Birds Movie 2"
+            - img "The Angry Birds Movie 2"
+          - heading "The Angry Birds Movie 2" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 36 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/16387742-7508-430d-89f7-7537fa44b112/
+            - listitem:
+              - text: Filmstaden Kista Salong 10 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4c46adc9-a299-4f69-8ced-c4a0e509f15a/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 11 Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/14732e94-dd7e-48e3-86e1-932f1b88040d/
+    - listitem:
+      - heading "23:54" [level=4]
+      - list:
+        - listitem:
+          - link "Rymdresan":
+            - /url: /film/rymdresan/
+            - img "Rymdresan"
+            - img "Rymdresan"
+          - heading "Rymdresan" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 14 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Grand Lidingö Salong 2 Platsinformation saknas sve tal, sve text Familj Syntolkning
+              - link "Köp biljetter":
+                - /url: /bokning/kop/8de7e9af-85fa-4a2d-8fc7-1137c08d5406/
+    - listitem:
+      - heading "23:55" [level=4]
+      - list:
+        - listitem:
+          - link "The Secrets We Keep":
+            - /url: /film/the-secrets-we-keep/
+            - img "The Secrets We Keep"
+            - img "The Secrets We Keep"
+          - heading "The Secrets We Keep" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 38 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 2 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4c7f774f-b20d-410e-9719-c6444a58312c/
+    - listitem:
+      - heading "00:00 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Honest Thief":
+            - /url: /film/honest-thief/
+            - img "Honest Thief"
+            - img "Honest Thief"
+          - heading "Honest Thief" [level=3]
+          - paragraph: Action
+          - text: 1 tim 39 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 7 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0216a918-5a6a-4695-b77d-0d3c3dc56d46/
+            - listitem:
+              - text: Sture Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/4654c6e7-0387-4b4c-80c1-6449aaa5fa4c/
+        - listitem:
+          - link "Unga kvinnor":
+            - /url: /film/unga-kvinnor/
+            - img "Unga kvinnor"
+            - img "Unga kvinnor"
+          - heading "Unga kvinnor" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 15 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 8 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e2358bd8-ee40-4aca-b720-199a89b70873/
+    - listitem:
+      - heading "00:04 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "A Clockwork Orange - Klassiker":
+            - /url: /film/a-clockwork-orange-klassiker/
+            - img "A Clockwork Orange - Klassiker"
+            - img "A Clockwork Orange - Klassiker"
+          - heading "A Clockwork Orange - Klassiker" [level=3]
+          - paragraph: Drama
+          - text: 2 tim 17 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 4 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/243d2535-1616-4315-b64d-ed737fd2b631/
+            - listitem:
+              - text: Filmstaden Rigoletto Salong 3 Platsinformation saknas eng tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/24eaec4e-8521-465c-b929-97f36a484e5b/
+    - listitem:
+      - heading "00:05 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "The Way of the Dragon - Klassiker":
+            - /url: /film/the-way-of-the-dragon-klassiker/
+            - img "The Way of the Dragon - Klassiker"
+            - img "The Way of the Dragon - Klassiker"
+          - heading "The Way of the Dragon - Klassiker" [level=3]
+          - paragraph: Action
+          - text: 1 tim 40 min 15+
+          - list:
+            - listitem:
+              - text: Saga Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/046a369e-dc58-4b0c-af3c-8707021f4dcb/
+            - listitem:
+              - text: Sture Salong 1 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/dd49c3b6-1188-4965-8bdf-054033d99c43/
+            - listitem:
+              - text: Victoria Stockholm Salong 7 Platsinformation saknas eng tal, Ej textad Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bb1b5b4b-3464-4537-ad2e-e69c43c26b1f/
+        - listitem:
+          - link "Toy Story 4":
+            - /url: /film/toy-story-4/
+            - img "Toy Story 4"
+            - img "Toy Story 4"
+          - heading "Toy Story 4" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 40 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Kista Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b3780e3f-ce7c-4ff5-89ad-811d3e37de58/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b493aeef-eabd-4fa4-b8b7-1a78f17d38e9/
+            - listitem:
+              - text: Victoria Stockholm Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/bac977a8-2b1d-4687-abd5-5021409ac951/
+    - listitem:
+      - heading "00:08 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Prinsessan Mononoke - Klassiker":
+            - /url: /film/prinsessan-mononoke-klassiker/
+            - img "Prinsessan Mononoke - Klassiker"
+            - img "Prinsessan Mononoke - Klassiker"
+          - heading "Prinsessan Mononoke - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 2 tim 14 min 11+
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 4 - "Bergman" Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b99c2835-a258-46df-9050-8bd7c2b8ea0d/
+            - listitem:
+              - text: Filmstaden Vällingby Salong 4 Platsinformation saknas jap tal, sve text Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b0a0ab5b-30f0-43ee-9360-07b38b84cf27/
+    - listitem:
+      - heading "00:10 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Ponyo på klippan vid havet - Klassiker":
+            - /url: /film/ponyo-pa-klippan-vid-havet-klassiker/
+            - img "Ponyo på klippan vid havet - Klassiker"
+            - img "Ponyo på klippan vid havet - Klassiker"
+          - heading "Ponyo på klippan vid havet - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 41 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 9 Platsinformation saknas sve tal, Ej textad Familj XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/ac57d261-ea2d-4439-8a2f-e7443bde0315/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 3 Platsinformation saknas jap tal, sve text Autismvänlig bio Familj Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/fe7dcc70-8b09-4919-a6ee-def7fe54ebbd/
+            - listitem:
+              - text: Saga Salong 4 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/f6f462b4-0bf8-483d-8966-1a1d98f99880/
+    - listitem:
+      - heading "00:12 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Agatha - granndetektiven":
+            - /url: /film/agatha-granndetektiven/
+            - img "Agatha - granndetektiven"
+            - img "Agatha - granndetektiven"
+          - heading "Agatha - granndetektiven" [level=3]
+          - paragraph: Familj
+          - text: 1 tim 17 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Råsunda Salong 2 - "Nisse" Platsinformation saknas sve tal, sve text Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/809fd4ad-d847-4c4b-943f-c472809d1ac3/
+    - listitem:
+      - heading "00:15 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Framåt":
+            - /url: /film/framat/
+            - img "Framåt"
+            - img "Framåt"
+          - heading "Framåt" [level=3]
+          - paragraph: Äventyr
+          - text: 1 tim 42 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 13 VIP (18-årsgräns) Platsinformation saknas sve tal, sve text Familj VIP-salong
+              - link "Köp biljetter":
+                - /url: /bokning/kop/e418096f-d585-42e5-9224-efeef2d8bd04/
+        - listitem:
+          - link "Freaky":
+            - /url: /film/freaky/
+            - img "Freaky"
+            - img "Freaky"
+          - heading "Freaky" [level=3]
+          - paragraph: Komedi
+          - text: 1 tim 42 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 1 Platsinformation saknas eng tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/538f41ce-e7cf-4441-b34b-c066f427a124/
+            - listitem:
+              - text: Grand Stockholm Salong 4 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/6a6cb105-dbc7-43af-a4e1-421b88ef424e/
+    - listitem:
+      - heading "00:25 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Kikis expressbud - Klassiker":
+            - /url: /film/kikis-expressbud-klassiker/
+            - img "Kikis expressbud - Klassiker"
+            - img "Kikis expressbud - Klassiker"
+          - heading "Kikis expressbud - Klassiker" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 43 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sergel Salong 11 Platsinformation saknas jap tal, sve text Klassiker
+              - link "Köp biljetter":
+                - /url: /bokning/kop/0227b63f-49b1-41c4-aa09-e214ff1517a8/
+    - listitem:
+      - heading "00:30 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Antebellum":
+            - /url: /film/antebellum/
+            - img "Antebellum"
+            - img "Antebellum"
+          - heading "Antebellum" [level=3]
+          - paragraph: Skräck
+          - text: 1 tim 45 min 15+
+          - list:
+            - listitem:
+              - text: Filmstaden Scandinavia IMAX®-salongen (Salong 1) Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a389c611-dcc1-4f7a-ab08-f3220bb630e2/
+    - listitem:
+      - heading "00:40 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Misbehaviour":
+            - /url: /film/misbehaviour/
+            - img "Misbehaviour"
+            - img "Misbehaviour"
+          - heading "Misbehaviour" [level=3]
+          - paragraph: Drama
+          - text: 1 tim 47 min 7+
+          - list:
+            - listitem:
+              - text: Filmstaden Vällingby Salong 3 Platsinformation saknas eng tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/b595f242-9712-41b0-b12c-ef0409a12399/
+    - listitem:
+      - heading "00:42 lördag 05/10" [level=4]
+      - list:
+        - listitem:
+          - link "Kapten Sabeltand och den magiska diamanten":
+            - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+            - img "Kapten Sabeltand och den magiska diamanten"
+            - img "Kapten Sabeltand och den magiska diamanten"
+          - heading "Kapten Sabeltand och den magiska diamanten" [level=3]
+          - paragraph: Animerat
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Victoria Stockholm Salong 6 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/1ed284cf-f072-46a1-a3c9-7d2f6b080802/
+        - listitem:
+          - link "Pettson och Findus - Findus flyttar hemifrån":
+            - /url: /film/pettson-och-findus-findus-flyttar-hemifran/
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+            - img "Pettson och Findus - Findus flyttar hemifrån"
+          - heading "Pettson och Findus - Findus flyttar hemifrån" [level=3]
+          - paragraph: Barn
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Sickla Salong 3 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/a02e39e1-7e63-40f6-8e95-835f45e0977e/
+            - listitem:
+              - text: Filmstaden Söder (Tillfälligt stängd) Salong 8 Platsinformation saknas sve tal, Ej textad Familj
+              - link "Köp biljetter":
+                - /url: /bokning/kop/194b166b-1145-4a7a-9aa3-dd9fc74626a9/
+        - listitem:
+          - 'link "Rafael: det unga geniet"':
+            - /url: /film/rafael-det-unga-geniet/
+            - 'img "Rafael: det unga geniet"'
+            - 'img "Rafael: det unga geniet"'
+          - 'heading "Rafael: det unga geniet" [level=3]'
+          - paragraph: Konst
+          - text: 1 tim 22 min Ingen åldersgräns
+          - list:
+            - listitem:
+              - text: Filmstaden Heron City Salong 6 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/98fa4f6b-6b14-427f-a84b-4ee7e18cadb8/
+            - listitem:
+              - text: Filmstaden Scandinavia Salong 4 Platsinformation saknas eng tal, ita tal, fra tal, sve text
+              - link "Köp biljetter":
+                - /url: /bokning/kop/873382c8-af89-4447-af97-b97d24600956/
+            - listitem:
+              - text: Filmstaden Sickla Salong 1 Platsinformation saknas eng tal, ita tal, fra tal, sve text XL - vår största duk
+              - link "Köp biljetter":
+                - /url: /bokning/kop/7fd93519-bf27-44fd-af35-75d327589d40/
+- contentinfo:
+  - heading "Om oss" [level=2]
+  - list:
+    - listitem:
+      - link "Jobba hos oss ":
+        - /url: https://jobb.filmstaden.se/
+    - listitem:
+      - link "Press ":
+        - /url: https://www.mynewsdesk.com/se/filmstaden-ab/
+    - listitem:
+      - link "Om Filmstaden":
+        - /url: /kundservice/fragor-och-svar/fragor-och-svar/om-filmstaden/
+    - listitem:
+      - link "Filmpanelen":
+        - /url: /filmpanelen/
+    - listitem:
+      - link "Alla våra biostäder":
+        - /url: /alla-biostader/
+    - listitem:
+      - link "Alla våra biografer":
+        - /url: /biografer/
+  - heading "För företag" [level=2]
+  - list:
+    - listitem:
+      - link "Företagsbiljetter":
+        - /url: /foretagsbiljetter/
+    - listitem:
+      - link "Möten & Event ":
+        - /url: https://moten.filmstaden.se/
+    - listitem:
+      - link "Bioreklam ":
+        - /url: https://media.filmstaden.se/
+    - listitem:
+      - link "Föreningsbiljetten":
+        - /url: /foreningsbiljetten/
+  - heading "Hjälp & kontakt" [level=2]
+  - list:
+    - listitem:
+      - link "Kundservice":
+        - /url: /kundservice/fragor-och-svar/
+    - listitem:
+      - link "Tillgänglig bio":
+        - /url: /tillganglig-bio/
+    - listitem:
+      - link "Personuppgiftspolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/personuppgiftspolicy/
+    - listitem:
+      - link "Cookiepolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/cookiepolicy/
+    - listitem:
+      - link "Kontakta oss":
+        - /url: /kundservice/kontakta-oss/
+  - heading "Sociala medier" [level=2]
+  - list:
+    - listitem:
+      - link "Instagram ":
+        - /url: https://www.instagram.com/filmstaden_ab/
+    - listitem:
+      - link "Facebook ":
+        - /url: https://www.facebook.com/filmstadenab
+    - listitem:
+      - link "LinkedIn ":
+        - /url: https://se.linkedin.com/company/filmstaden
+  - separator
+  - img "Filmstaden logotype"
+  - paragraph: Filmstaden ©2021. En del av Odeon Cinemas Group
+- text: Navigated to På bio nu
+- button "Open chat":
+  - img
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import { LandingPage } from '../../pages/filmstaden_int/Landingpage';
+   3 | import { NotFoundPage } from '../../pages/filmstaden_int/404page';
+   4 | import * as allure from 'allure-js-commons';
+   5 |
+   6 | test.describe.parallel('404-page tests', () => {
+   7 |   let landingPage;
+   8 |   let notFoundPage;
+   9 |
+  10 |   test.beforeEach(async ({ page }) => {
+  11 |     landingPage = new LandingPage(page);
+  12 |     notFoundPage = new NotFoundPage(page);
+  13 |
+  14 |     await page.goto('/');
+  15 |     await landingPage.acceptCookies();
+  16 |     await landingPage.selectStockholm();
+  17 |   });
+  18 |
+  19 |   test('Test that 404-page has the correct elements', async ({ page }) => {
+  20 |     await test.step('Initial setup of test specific variables and tags', async () => {
+  21 |       await allure.epic('Error Pages');
+  22 |       await allure.feature('404 Page');
+  23 |     });
+  24 |
+  25 |     await test.step('Navigate to and verify 404-page', async () => {
+  26 |       await notFoundPage.navigateTo404();
+  27 |       await expect(notFoundPage.pageTitle).toContainText('Oj hoppsan! Nu hittade vi inte det du letar efter');
+  28 |       await expect(notFoundPage.findMoviesLink).toBeVisible();
+  29 |       await expect(notFoundPage.goToStartLink).toBeVisible();
+  30 |       await expect(notFoundPage.customerServiceLink).toBeVisible();
+  31 |     });
+  32 |
+  33 |     await test.step('Verify link from 404-page works correctly', async () => {
+  34 |       await notFoundPage.clickFindMoviesLink();
+  35 |       //await expect(notFoundPage.pageTitle).toContainText('På bio nu');
+> 36 |       await expect(notFoundPage.pageTitle).toContainText('DKWPAOK KPFKPOAESKFOPEÄKP 32489');
+     |                                            ^ Error: Timed out 10000ms waiting for expect(locator).toContainText(expected)
+  37 |     });
+  38 |   });
+  39 | });
+  40 |
+```
