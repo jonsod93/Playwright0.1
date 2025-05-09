@@ -9,13 +9,17 @@ on:
 
 jobs:
   run-tests:
-    if: (github.event_name == 'schedule' && github.event.schedule != '0 4 * * *') || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Exit if current time is 06:00 CEST
+        run: |
+          hour=$(TZ=Europe/Stockholm date +'%H')
+          if [ "$hour" = "06" ]; then
+            echo "It's 06:00 CEST — skipping test run."
+            exit 0
+          fi
 
-      - name: Check directory structure
-        run: ls -R
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.8.1
@@ -44,20 +48,11 @@ jobs:
       - name: Run pre-run setup
         run: npm run pre-run
 
-      - name: Debug after pre-run merge
-        run: ls -R allure-results/history || echo "No merged history before test run"
-
       - name: Run Playwright tests
         run: npm run test || true
 
-      - name: Debug history after test run
-        run: ls -R allure-results/history || echo "No history after test run"
-
       - name: Generate temporary Allure report
         run: npm run report
-
-      - name: Debug report output
-        run: ls -R allure-report || echo "No report directory found"
 
       - name: Upload Allure results
         if: always()
@@ -75,14 +70,13 @@ jobs:
 
   generate-report:
     needs: run-tests
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - name: Check if it's 06:00 run
+      - name: Check if it's 06:00 CEST
         id: check_time
         run: |
-          hour=$(date +'%H')
-          if [ "$hour" != "04" ]; then  # 04 UTC = 06 CEST
+          hour=$(TZ=Europe/Stockholm date +'%H')
+          if [ "$hour" != "06" ]; then
             echo "Not 06:00 CEST run. Skipping report generation."
             echo "skip=true" >> $GITHUB_OUTPUT
           fi
@@ -92,9 +86,6 @@ jobs:
         run: exit 0
 
       - uses: actions/checkout@v4
-
-      - name: Check directory structure
-        run: ls -R
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.8.1
@@ -120,17 +111,8 @@ jobs:
           name: allure-results
           path: allure-results
 
-      - name: View contents of history.json
-        run: cat allure-report/history/history.json || echo "Missing history.json"
-
-      - name: Run pre-run setup (merges history, creates executor)
+      - name: Run pre-run setup (merge history, executor)
         run: npm run pre-run
-
-      - name: Debug after pre-run merge
-        run: ls -R allure-results/history || echo "No merged history before report"
-
-      - name: Confirm history still exists before generating report
-        run: ls -R allure-results/history || echo "History folder unexpectedly empty before generate"
 
       - name: Generate final Allure report
         run: npm run report
@@ -145,9 +127,6 @@ jobs:
 
       - name: Add .nojekyll
         run: touch allure-report/.nojekyll
-
-      - name: Debug history before deploy
-        run: ls -R allure-report/history || echo "No history folder before deploy"
 
       - name: Deploy to GitHub Pages
         if: steps.check_report.outputs.skip_deploy != 'true'
