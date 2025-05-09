@@ -24,9 +24,7 @@ test.describe.parallel('404-page tests', () => {
 
     await test.step('Navigate to and verify 404-page', async () => {
       await notFoundPage.navigateTo404();
-      await expect(notFoundPage.pageTitle).toContainText(
-        'Oj hoppsan! Nu hittade vi inte det du letar efter'
-      );
+      await expect(notFoundPage.pageTitle).toContainText('Oj hoppsan! Nu hittade vi inte det du letar efter');
       await expect(notFoundPage.findMoviesLink).toBeVisible();
       await expect(notFoundPage.goToStartLink).toBeVisible();
       await expect(notFoundPage.customerServiceLink).toBeVisible();
@@ -34,7 +32,8 @@ test.describe.parallel('404-page tests', () => {
 
     await test.step('Verify link from 404-page works correctly', async () => {
       await notFoundPage.clickFindMoviesLink();
-      await expect(notFoundPage.pageTitle).toContainText('På bio nu');
+      //await expect(notFoundPage.pageTitle).toContainText('På bio nu');
+      await expect(notFoundPage.pageTitle).toContainText('DKWPAOK KPFKPOAESKFOPEÄKP 32489');
     });
   });
 });
