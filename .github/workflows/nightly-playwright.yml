@@ -2,23 +2,13 @@ name: Nightly Playwright Tests
 
 on:
   schedule:
-    - cron: '0 23 * * *' # 01:00 CEST
     - cron: '0 2 * * *' # 04:00 CEST
-    - cron: '0 4 * * *' # 06:00 CEST
   workflow_dispatch:
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Exit if current time is 06:00 CEST
-        run: |
-          hour=$(TZ=Europe/Stockholm date +'%H')
-          if [ "$hour" = "06" ]; then
-            echo "It's 06:00 CEST — skipping test run."
-            exit 0
-          fi
-
       - uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -72,19 +62,6 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: Check if it's 06:00 CEST
-        id: check_time
-        run: |
-          hour=$(TZ=Europe/Stockholm date +'%H')
-          if [ "$hour" != "06" ]; then
-            echo "Not 06:00 CEST run. Skipping report generation."
-            echo "skip=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Exit early if not 06:00
-        if: steps.check_time.outputs.skip == 'true'
-        run: exit 0
-
       - uses: actions/checkout@v4
 
       - name: Setup Node.js
