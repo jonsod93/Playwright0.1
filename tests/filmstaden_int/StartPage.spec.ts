@@ -27,15 +27,15 @@ test.describe.parallel('Filmstaden Startpage', () => {
     });
 
     await test.step('Search for a movie and verify that it is found', async () => {
-      await startPage.searchMovie('emil');
-      let movieTitleLocator = await startPage.getMovieTitleLink('emil');
+      await startPage.searchMovie('rymdimperiet');
+      let movieTitleLocator = await startPage.getMovieTitleLink('rymdimperiet');
       await expect(movieTitleLocator).toBeVisible();
     });
 
     await test.step('Click the search result and verify that it leads to the correct page', async () => {
-      await startPage.clickMovieLink('emil');
+      await startPage.clickMovieLink('rymdimperiet');
       await expect(async () => {
-        await expect(moviePage.mainContentLocator).toContainText('Emil');
+        await expect(moviePage.mainContentLocator).toContainText('Rymdimperiet');
         await expect(moviePage.readMoreButton).toBeVisible();
       }).toPass({ timeout: 10000 });
     });
