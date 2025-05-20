@@ -73,8 +73,8 @@ test.describe.parallel('2FA tests', () => {
       await signUpPage.fillFirstName(TestUserGeneric.firstName);
       await signUpPage.fillLastName(TestUserGeneric.lastName);
       await signUpPage.fillPhoneNumber(TestUserGeneric.phoneNumber);
-      socialSecurityNumber = await signUpPage.getSocialSecurityNumber();
-      //socialSecurityNumber = "950103-1638"; // Hardcoded social security number for now
+      //socialSecurityNumber = await signUpPage.getSocialSecurityNumber();
+      socialSecurityNumber = "950103-1638"; // Hardcoded social security number for now
       await signUpPage.fillSSN(socialSecurityNumber);
       await signUpPage.acceptTerms();
       await signUpPage.acceptSubscription();

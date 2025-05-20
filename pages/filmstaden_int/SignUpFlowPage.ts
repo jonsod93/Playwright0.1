@@ -16,6 +16,8 @@ export class SignUpFlowPage extends DefaultPage {
   private subscriptionCheckbox: any;
   private finishButton: any;
   private mainContentLocator: any;
+  private ssnErrorMessage: any;
+  private ssnErrorMessageOkButton: any;
 
   constructor(page) {
     super(page);
@@ -40,6 +42,8 @@ export class SignUpFlowPage extends DefaultPage {
     this.subscriptionCheckbox = this.page.locator('#subscriptionsOptIn');
     this.finishButton = this.page.getByRole('button', { name: 'Fortsätt' });
     this.mainContentLocator = this.page.getByRole('main');
+    this.ssnErrorMessage = this.page.getByRole('heading', { name: 'Kontrollera dina uppgifter' });
+    this.ssnErrorMessageOkButton = this.page.getByRole('button', { name: 'Ok' });
   }
 
   async fillEmail(email: string) {
@@ -96,6 +100,7 @@ export class SignUpFlowPage extends DefaultPage {
 
   async clickFinishSignUp() {
     await this.finishButton.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   async getSocialSecurityNumber(): Promise<string> {
@@ -103,6 +108,7 @@ export class SignUpFlowPage extends DefaultPage {
 
     try {
       await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
+      await socialSecurityNumberPage.waitForLoadState('networkidle');
       const consentButton =
         socialSecurityNumberPage.getByLabel('Jag samtycker');
       if (await consentButton.isVisible()) {
@@ -110,7 +116,7 @@ export class SignUpFlowPage extends DefaultPage {
       }
       const socialSecurityNumber = await socialSecurityNumberPage
         .locator(
-          'body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)'
+          "div[class='text-xl font-mono bg-gray-50 px-4 py-2 rounded border border-gray-200']"
         )
         .textContent();
       await socialSecurityNumberPage.close();
@@ -122,10 +128,15 @@ export class SignUpFlowPage extends DefaultPage {
     }
   }
 
-  private async isProfilePageFound(): Promise<boolean> {
-    console.log(`Checking if profile page is found...`);
-    const isProfileFound = await this.mainContentLocator.textContent();
-    return isProfileFound && isProfileFound.includes('Inställningar');
+  private async invalidSSN(): Promise<boolean> {
+    await this.page.waitForLoadState('networkidle');
+    const ssnInvalid = await this.ssnErrorMessage.isVisible();
+    return ssnInvalid;
+  }
+
+  private async clickSSNErrorOkButton() {
+    await this.ssnErrorMessageOkButton.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   async finishSignUpWithRetries(maxRetries: number = 5): Promise<void> {
@@ -134,20 +145,8 @@ export class SignUpFlowPage extends DefaultPage {
 
     while (!success && retries < maxRetries) {
       try {
-        console.log(`Checking if profile page is found...`);
-        // Check if the profile page is found
-        if (await this.isProfilePageFound()) {
-          console.log('Profile page found. Sign-up successful.');
-          success = true;
-          break;
-        }
-        // Attempt to finish the sign-up process
         await this.clickFinishSignUp();
-        await this.page.waitForTimeout(2000); // Temporary wait for the page to load
-
-        // Check if the profile page is found
-        console.log(`Checking if profile page is found...`);
-        if (await this.isProfilePageFound()) {
+        if (!(await this.invalidSSN())) {
           console.log('Profile page found. Sign-up successful.');
           success = true;
           break;
@@ -155,13 +154,8 @@ export class SignUpFlowPage extends DefaultPage {
         console.log(`Retrying with a new SSN (Attempt ${retries + 1})`);
         const socialSecurityNumber = await this.getSocialSecurityNumber();
         console.log(`Using SSN: ${socialSecurityNumber}`);
-        console.log(`Checking if profile page is found...`);
-        // Check again after getting a new SSN
-        if (await this.isProfilePageFound()) {
-          console.log('Profile page found. Sign-up successful.');
-          success = true;
-          break;
-        }
+
+        await this.clickSSNErrorOkButton();
         await this.fillSSN(socialSecurityNumber);
       } catch (error) {
         console.log(`Error during retry ${retries + 1}:`, error);
