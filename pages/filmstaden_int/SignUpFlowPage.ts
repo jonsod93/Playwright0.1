@@ -19,7 +19,7 @@ export class SignUpFlowPage extends DefaultPage {
   private ssnErrorMessage: any;
   private ssnErrorMessageOkButton: any;
 
-  constructor(page) {
+  constructor(page: any) {
     super(page);
     this.emailField = this.page.getByPlaceholder('E‑postadress');
     this.passwordField = this.page.getByPlaceholder('Nytt lösenord');
