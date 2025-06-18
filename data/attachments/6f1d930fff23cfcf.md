@@ -1,0 +1,337 @@
+# Test info
+
+- Name: Tests for the Showpage >> Saloninfo verification
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:26:3
+
+# Error details
+
+```
+Error: expect.toContainText: Error: strict mode violation: getByRole('dialog') resolved to 8 elements:
+    1) <dialog open="" class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark">…</dialog> aka getByRole('dialog').filter({ hasText: 'SalongsinformationSalongen' })
+    2) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('dialog:nth-child(6)').first()
+    3) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('dialog:nth-child(7)').first()
+    4) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('dialog:nth-child(8)').first()
+    5) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('.bg > div > div > .\\!block')
+    6) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('div:nth-child(6) > .\\!block')
+    7) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('.mb-64 > dialog').first()
+    8) <dialog class="!block appearance-none transition-all duration-[0.25] backdrop:bg-weakest backdrop:opacity-70 dark"></dialog> aka locator('.mb-64 > dialog:nth-child(8)')
+
+Call log:
+  - expect.toContainText with timeout 10000ms
+  - waiting for getByRole('dialog')
+
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:45:44
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:38:5
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - link "Svenska bio logotyp":
+    - /url: /stockholm/
+    - img "Svenska bio logotyp"
+  - text: Familj, Klassiker
+  - heading "Lånaren Arrietty - Klassiker" [level=1]
+  - text: Jap tal, Sve text I dag 18 jun, kl 12:00 Victoria Stockholm, Salong 2
+  - heading "Välj antal biljetter" [level=2]
+  - paragraph: Ordinarie
+  - button "-": 
+  - spinbutton "Ordinarie" [disabled]: "2"
+  - button "+": 
+  - paragraph: Pensionär
+  - paragraph: Pensionärserbjudande - 55% rabatt
+  - button "-" [disabled]: 
+  - spinbutton "Pensionär" [disabled]: "0"
+  - button "+": 
+  - heading "Välj platser" [level=2]
+  - text: "Vi har förvalt de bästa platserna. Byt plats genom att dra markören. Valda platser: Rad 3 Plats 28-29"
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - img
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - 'checkbox "Valda platser: Rad 3 Plats 28-29"'
+  - checkbox "Välj skilda platser"
+  - text: Välj skilda platser
+  - img
+  - text: Ditt val Ordinarie
+  - img
+  - text: Upptagen
+  - img
+  - text: Rullstol
+  - button "Salongsinformation"
+  - dialog:
+    - heading "Salongsinformation" [level=3]
+    - button ""
+    - paragraph: Salongen har 135 platser på 11 rader. Stolarna på rad 1, 8 och 9 är Plusstolar. Dessa rader har extra benutrymme.
+    - paragraph: Salongen är anpassad för rullstol och har hörslinga. För reservation av rullstolsplatser, ring 08-56 26 00 00. Salongen tar inte permobil.
+    - button "Stäng"
+  - dialog
+  - dialog
+  - dialog
+  - heading "Använd rabattkod" [level=2]
+  - text: Rabatt- och biljettkoder, biokort samt biopasset.
+  - button "Lös in in rabattkod"
+  - dialog
+  - heading "Biljettleverans" [level=2]
+  - paragraph: För biljetter och bokningsbekräftelse.
+  - text: Ange en e-postadress
+  - textbox "Ange en e-postadress"
+  - heading "Betalning" [level=2]
+  - paragraph: All data krypteras
+  - separator
+  - heading "Använd presentkort" [level=3]
+  - text: Har du ett presentkort? Använd den för ditt köp.
+  - button "Lös in ditt presentkortsnummer"
+  - separator
+  - dialog
+  - heading "Välj betalsätt" [level=3]
+  - list:
+    - listitem:
+      - radio "Kort" [checked]
+      - text: Kort
+    - listitem:
+      - radio "Swish"
+      - text: Swish
+  - separator
+  - button "Fortsätt till kortbetalning"
+  - paragraph:
+    - text: Genom att fortsätta godkänner du
+    - link "Svenska Bios köpvillkor":
+      - /url: /svenska-bio/kundservice/fragor-och-svar/svenska-bio/villkor-och-policies/svenska-bio/villkor-och-policies/kopvillkor/
+    - text: .
+  - paragraph:
+    - text: Läs om hur vi värnar om din integritet i
+    - link "Svenska Bios personuppgiftspolicy":
+      - /url: /svenska-bio/kundservice/fragor-och-svar/svenska-bio/villkor-och-policies/svenska-bio/villkor-och-policies/personuppgiftspolicy/
+    - text: .
+  - dialog
+  - dialog
+  - text: "Summa: 200.00 kr Ordinarie 2 st 200.00 kr"
+- text: Navigated to Lånaren Arrietty - Klassiker | Se filmen på bio
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import { LandingPage } from '../../pages/filmstaden_int/Landingpage';
+   3 | import { StartPage } from '../../pages/filmstaden_int/StartPage';
+   4 | import { MoviePage } from '../../pages/filmstaden_int/MoviePage';
+   5 | import { ShowPage } from '../../pages/filmstaden_int/ShowPage';
+   6 | import { EnvironmentData } from '../../testData/environmentData';
+   7 | import * as allure from 'allure-js-commons';
+   8 |
+   9 | test.describe.parallel('Tests for the Showpage', () => {
+  10 |   let landingPage;
+  11 |   let startPage;
+  12 |   let moviePage;
+  13 |   let showPage;
+  14 |
+  15 |   test.beforeEach(async ({ page }) => {
+  16 |     landingPage = new LandingPage(page);
+  17 |     startPage = new StartPage(page);
+  18 |     moviePage = new MoviePage(page);
+  19 |     showPage = new ShowPage(page);
+  20 |
+  21 |     await page.goto('/');
+  22 |     await landingPage.acceptCookies();
+  23 |     await landingPage.selectStockholm();
+  24 |   });
+  25 |
+  26 |   test('Saloninfo verification', async ({ page }) => {
+  27 |     await test.step('Initial setup of test specific variables and tags', async () => {
+  28 |       await allure.epic('Showpage');
+  29 |       await allure.feature('Information about the salon');
+  30 |     });
+  31 |
+  32 |     await test.step('Navigate to a movie with shows', async () => {
+  33 |       await expect(startPage.loginButton).toBeVisible();
+  34 |       await startPage.selectRandomMovie();
+  35 |       await moviePage.selectFirstAvailableShowtime(startPage.selectRandomMovie.bind(startPage));
+  36 |     });
+  37 |
+  38 |     await test.step('Control the salon information', async () => {
+  39 |       //Not all shows have salon information, so we need to check if the button is present before clicking it
+  40 |       await showPage.findShowWithSalonInformation(
+  41 |         moviePage.selectFirstAvailableShowtime.bind(moviePage),
+  42 |         startPage.selectRandomMovie.bind(startPage)
+  43 |       );
+  44 |       await showPage.clickSalonInformationButton();
+> 45 |       await expect(showPage.dialogLocator).toContainText('Salongsinformation');
+     |                                            ^ Error: expect.toContainText: Error: strict mode violation: getByRole('dialog') resolved to 8 elements:
+  46 |       await showPage.closeSalonInformationButton();
+  47 |     });
+  48 |   });
+  49 | });
+  50 |
+```
