@@ -1,6 +1,7 @@
+import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
 import { DefaultPage } from './DefaultPage';
 
-export class LandingPage extends DefaultPage {
+export class LandingPage extends DefaultPageWithNavigation {
   private cookieButton: any;
   private stockholmLink: any;
   public mainContentLocator: any;
@@ -43,6 +44,12 @@ export class LandingPage extends DefaultPage {
       }
       stockholmLinkCount = await this.stockholmLink.count();
     }
+    //The following 5 rows are just a work around for a bug, they can be removed once the initial city selection on the landing page works for Stockholm
+    await this.clickCityPicker();
+    await this.selectCityFromResults('Malmö');
+    await this.page.waitForLoadState('networkidle');
+    await this.page.getByRole('button', { name: 'Malmö' }).click();
+    await this.selectCityFromResults('Stockholm');
   }
 
   async searchTown(townName: string) {

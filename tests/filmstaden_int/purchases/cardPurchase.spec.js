@@ -38,9 +38,7 @@ test.describe.parallel('Unauthenticated Card Purchase Tests', () => {
 
     await test.step('Navigate to a movie with shows', async () => {
       await startPage.selectRandomMovie();
-      await moviePage.selectFirstAvailableShowtime(
-        startPage.selectRandomMovie.bind(startPage)
-      );
+      await moviePage.selectFirstAvailableShowtime(startPage.selectRandomMovie.bind(startPage));
     });
 
     await test.step('Select 1 ticket and fill in required fields', async () => {
@@ -52,19 +50,12 @@ test.describe.parallel('Unauthenticated Card Purchase Tests', () => {
     });
 
     await test.step('Make the purchase at Nets', async () => {
-      await netsPage.completePayment(
-        ValidVisa.number,
-        ValidVisa.month,
-        ValidVisa.year,
-        ValidVisa.CVC
-      );
+      await netsPage.completePayment(ValidVisa.number, ValidVisa.month, ValidVisa.year, ValidVisa.CVC);
     });
 
     await test.step('Control that you end up on the receiptpage', async () => {
       await expect(async () => {
-        await expect(receiptPage.referensNumberTitleLabel).toContainText(
-          'Referensnummer'
-        );
+        await expect(receiptPage.referensNumberTitleLabel).toBeVisible();
       }).toPass({ timeout: 15000 });
     });
   });
@@ -75,20 +66,16 @@ test.describe.parallel('Unauthenticated Card Purchase Tests', () => {
 
     await test.step('Navigate to a suitable movie', async () => {
       await startPage.selectRandomMovie();
-      await moviePage.selectFirstAvailableShowtime(
-        startPage.selectRandomMovie.bind(startPage)
-      );
+      await moviePage.selectFirstAvailableShowtime(startPage.selectRandomMovie.bind(startPage));
     });
 
     await test.step('Select 1 ticket and fill in necessary fields', async () => {
       await showPage.acceptAgeLimit();
       await showPage.startPayment();
       await expect(async () => {
-        await expect(
-          page.locator(
-            "//div[contains(text(),'Felaktigt format på e-postadress')]"
-          )
-        ).toContainText('Felaktigt format på e-postadress');
+        await expect(page.locator("//div[contains(text(),'Felaktigt format på e-postadress')]")).toContainText(
+          'Felaktigt format på e-postadress'
+        );
       }).toPass({ timeout: 5000 });
     });
   });

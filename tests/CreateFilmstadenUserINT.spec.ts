@@ -4,12 +4,12 @@ import { MailiskClient } from 'mailisk';
 const Environment = 'https://sv-sit-marvel.filmstaden.se/'; // Set the environment to the SIT environment
 
 test.describe('Create Account', () => {
-  test.skip('Sign up, verify email, login, cancel membership', async ({ page, context }, testInfo) => {
+  test.skip('Sign up, verify email, login', async ({ page, context }, testInfo) => {
     // Block the ad script
     await context.route('https://s1.adform.net/banners/scripts/adx.js', (route) => route.abort());
 
     test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
-    const namespace = 'mk4soayafs1u';
+    const namespace = 'y1ccwj8npeop';
     const numberOfGroups = 2; // Amount of number groups in the namespace
     const mailisk = new MailiskClient({
       apiKey: 'umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY',
@@ -31,7 +31,7 @@ test.describe('Create Account', () => {
     await socialSecurityNumberPage.goto('https://www.personnummer.nu/');
     await socialSecurityNumberPage.getByLabel('Jag samtycker').click();
     let socialSecurityNumber = await socialSecurityNumberPage
-      .locator('body > div:nth-child(1) > main:nth-child(3) > div:nth-child(4) > p:nth-child(4)')
+      .locator("div[class='text-xl font-mono bg-gray-50 px-4 py-2 rounded border border-gray-200']")
       .textContent();
 
     // Close the social security number page

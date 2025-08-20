@@ -11,7 +11,7 @@ export class EmailHelper {
     this.mailisk = new MailiskClient({ apiKey });
     this.loginIndex = 2; // Amount of number groups in the namespace
     this.signUpIndex = this.loginIndex + 1;
-    this.namespace = 'mk4soayafs1u';
+    this.namespace = 'y1ccwj8npeop';
   }
 
   // Method to get the namespace

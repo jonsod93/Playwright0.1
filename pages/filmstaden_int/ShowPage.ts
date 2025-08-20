@@ -25,12 +25,8 @@ export class ShowPage extends DefaultPageWithNavigation {
     super(page);
     this.ticketStepper = this.page.locator('#stepper-inputfield_Ordinarie');
     this.emailField = this.page.getByPlaceholder('Fyll i din e-postadress');
-    this.ageLimitCheckbox = this.page
-      .locator('label')
-      .filter({ hasText: 'Jag är medveten om att filmen' });
-    this.secondAgeLimitCheckbox = this.page
-      .locator('label')
-      .filter({ hasText: 'Jag intygar att alla i sä' });
+    this.ageLimitCheckbox = this.page.locator('label').filter({ hasText: 'Jag är medveten om att filmen' });
+    this.secondAgeLimitCheckbox = this.page.locator('label').filter({ hasText: 'Jag intygar att alla i sä' });
     this.paymentButton = this.page.getByRole('button', {
       name: 'Fortsätt till kortbetalning',
     });
@@ -57,16 +53,16 @@ export class ShowPage extends DefaultPageWithNavigation {
     this.discountPopupButton = this.page.getByRole('button', {
       name: 'Lös in in rabattkod',
     });
-    this.amountOfTicketsLabel = this.page.locator(
-      "//div[@class='shrink-0 text-right font-bold']"
-    );
+    this.amountOfTicketsLabel = this.page.locator("//div[@class='shrink-0 text-right font-bold']");
     this.mainContentLocator = this.page.getByRole('main');
     this.discountCodeInfo = this.page.getByLabel('Probem med rabattkoden');
     this.formLocator = this.page.locator('form');
     this.salonInformationButton = this.page.getByRole('button', {
       name: 'Salongsinformation',
     });
-    this.dialogLocator = this.page.getByRole('dialog');
+    this.dialogLocator = this.page.locator(
+      "(//div[contains(@class,'relative flex flex-col gap-24 rounded-2xl p-24 md:p-[2.5rem]')])[1]"
+    );
     this.closeDialogButton = this.page.getByRole('button', { name: 'Stäng' });
   }
 
@@ -124,9 +120,7 @@ export class ShowPage extends DefaultPageWithNavigation {
   }
 
   async findShowWithSalonInformation(
-    selectFirstAvailableShowtime: (
-      selectRandomMovie: () => Promise<void>
-    ) => Promise<void>,
+    selectFirstAvailableShowtime: (selectRandomMovie: () => Promise<void>) => Promise<void>,
     selectRandomMovie: () => Promise<void>
   ) {
     let salonInfoButtonCount = await this.salonInformationButton.count();
