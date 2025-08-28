@@ -1,0 +1,423 @@
+# Test info
+
+- Name: 2FA tests >> Create and delete account
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/loginAndSignUp/signUpFlow.spec.js:40:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 90000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'Bli medlem' })
+    - waiting for" https://sit-signin.filmstaden.se/ncgcmdb2cint.onmicrosoft.com/B2C_1A_Filmstaden_SignUpOrSignIn/api/SelfAsserted/error?code=UX004&diags=%7B%22pageViewId%22%3A%2220eed2ed-60f2-4a8e-aff0-40e5637bfb0e%22…" navigation to finish...
+    - navigated to "https://sit-signin.filmstaden.se/ncgcmdb2cint.onmicrosoft.com/B2C_1A_Filmstaden_SignUpOrSignIn/api/SelfAsserted/error?code=UX004&diags=%7B%22pageViewId%22%3A%2220eed2ed-60f2-4a8e-aff0-40e5637bfb0e%22…"
+
+    at LoginFlowPage.clickSignUpButton (/home/runner/work/Playwright0.1/Playwright0.1/pages/filmstaden_int/LoginFlowPage.ts:42:29)
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/loginAndSignUp/signUpFlow.spec.js:54:23
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/loginAndSignUp/signUpFlow.spec.js:52:5
+```
+
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "temp logotype":
+    - /url: /stockholm/
+    - img "temp logotype"
+  - link "Upptäck":
+    - /url: /stockholm/
+  - button "Gå på bio "
+  - link "Medlemsskapet":
+    - /url: /medlem/
+  - button "Mer "
+  - link "Logga in menuitem logo Logga in":
+    - /url: https://inte-services.cinema-api.com/redirect/externalSignUpOrIn/se?redirectUrl=https://sv-sit-marvel.filmstaden.se/mina-sidor/
+    - text: Logga in
+    - img "menuitem logo Logga in"
+  - button "Stockholm"
+- main:
+  - heading "Vilken film vill du se?" [level=1]
+  - text: 
+  - textbox "Vilken film vill du se?"
+  - heading "Filmer i Stockholm" [level=2]
+  - checkbox "Aktuellt" [checked]
+  - text: Aktuellt
+  - checkbox "Barn och familj"
+  - text: Barn och familj
+  - checkbox "Klassiker"
+  - text: Klassiker
+  - checkbox "Genre"
+  - text: Genre
+  - checkbox "På bio nu"
+  - text: På bio nu
+  - button "Alla dagar "
+  - button "Alla biografer "
+  - list:
+    - listitem:
+      - img "Babyteeth"
+      - img "Babyteeth"
+      - link "Babyteeth":
+        - /url: /film/babyteeth/
+      - text: Komedi
+    - listitem:
+      - img "Framåt"
+      - img "Framåt"
+      - link "Framåt":
+        - /url: /film/framat/
+      - text: Äventyr
+    - listitem:
+      - img "Knives Out"
+      - img "Knives Out"
+      - link "Knives Out":
+        - /url: /film/knives-out/
+      - text: Komedi
+    - listitem:
+      - heading "Filmstaden stöder Rosa Bandet" [level=3]:
+        - link "Filmstaden stöder Rosa Bandet":
+          - /url: /nyhet/rosa-bandet-pa-filmstaden/
+      - paragraph: Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. HejsanHoppsan.
+    - listitem:
+      - img "Trubbel"
+      - img "Trubbel"
+      - link "Trubbel":
+        - /url: /film/trubbel/
+      - text: Komedi
+    - listitem:
+      - img "Familjen Bigfoot"
+      - img "Familjen Bigfoot"
+      - link "Familjen Bigfoot":
+        - /url: /film/familjen-bigfoot/
+      - text: Komedi
+    - listitem:
+      - img "Latte Igelkott och den magiska vattenstenen"
+      - img "Latte Igelkott och den magiska vattenstenen"
+      - link "Latte Igelkott och den magiska vattenstenen":
+        - /url: /film/latte-igelkott-och-den-magiska-vattenstenen/
+      - text: Animerat
+  - button "Visa fler filmer"
+  - heading "Topplistan i Stockholm" [level=2]
+  - list:
+    - listitem:
+      - img "Babyteeth"
+      - img "Babyteeth"
+      - img
+      - text: "01"
+      - img
+      - link "Babyteeth":
+        - /url: /film/babyteeth/
+      - text: Komedi
+    - listitem:
+      - img "Guardians of the Galaxy Vol. 3"
+      - img "Guardians of the Galaxy Vol. 3"
+      - img
+      - text: "02"
+      - img
+      - link "Guardians of the Galaxy Vol. 3":
+        - /url: /film/guardians-of-the-galaxy-vol-3/
+      - text: Action
+    - listitem:
+      - img "A Clockwork Orange - Klassiker"
+      - img "A Clockwork Orange - Klassiker"
+      - img
+      - text: "03"
+      - img
+      - link "A Clockwork Orange - Klassiker":
+        - /url: /film/a-clockwork-orange-klassiker/
+      - text: Drama
+    - listitem:
+      - img "Mästerdetektiven Sherlock Gnomes"
+      - img "Mästerdetektiven Sherlock Gnomes"
+      - img
+      - text: "04"
+      - img
+      - link "Mästerdetektiven Sherlock Gnomes":
+        - /url: /film/masterdetektiven-sherlock-gnomes/
+      - text: Animerat
+    - listitem:
+      - img "Antebellum"
+      - img "Antebellum"
+      - img
+      - text: "05"
+      - img
+      - link "Antebellum":
+        - /url: /film/antebellum/
+      - text: Skräck
+    - listitem:
+      - img "Spring Uje spring"
+      - img "Spring Uje spring"
+      - img
+      - text: "06"
+      - img
+      - link "Spring Uje spring":
+        - /url: /film/spring-uje-spring/
+      - text: Drama
+    - listitem:
+      - img "Summerland"
+      - img "Summerland"
+      - img
+      - text: "07"
+      - img
+      - link "Summerland":
+        - /url: /film/summerland/
+      - text: Drama
+    - listitem:
+      - img "Toy Story 4"
+      - img "Toy Story 4"
+      - img
+      - text: "08"
+      - img
+      - link "Toy Story 4":
+        - /url: /film/toy-story-4/
+      - text: Animerat
+    - listitem:
+      - img "Katternas rike - Klassiker"
+      - img "Katternas rike - Klassiker"
+      - img
+      - text: "09"
+      - img
+      - link "Katternas rike - Klassiker":
+        - /url: /film/katternas-rike-klassiker/
+      - text: Animerat
+    - listitem:
+      - img "Kapten Sabeltand och den magiska diamanten"
+      - img "Kapten Sabeltand och den magiska diamanten"
+      - img
+      - text: "10"
+      - img
+      - link "Kapten Sabeltand och den magiska diamanten":
+        - /url: /film/kapten-sabeltand-och-den-magiska-diamanten/
+      - text: Animerat
+  - button "Visa fler filmer"
+  - heading "Välj dag du vill gå på bio" [level=2]
+  - radio "Idag 28 aug" [checked]
+  - text: Idag 28 aug
+  - radio "fredag 29 aug"
+  - text: fredag 29 aug
+  - radio "lördag 30 aug"
+  - text: lördag 30 aug
+  - radio "söndag 31 aug"
+  - text: söndag 31 aug
+  - radio "måndag 1 sep"
+  - text: måndag 1 sep
+  - checkbox "Grand Lidingö"
+  - text: Grand Lidingö
+  - checkbox "Grand Stockholm"
+  - text: Grand Stockholm
+  - checkbox "Heron City"
+  - text: Heron City
+  - checkbox "Kista"
+  - text: Kista
+  - checkbox "Rigoletto"
+  - text: Rigoletto
+  - checkbox "Sergel"
+  - text: Sergel
+  - checkbox "Sickla"
+  - text: Sickla
+  - checkbox "Skandia"
+  - text: Skandia
+  - checkbox "Sture"
+  - text: Sture
+  - checkbox "Söder"
+  - text: Söder
+  - checkbox "Täby"
+  - text: Täby
+  - checkbox "Victoria"
+  - text: Victoria
+  - checkbox "Vällingby"
+  - text: Vällingby
+  - checkbox "Alla" [checked]
+  - text: Alla
+  - link "På bio nu":
+    - /url: /pa-bio-nu/?date=2025-08-28
+  - heading "Utvalt" [level=2]
+  - paragraph: Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. HejsanHoppsan.
+  - heading "Filmstaden stöder Rosa Bandet" [level=3]:
+    - link "Filmstaden stöder Rosa Bandet":
+      - /url: /nyhet/rosa-bandet-pa-filmstaden/
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - paragraph: Behöver du hjälp? Klicka här!
+  - heading "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar" [level=3]:
+    - link "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar":
+      - /url: /kundservice/fragor-och-svar/kontakta-oss/
+  - heading "Kommande filmer" [level=2]
+  - list:
+    - listitem:
+      - img "Saw XI"
+      - img "Saw XI"
+      - link "Saw XI":
+        - /url: /film/saw-xi/
+      - text: Skräck Premiär 26 september
+    - listitem:
+      - img "Gaucho Gaucho"
+      - img "Gaucho Gaucho"
+      - link "Gaucho Gaucho":
+        - /url: /film/gaucho-gaucho/
+      - text: Dokumentär Premiär 26 september
+  - heading "Mer för bioälskare" [level=2]
+  - list:
+    - listitem:
+      - link "Erbjudanden ":
+        - /url: /erbjudanden/
+      - link "Bioupplevelsen ":
+        - /url: /bioupplevelsen/
+      - link "Genres ":
+        - /url: /genre/
+      - link "Se det aktuella Klassiker-programmet ":
+        - /url: /klassiker-pa-bio/
+      - link "Filmarkivet ":
+        - /url: /filmarkivet/
+  - heading "Nyheter" [level=2]
+  - list:
+    - listitem:
+      - heading "Medlemsvisning den 7 april – Se The Amateur före alla andra" [level=3]:
+        - link "Medlemsvisning den 7 april – Se The Amateur före alla andra":
+          - /url: /nyhet/medlemsvisning-den-7-april-se-the-amateur-fore-alla-andra/
+      - paragraph: 24 mars 2025
+    - listitem:
+      - heading "Köp biljett och få ett Jetpack-tillägg i Minecraft!" [level=3]:
+        - link "Köp biljett och få ett Jetpack-tillägg i Minecraft!":
+          - /url: /nyhet/kop-biljett-och-fa-ett-jetpack-tillagg-i-minecraft/
+      - paragraph: 21 mars 2025
+    - listitem:
+      - 'heading "Biosvepet: Modiga monsteragenter, svenska superhjältar och vårens galnaste actionkomedi" [level=3]':
+        - 'link "Biosvepet: Modiga monsteragenter, svenska superhjältar och vårens galnaste actionkomedi"':
+          - /url: /nyhet/biosvepet-modiga-monsteragenter-svenska-superhjaltar-och-varens-galnaste-actionk/
+      - paragraph: 20 mars 2025
+- contentinfo:
+  - heading "Om oss" [level=2]
+  - list:
+    - listitem:
+      - link "Jobba hos oss ":
+        - /url: https://jobb.filmstaden.se/
+    - listitem:
+      - link "Press ":
+        - /url: https://www.mynewsdesk.com/se/filmstaden-ab/
+    - listitem:
+      - link "Om Filmstaden":
+        - /url: /kundservice/fragor-och-svar/fragor-och-svar/om-filmstaden/
+    - listitem:
+      - link "Filmpanelen":
+        - /url: /filmpanelen/
+    - listitem:
+      - link "Alla våra biostäder":
+        - /url: /alla-biostader/
+    - listitem:
+      - link "Alla våra biografer":
+        - /url: /biografer/
+  - heading "För företag" [level=2]
+  - list:
+    - listitem:
+      - link "Företagsbiljetter":
+        - /url: /foretagsbiljetter/
+    - listitem:
+      - link "Möten & Event ":
+        - /url: https://moten.filmstaden.se/
+    - listitem:
+      - link "Bioreklam ":
+        - /url: https://media.filmstaden.se/
+    - listitem:
+      - link "Föreningsbiljetten":
+        - /url: /foreningsbiljetten/
+  - heading "Hjälp & kontakt" [level=2]
+  - list:
+    - listitem:
+      - link "Kundservice":
+        - /url: /kundservice/fragor-och-svar/
+    - listitem:
+      - link "Tillgänglig bio":
+        - /url: /tillganglig-bio/
+    - listitem:
+      - link "Personuppgiftspolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/personuppgiftspolicy/
+    - listitem:
+      - link "Cookiepolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/cookiepolicy/
+    - listitem:
+      - link "Kontakta oss":
+        - /url: /kundservice/kontakta-oss/
+  - heading "Sociala medier" [level=2]
+  - list:
+    - listitem:
+      - link "Instagram ":
+        - /url: https://www.instagram.com/filmstaden_ab/
+    - listitem:
+      - link "Facebook ":
+        - /url: https://www.facebook.com/filmstadenab
+    - listitem:
+      - link "LinkedIn ":
+        - /url: https://se.linkedin.com/company/filmstaden
+  - separator
+  - img "Filmstaden logotype"
+  - paragraph: Filmstaden ©2021. En del av Odeon Cinemas Group
+- text: Navigated to Vilken film vill du se?
+- button "Open chat":
+  - img
+```
+
+# Test source
+
+```ts
+   1 | import { DefaultPage } from './DefaultPage';
+   2 |
+   3 | export class LoginFlowPage extends DefaultPage {
+   4 |   private emailField: any;
+   5 |   private passwordField: any;
+   6 |   private loginButton: any;
+   7 |   private signUpButton: any;
+   8 |   private sendCodeButton: any;
+   9 |   private verificationCodeField: any;
+  10 |   private verifyButton: any;
+  11 |   private continueButton: any;
+  12 |
+  13 |   constructor(page: any) {
+  14 |     super(page);
+  15 |     this.emailField = this.page.getByPlaceholder('E‑postadress');
+  16 |     this.passwordField = this.page.getByPlaceholder('Lösenord');
+  17 |     this.loginButton = this.page.getByRole('button', { name: 'Logga in' });
+  18 |     this.signUpButton = this.page.getByRole('link', { name: 'Bli medlem' });
+  19 |     this.sendCodeButton = this.page.getByRole('button', {
+  20 |       name: 'Skicka verifieringskod',
+  21 |     });
+  22 |     this.verificationCodeField = this.page.getByPlaceholder('Verifieringskod');
+  23 |     this.verifyButton = this.page.getByRole('button', {
+  24 |       name: 'Verifiera koden',
+  25 |     });
+  26 |     this.continueButton = this.page.getByRole('button', { name: 'Fortsätt' });
+  27 |   }
+  28 |
+  29 |   async fillEmail(email: string) {
+  30 |     await this.emailField.fill(email);
+  31 |   }
+  32 |
+  33 |   async fillPassword(password: string) {
+  34 |     await this.passwordField.fill(password);
+  35 |   }
+  36 |
+  37 |   async clickLogin() {
+  38 |     await this.loginButton.click();
+  39 |   }
+  40 |
+  41 |   async clickSignUpButton() {
+> 42 |     await this.signUpButton.click();
+     |                             ^ Error: locator.click: Test timeout of 90000ms exceeded.
+  43 |   }
+  44 |
+  45 |   async clickSendCode() {
+  46 |     await this.sendCodeButton.click();
+  47 |   }
+  48 |
+  49 |   async fillVerificationCode(code: string) {
+  50 |     await this.verificationCodeField.fill(code);
+  51 |   }
+  52 |
+  53 |   async clickVerify() {
+  54 |     await this.verifyButton.click();
+  55 |   }
+  56 |
+  57 |   async clickContinue() {
+  58 |     await this.continueButton.click();
+  59 |   }
+  60 | }
+  61 |
+```
