@@ -41,7 +41,7 @@ export class StartPage extends DefaultPageWithNavigation {
   }
 
   async selectRandomMovie() {
-    let randomMovie = Math.floor(Math.random() * 7);
+    let randomMovie = Math.floor(Math.random() * 6);
     await this.moviePosters.nth(randomMovie).click();
     await this.page.waitForLoadState('networkidle');
     return randomMovie;
