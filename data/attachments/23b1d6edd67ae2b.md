@@ -1,0 +1,408 @@
+# Test info
+
+- Name: Tests for the Showpage >> Saloninfo verification
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:26:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for locator('div[class=\'group/poster\']').nth(3)
+    - locator resolved to <div class="group/poster">…</div>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="relative w-full">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="relative w-full">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="mx-auto flex min-w-[343px] justify-end">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+  20 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="relative w-full">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="relative w-full">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="mx-auto flex min-w-[343px] justify-end">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="mx-auto flex min-w-[343px] justify-end">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div class="relative w-full">…</div> from <nav class="mx-auto flex h-[5rem] w-full max-w-lg flex-col gap-y-24 px-12 pt-16 lg:sticky lg:top-0 lg:z-[40] lg:gap-y-24 lg:px-24 lg:pt-24">…</nav> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+
+    at StartPage.selectRandomMovie (/home/runner/work/Playwright0.1/Playwright0.1/pages/filmstaden_int/StartPage.ts:45:46)
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:34:23
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:32:5
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: ❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.
+- link "❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.":
+  - /url: /foretagsbiljetter/
+- navigation:
+  - link "temp logotype":
+    - /url: /malmo/
+    - img "temp logotype"
+  - link "Upptäck":
+    - /url: /malmo/
+  - button "Gå på bio "
+  - link "Medlemsskapet":
+    - /url: /medlem/
+  - button "Mer "
+  - link "Logga in menuitem logo Logga in":
+    - /url: https://inte-services.cinema-api.com/redirect/externalSignUpOrIn/se?redirectUrl=https://sv-sit-marvel.filmstaden.se/mina-sidor/
+    - text: Logga in
+    - img "menuitem logo Logga in"
+  - button "Malmö"
+  - dialog:
+    - alertdialog "Din biostad":
+      - heading "Din biostad" [level=4]
+      - button "Byt stad"
+      - button "Det ser rätt ut!"
+- main:
+  - heading "Vilken film vill du se?" [level=1]
+  - text: 
+  - textbox "Vilken film vill du se?"
+  - heading "Filmer i Malmö" [level=2]
+  - checkbox "Aktuellt" [checked]
+  - text: Aktuellt
+  - checkbox "Barn och familj"
+  - text: Barn och familj
+  - checkbox "Klassiker"
+  - text: Klassiker
+  - checkbox "Genre"
+  - text: Genre
+  - checkbox "På bio nu"
+  - text: På bio nu
+  - checkbox "Biopasset"
+  - text: Biopasset
+  - button "Alla dagar "
+  - button "Alla biografer "
+  - list:
+    - listitem:
+      - img "Saiyaara"
+      - img "Saiyaara"
+      - link "Saiyaara":
+        - /url: /film/saiyaara/
+      - text: Romantik
+    - listitem:
+      - img "Munken och geväret"
+      - img "Munken och geväret"
+      - link "Munken och geväret":
+        - /url: /film/munken-och-gevaret/
+      - text: Drama
+    - listitem:
+      - img "Weapons"
+      - img "Weapons"
+      - link "Weapons":
+        - /url: /film/weapons/
+      - text: Skräck
+    - listitem:
+      - img "Tuffa gänget 2"
+      - img "Tuffa gänget 2"
+      - link "Tuffa gänget 2":
+        - /url: /film/tuffa-ganget-2/
+      - text: Animerat
+    - listitem:
+      - img "Greta träffar bebisen"
+      - img "Greta träffar bebisen"
+      - link "Greta träffar bebisen":
+        - /url: /film/greta-traffar-bebisen/
+      - text: Animerat
+    - listitem:
+      - 'img "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"'
+      - 'img "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"'
+      - 'link "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"':
+        - /url: /film/bts-live-the-most-beautiful-moment-in-life-on-stage-epoligue-remastered/
+      - text: Konsert Premiär idag
+    - listitem:
+      - img "Freakier Friday"
+      - img "Freakier Friday"
+      - link "Freakier Friday":
+        - /url: /film/freakier-friday/
+      - text: Komedi
+    - listitem:
+      - link "Superman":
+        - /url: /film/superman/
+      - text: Action
+    - listitem:
+      - link "I Know What You Did Last Summer":
+        - /url: /film/i-know-what-you-did-last-summer/
+      - text: Skräck
+    - listitem:
+      - img "Smurfar"
+      - img "Smurfar"
+      - link "Smurfar":
+        - /url: /film/smurfar/
+      - text: Animerat
+  - button "Visa fler filmer"
+  - heading "Topplistan i Malmö" [level=2]
+  - text: Inga filmer matchar detta filter
+  - heading "Välj dag du vill gå på bio" [level=2]
+  - radio "Idag 24 sep" [checked]
+  - text: Idag 24 sep
+  - radio "torsdag 25 sep"
+  - text: torsdag 25 sep
+  - radio "fredag 26 sep"
+  - text: fredag 26 sep
+  - radio "lördag 27 sep"
+  - text: lördag 27 sep
+  - radio "söndag 28 sep"
+  - text: söndag 28 sep
+  - radio "måndag 29 sep"
+  - text: måndag 29 sep
+  - checkbox "Filmstaden Entré"
+  - text: Filmstaden Entré
+  - checkbox "Filmstaden Storgatan"
+  - text: Filmstaden Storgatan
+  - checkbox "Royal Malmö"
+  - text: Royal Malmö
+  - checkbox "Alla" [checked]
+  - text: Alla
+  - link "På bio nu":
+    - /url: /pa-bio-nu/?date=2025-09-24
+  - heading "Utvalt" [level=2]
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - paragraph: Behöver du hjälp? Klicka här!
+  - heading "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar" [level=3]:
+    - link "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar":
+      - /url: /kundservice/fragor-och-svar/kontakta-oss/
+  - dialog
+  - button " Spela"
+  - button "50% med Biopasset" [disabled]
+  - paragraph: Julianne Moore och Natalie Portman spelar Gracie och Elizabeth i denna omtalade, skarpsinniga dramakomedi av Todd Haynes, regissören bakom filmer som "Carol" och "Far From Heaven".
+  - heading "May December" [level=3]:
+    - link "May December":
+      - /url: /film/may-december/
+  - heading "Kommande filmer" [level=2]
+  - list:
+    - listitem:
+      - img "Saw XI"
+      - img "Saw XI"
+      - link "Saw XI":
+        - /url: /film/saw-xi/
+      - text: Skräck Premiär 26 september
+    - listitem:
+      - 'img "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"'
+      - 'img "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"'
+      - 'link "BTS Live The Most Beautiful Moment in Life On Stage: Epoligue Remastered"':
+        - /url: /film/bts-live-the-most-beautiful-moment-in-life-on-stage-epoligue-remastered/
+      - text: Konsert Premiär idag
+    - listitem:
+      - img "BTS 2017 Live Trilogy EPISODE III THE WINGS TOUR THE FINAL Remastered"
+      - img "BTS 2017 Live Trilogy EPISODE III THE WINGS TOUR THE FINAL Remastered"
+      - link "BTS 2017 Live Trilogy EPISODE III THE WINGS TOUR THE FINAL Remastered":
+        - /url: /film/bts-2017-live-trilogy-episode-iii-the-wings-tour-the-final-remastered/
+      - text: Konsert Premiär 25 september
+    - listitem:
+      - img "Gaucho Gaucho"
+      - img "Gaucho Gaucho"
+      - link "Gaucho Gaucho":
+        - /url: /film/gaucho-gaucho/
+      - text: Dokumentär Premiär 26 september
+    - listitem:
+      - 'link "Kygo: Back at the Bowl"':
+        - /url: /film/kygo-back-at-the-bowl/
+      - text: Konsert Premiär 26 september
+  - button "Visa fler filmer"
+  - heading "Mer för bioälskare" [level=2]
+  - list:
+    - listitem:
+      - link "Erbjudanden ":
+        - /url: /erbjudanden/
+      - link "Bioupplevelsen ":
+        - /url: /bioupplevelsen/
+      - link "Genres ":
+        - /url: /genre/
+      - link "Se det aktuella Klassiker-programmet ":
+        - /url: /klassiker-pa-bio/
+      - link "Filmarkivet ":
+        - /url: /filmarkivet/
+  - heading "Nyheter" [level=2]
+  - list:
+    - listitem:
+      - 'heading "Biosvepet: Martina Haag regidebuterar, och Sveriges Oscarsbidrag är utsett" [level=3]':
+        - 'link "Biosvepet: Martina Haag regidebuterar, och Sveriges Oscarsbidrag är utsett"':
+          - /url: /nyhet/biosvepet-martina-haag-regidebuterar-och-sveriges-oscarsbidrag-ar-utsett/
+      - paragraph: 28 augusti 2025
+    - listitem:
+      - heading "Köp presentkort - få 50% på valfri merchandise" [level=3]:
+        - link "Köp presentkort - få 50% på valfri merchandise":
+          - /url: /nyhet/kop-presentkort-fa-50-pa-valfri-merchandise/
+      - paragraph: 15 augusti 2025
+    - listitem:
+      - heading "Medlemsvisning den 11 augusti – Se Materialists före alla andra" [level=3]:
+        - link "Medlemsvisning den 11 augusti – Se Materialists före alla andra":
+          - /url: /nyhet/medlemsvisning-den-11-augusti-se-materialists-fore-alla-andra/
+      - paragraph: 4 augusti 2025
+- contentinfo:
+  - heading "Om oss" [level=2]
+  - list:
+    - listitem:
+      - link "Jobba hos oss ":
+        - /url: https://jobb.filmstaden.se/
+    - listitem:
+      - link "Press ":
+        - /url: https://www.mynewsdesk.com/se/filmstaden-ab/
+    - listitem:
+      - link "Om Filmstaden":
+        - /url: /kundservice/fragor-och-svar/fragor-och-svar/om-filmstaden/
+    - listitem:
+      - link "Filmpanelen":
+        - /url: /filmpanelen/
+    - listitem:
+      - link "Alla våra biostäder":
+        - /url: /alla-biostader/
+    - listitem:
+      - link "Alla våra biografer":
+        - /url: /biografer/
+  - heading "För företag" [level=2]
+  - list:
+    - listitem:
+      - link "Företagsbiljetter":
+        - /url: /foretagsbiljetter/
+    - listitem:
+      - link "Möten & Event ":
+        - /url: https://moten.filmstaden.se/
+    - listitem:
+      - link "Bioreklam ":
+        - /url: https://media.filmstaden.se/
+    - listitem:
+      - link "Föreningsbiljetten":
+        - /url: /foreningsbiljetten/
+  - heading "Hjälp & kontakt" [level=2]
+  - list:
+    - listitem:
+      - link "Kundservice":
+        - /url: /kundservice/fragor-och-svar/
+    - listitem:
+      - link "Tillgänglig bio":
+        - /url: /tillganglig-bio/
+    - listitem:
+      - link "Personuppgiftspolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/personuppgiftspolicy/
+    - listitem:
+      - link "Cookiepolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/cookiepolicy/
+    - listitem:
+      - link "Kontakta oss":
+        - /url: /kundservice/kontakta-oss/
+    - listitem:
+      - link "Cookieinställningar":
+        - /url: "#"
+  - heading "Sociala medier" [level=2]
+  - list:
+    - listitem:
+      - link "Instagram ":
+        - /url: https://www.instagram.com/filmstaden_ab/
+    - listitem:
+      - link "Facebook ":
+        - /url: https://www.facebook.com/filmstadenab
+    - listitem:
+      - link "LinkedIn ":
+        - /url: https://se.linkedin.com/company/filmstaden
+  - separator
+  - img "Filmstaden logotype"
+  - paragraph: Filmstaden ©2021. En del av Odeon Cinemas Group
+- text: Navigated to Vilken film vill du se?
+- button "Open chat":
+  - img
+```
+
+# Test source
+
+```ts
+   1 | import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
+   2 |
+   3 | export class StartPage extends DefaultPageWithNavigation {
+   4 |   private moviePosters: any;
+   5 |   private movieSearchField: any;
+   6 |   public mainContentLocator: any;
+   7 |   public errorMessageMovieSearch: any;
+   8 |
+   9 |   constructor(page: any) {
+  10 |     super(page);
+  11 |     this.moviePosters = this.page.locator("div[class='group/poster']");
+  12 |     this.movieSearchField = this.page.getByPlaceholder('Sök på filmens namn');
+  13 |     this.mainContentLocator = this.page.getByRole('main');
+  14 |     this.errorMessageMovieSearch = this.page.getByText('Ingen träff!Vi kunde inte');
+  15 |   }
+  16 |
+  17 |   async selectTownFromResults(townName: string) {
+  18 |     await this.page
+  19 |       .locator('ul')
+  20 |       .filter({ hasText: new RegExp(`^${townName}$`) })
+  21 |       .getByRole('link')
+  22 |       .click();
+  23 |   }
+  24 |
+  25 |   async searchMovie(movieName: string) {
+  26 |     await this.movieSearchField.fill(movieName);
+  27 |   }
+  28 |
+  29 |   async getMovieTitleLink(movieName: string) {
+  30 |     let locator = await this.page.getByRole('link', { name: movieName });
+  31 |     return locator;
+  32 |   }
+  33 |
+  34 |   async clickMovieLink(movieName: string) {
+  35 |     await this.page.getByRole('link', { name: movieName }).click();
+  36 |     await this.page.waitForLoadState('networkidle');
+  37 |   }
+  38 |
+  39 |   async clearMovieSearchField() {
+  40 |     await this.movieSearchField.fill('');
+  41 |   }
+  42 |
+  43 |   async selectRandomMovie() {
+  44 |     let randomMovie = Math.floor(Math.random() * 6);
+> 45 |     await this.moviePosters.nth(randomMovie).click();
+     |                                              ^ Error: locator.click: Test timeout of 60000ms exceeded.
+  46 |     await this.page.waitForLoadState('networkidle');
+  47 |     return randomMovie;
+  48 |   }
+  49 | }
+  50 |
+```
