@@ -49,7 +49,6 @@ test.describe.parallel('2FA login', () => {
       await loginPage.fillEmail(testEmailAddress);
       await loginPage.fillPassword(TestUserLogin.password);
       await loginPage.clickLogin();
-      await loginPage.clickSendCode();
     });
 
     await test.step('Verify the code and finish login', async () => {
@@ -57,7 +56,6 @@ test.describe.parallel('2FA login', () => {
       const code = await emailHelper.getLoginCode(testEmailAddress, timeFrom, namespace);
       await loginPage.fillVerificationCode(code);
       await loginPage.clickVerify();
-      await loginPage.clickContinue();
 
       // Assert that the login was successful by checking for the user name
       await expect(async () => {

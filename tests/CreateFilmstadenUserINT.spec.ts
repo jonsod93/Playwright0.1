@@ -9,8 +9,8 @@ test.describe('Create Account', () => {
     await context.route('https://s1.adform.net/banners/scripts/adx.js', (route) => route.abort());
 
     test.setTimeout(60000); // Set timeout to 60 seconds for the whole test
-    const namespace = 'y1ccwj8npeop';
-    const numberOfGroups = 2; // Amount of number groups in the namespace
+    const namespace = 'k9d40kvhx4pf';
+    const numberOfGroups = 3; // Amount of number groups in the namespace
     const mailisk = new MailiskClient({
       apiKey: 'umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY',
     });

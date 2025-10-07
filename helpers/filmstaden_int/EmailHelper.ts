@@ -9,9 +9,9 @@ export class EmailHelper {
   constructor() {
     const apiKey = 'umQrBAvP90qajGGk2Qv9_a4yDhyuAPcwsfPPjs7ovBY';
     this.mailisk = new MailiskClient({ apiKey });
-    this.loginIndex = 2; // Amount of number groups in the namespace
+    this.loginIndex = 3; // Amount of number groups in the namespace
     this.signUpIndex = this.loginIndex + 1;
-    this.namespace = 'y1ccwj8npeop';
+    this.namespace = 'k9d40kvhx4pf';
   }
 
   // Method to get the namespace
