@@ -1,0 +1,215 @@
+# Test info
+
+- Name: Tests for the Showpage >> Saloninfo verification
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:26:3
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for locator('div[class=\'group/poster\']').nth(4)
+
+    at StartPage.selectRandomMovieMethod (/home/runner/work/Playwright0.1/Playwright0.1/pages/filmstaden_int/StartPage.ts:45:46)
+    at MoviePage.selectFirstAvailableShowtime (/home/runner/work/Playwright0.1/Playwright0.1/pages/filmstaden_int/MoviePage.ts:22:13)
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:35:7
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/filmstaden_int/showPage.spec.ts:32:5
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: ❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.
+- link "❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.":
+  - /url: /foretagsbiljetter/
+- navigation:
+  - link "Filmstaden logotype":
+    - /url: /stockholm/
+    - img "Filmstaden logotype"
+  - link "På bio nu":
+    - /url: /pa-bio-nu/
+  - button "Gå på bio "
+  - link "Medlemsskapet":
+    - /url: /medlem/
+  - button "Mer "
+  - link "Logga in menuitem logo Logga in":
+    - /url: https://inte-services.cinema-api.com/redirect/externalSignUpOrIn/se?redirectUrl=https://sv-sit-marvel.filmstaden.se/mina-sidor/
+    - text: Logga in
+    - img "menuitem logo Logga in"
+  - button "Stockholm"
+- main:
+  - list:
+    - listitem:
+      - heading "Biobiljetter för företag" [level=1]
+      - paragraph: Ge bort biobiljetter och låt era kunder och medarbetare stiga in i en värld av spännande berättelser och upplevelser.
+      - paragraph: Ge bort en stor upplevelse i litet format. Företagsbiljetterna är giltiga ett helt år och gäller för alla ordinarie bioföreställningar och ordinarie platser hos Filmstaden och Svenska bio.
+      - link "Logga in och köp företagsbiljetter":
+        - /url: https://foretagsbiljetter.filmstaden.se/
+      - heading "Ge bort en bioupplevelse med extra guldkant" [level=3]
+      - paragraph: Ge dina kunder och kollegor maxade bioupplevelser med extra allt - bästa ljud, bild och komfort! Våra guldbiljetter gäller på alla föreställningar inklusive IMAX, iSense och Filmstadens VIP-salonger.
+      - heading "Biomenyer" [level=3]
+      - paragraph: Fullända bioupplevelsen och bjud på popcorn och läsk till biobesöket. Köp biomenybiljetter att toppa bioupplevelsen med.
+      - paragraph: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+      - paragraph: När "Black Panther" kom på bio 2018 blev filmen en stor milstolpe för Marvel, och superhjältegenren i stort. Ett stort kliv framåt för mångfald och representation på bioduken - och en mängd Oscarsnomineringar samt höga biointäkter visar att filmen gick hem både i finkretsar och hos den stora massan.
+      - img "TestImage - Test"
+    - listitem
+  - heading "Frågor och svar om företagsbiljetter" [level=2]
+  - list:
+    - listitem:
+      - button " Vad är en Företagsbiljett?"
+    - listitem:
+      - button " Kan jag lägga till en logotyp på företagsbiljetten?"
+    - listitem:
+      - button " Kan jag skriva en personlig hälsning på företagsbiljetten?"
+    - listitem:
+      - button " Ingår det kuvert till företagsbiljetten?"
+    - listitem:
+      - button " Hur många företagsbiljetter kan jag köpa?"
+  - heading "För företag" [level=2]
+  - heading "Föreningsbiljetten" [level=3]:
+    - link "Föreningsbiljetten":
+      - /url: /foreningsbiljetten/
+  - paragraph: Tjäna pengar till föreningen med hjälp av biobiljetter
+  - heading "Möten & Event" [level=3]:
+    - link "Möten & Event":
+      - /url: https://moten.filmstaden.se/
+  - paragraph: Hyr en biograf och skapa ett minnesvärt företagsevent eller filmevent.
+  - heading "Bioreklam" [level=3]:
+    - link "Bioreklam":
+      - /url: https://media.filmstaden.se/
+  - paragraph: På bion vill publiken se reklam. Ge ert varumärke fullt fokus.
+  - text: Kontrollera din företagsbiljett
+  - paragraph: Skriv in biljettkoden (12 tecken). Observera att gamla biljetter med 11 siffror inte kan visa giltighet
+  - textbox "Kontrollera din företagsbiljett"
+  - button "Kontrollera företagsbiljett" [disabled]
+  - dialog
+- contentinfo:
+  - heading "Om oss" [level=2]
+  - list:
+    - listitem:
+      - link "Jobba hos oss ":
+        - /url: https://jobb.filmstaden.se/
+    - listitem:
+      - link "Press ":
+        - /url: https://www.mynewsdesk.com/se/filmstaden-ab/
+    - listitem:
+      - link "Om Filmstaden":
+        - /url: /kundservice/fragor-och-svar/fragor-och-svar/om-filmstaden/
+    - listitem:
+      - link "Filmpanelen":
+        - /url: /filmpanelen/
+    - listitem:
+      - link "Alla våra biostäder":
+        - /url: /alla-biostader/
+    - listitem:
+      - link "Alla våra biografer":
+        - /url: /biografer/
+  - heading "För företag" [level=2]
+  - list:
+    - listitem:
+      - link "Företagsbiljetter":
+        - /url: /foretagsbiljetter/
+    - listitem:
+      - link "Möten & Event ":
+        - /url: https://moten.filmstaden.se/
+    - listitem:
+      - link "Bioreklam ":
+        - /url: https://media.filmstaden.se/
+    - listitem:
+      - link "Föreningsbiljetten":
+        - /url: /foreningsbiljetten/
+    - listitem:
+      - link "Test-sida":
+        - /url: /test/
+  - heading "Hjälp & kontakt" [level=2]
+  - list:
+    - listitem:
+      - link "Kundservice":
+        - /url: /kundservice/fragor-och-svar/
+    - listitem:
+      - link "Tillgänglig bio":
+        - /url: /tillganglig-bio/
+    - listitem:
+      - link "Personuppgiftspolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/personuppgiftspolicy/
+    - listitem:
+      - link "Cookiepolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/cookiepolicy/
+    - listitem:
+      - link "Kontakta oss":
+        - /url: /kundservice/kontakta-oss/
+    - listitem:
+      - link "Cookieinställningar":
+        - /url: "#"
+  - heading "Sociala medier" [level=2]
+  - list:
+    - listitem:
+      - link "Instagram ":
+        - /url: https://www.instagram.com/filmstaden_ab/
+    - listitem:
+      - link "Facebook ":
+        - /url: https://www.facebook.com/filmstadenab
+    - listitem:
+      - link "LinkedIn ":
+        - /url: https://se.linkedin.com/company/filmstaden
+  - separator
+  - img "Filmstaden logotype"
+  - paragraph: Filmstaden ©2021. En del av Odeon Cinemas Group
+- text: Navigated to Biobiljetter för företag
+```
+
+# Test source
+
+```ts
+   1 | import { DefaultPageWithNavigation } from './DefaultPageWithNavigation';
+   2 |
+   3 | export class StartPage extends DefaultPageWithNavigation {
+   4 |   private moviePosters: any;
+   5 |   private movieSearchField: any;
+   6 |   public mainContentLocator: any;
+   7 |   public errorMessageMovieSearch: any;
+   8 |
+   9 |   constructor(page: any) {
+  10 |     super(page);
+  11 |     this.moviePosters = this.page.locator("div[class='group/poster']");
+  12 |     this.movieSearchField = this.page.getByPlaceholder('Sök på filmens namn');
+  13 |     this.mainContentLocator = this.page.getByRole('main');
+  14 |     this.errorMessageMovieSearch = this.page.getByText('Ingen träff!Vi kunde inte');
+  15 |   }
+  16 |
+  17 |   async selectTownFromResults(townName: string) {
+  18 |     await this.page
+  19 |       .locator('ul')
+  20 |       .filter({ hasText: new RegExp(`^${townName}$`) })
+  21 |       .getByRole('link')
+  22 |       .click();
+  23 |   }
+  24 |
+  25 |   async searchMovie(movieName: string) {
+  26 |     await this.movieSearchField.fill(movieName);
+  27 |   }
+  28 |
+  29 |   async getMovieTitleLink(movieName: string) {
+  30 |     let locator = await this.page.getByRole('link', { name: movieName });
+  31 |     return locator;
+  32 |   }
+  33 |
+  34 |   async clickMovieLink(movieName: string) {
+  35 |     await this.page.getByRole('link', { name: movieName }).click();
+  36 |     await this.page.waitForLoadState('networkidle');
+  37 |   }
+  38 |
+  39 |   async clearMovieSearchField() {
+  40 |     await this.movieSearchField.fill('');
+  41 |   }
+  42 |
+  43 |   async selectRandomMovie() {
+  44 |     let randomMovie = Math.floor(Math.random() * 6);
+> 45 |     await this.moviePosters.nth(randomMovie).click();
+     |                                              ^ Error: locator.click: Test timeout of 60000ms exceeded.
+  46 |     await this.page.waitForLoadState('networkidle');
+  47 |     return randomMovie;
+  48 |   }
+  49 | }
+  50 |
+```
