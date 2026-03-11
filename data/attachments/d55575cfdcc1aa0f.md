@@ -1,0 +1,406 @@
+# Test info
+
+- Name: test
+- Location: /home/runner/work/Playwright0.1/Playwright0.1/tests/codegen.spec.js:3:1
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Visa saldo' })
+
+    at /home/runner/work/Playwright0.1/Playwright0.1/tests/codegen.spec.js:13:58
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: ❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.
+- link "❤️‍🔥 Är ni redo, Swifties? ❤️‍🔥 För biljetter till konsertfilmer gäller ej rätt till återköp eller byte.":
+  - /url: /foretagsbiljetter/
+- navigation:
+  - link "Filmstaden logotype":
+    - /url: /stockholm/
+    - img "Filmstaden logotype"
+  - link "På bio nu":
+    - /url: /pa-bio-nu/
+  - button "Gå på bio "
+  - link "Medlemsskapet":
+    - /url: /medlem/
+  - link "Företag":
+    - /url: /foretag/
+  - button "Mer "
+  - link "Logga in menuitem logo Logga in":
+    - /url: https://inte-services.cinema-api.com/redirect/externalSignUpOrIn/se?redirectUrl=https://sv-sit-marvel.filmstaden.se/mina-sidor/
+    - text: Logga in
+    - img "menuitem logo Logga in"
+  - button "Stockholm"
+- main:
+  - heading "Vilken film vill du se?" [level=1]
+  - text: 
+  - textbox "Vilken film vill du se?"
+  - heading "Filmer i Stockholm" [level=2]
+  - checkbox "Aktuellt" [checked]
+  - text: Aktuellt
+  - checkbox "Barn och familj"
+  - text: Barn och familj
+  - checkbox "Klassiker"
+  - text: Klassiker
+  - checkbox "Genre"
+  - text: Genre
+  - checkbox "På bio nu"
+  - text: På bio nu
+  - checkbox "Stickbio"
+  - text: Stickbio
+  - button "Alla dagar "
+  - button "Alla biografer "
+  - list:
+    - listitem:
+      - img "Anaconda"
+      - img "Anaconda"
+      - link "Anaconda":
+        - /url: /film/anaconda/
+      - text: Komedi
+    - listitem:
+      - img "Eternity"
+      - img "Eternity"
+      - link "Eternity":
+        - /url: /film/eternity/
+      - text: Romantik
+    - listitem:
+      - img "Vermiglio - en familjekrönika från alperna"
+      - img "Vermiglio - en familjekrönika från alperna"
+      - link "Vermiglio - en familjekrönika från alperna":
+        - /url: /film/vermiglio-en-familjekronika-fran-alperna/
+      - text: Drama
+    - listitem:
+      - heading "Filmstadens Medlemsdagar" [level=3]:
+        - link "Filmstadens Medlemsdagar":
+          - /url: https://www.filmstaden.se/medlemsdagar/
+      - paragraph: Den 10-12 mars är det medlemsdagar på Filmstaden
+    - listitem:
+      - 'link "Jujutsu Kaisen: Execution"':
+        - /url: /film/jujutsu-kaisen-execution/
+      - text: Anime
+    - listitem:
+      - img "The World of Hans Zimmer – A New Dimension"
+      - img "The World of Hans Zimmer – A New Dimension"
+      - link "The World of Hans Zimmer – A New Dimension":
+        - /url: /film/the-world-of-hans-zimmer-a-new-dimension/
+      - text: Musik
+    - listitem:
+      - link "The Housemaid":
+        - /url: /film/the-housemaid/
+      - text: Thriller
+  - button "Visa fler filmer"
+  - heading "Topplistan i Stockholm" [level=2]
+  - list:
+    - listitem:
+      - img "Tere Ishk Mein"
+      - img "Tere Ishk Mein"
+      - img
+      - text: "01"
+      - img
+      - link "Tere Ishk Mein":
+        - /url: /film/tere-ishk-mein/
+      - text: Romantik
+    - listitem:
+      - img "Anaconda"
+      - img "Anaconda"
+      - img
+      - text: "02"
+      - img
+      - link "Anaconda":
+        - /url: /film/anaconda/
+      - text: Komedi
+    - listitem:
+      - img "Dhurandhar"
+      - img "Dhurandhar"
+      - img
+      - text: "03"
+      - img
+      - link "Dhurandhar":
+        - /url: /film/dhurandhar/
+      - text: Action
+    - listitem:
+      - 'img "Sisu: Road to Revenge"'
+      - 'img "Sisu: Road to Revenge"'
+      - img
+      - text: "04"
+      - img
+      - 'link "Sisu: Road to Revenge"':
+        - /url: /film/sisu-road-to-revenge/
+      - text: Action
+    - listitem:
+      - img "120 Bahadur"
+      - img "120 Bahadur"
+      - img
+      - text: "05"
+      - img
+      - link "120 Bahadur":
+        - /url: /film/120-bahadur/
+      - text: Action
+    - listitem:
+      - img
+      - text: "06"
+      - img
+      - link "Good Boy":
+        - /url: /film/good-boy/
+      - text: Skräck
+    - listitem:
+      - img "Mästaren och Margarita"
+      - img "Mästaren och Margarita"
+      - img
+      - text: "07"
+      - img
+      - link "Mästaren och Margarita":
+        - /url: /film/mastaren-och-margarita/
+      - text: Drama
+    - listitem:
+      - img "De De Pyaar De 2"
+      - img "De De Pyaar De 2"
+      - img
+      - text: "08"
+      - img
+      - link "De De Pyaar De 2":
+        - /url: /film/de-de-pyaar-de-2/
+      - text: Romantik
+    - listitem:
+      - img
+      - text: "09"
+      - img
+      - 'link "Jujutsu Kaisen: Execution"':
+        - /url: /film/jujutsu-kaisen-execution/
+      - text: Anime
+    - listitem:
+      - img
+      - text: "10"
+      - img
+      - link "The Running Man":
+        - /url: /film/the-running-man/
+      - text: Action
+  - button "Visa fler filmer"
+  - heading "Välj dag du vill gå på bio" [level=2]
+  - radio "Idag 11 mar" [checked]
+  - text: Idag 11 mar
+  - radio "torsdag 12 mar"
+  - text: torsdag 12 mar
+  - radio "fredag 13 mar"
+  - text: fredag 13 mar
+  - radio "lördag 14 mar"
+  - text: lördag 14 mar
+  - radio "söndag 15 mar"
+  - text: söndag 15 mar
+  - radio "måndag 16 mar"
+  - text: måndag 16 mar
+  - radio "tisdag 31 mar"
+  - text: tisdag 31 mar
+  - checkbox "Grand Lidingö"
+  - text: Grand Lidingö
+  - checkbox "Grand Stockholm"
+  - text: Grand Stockholm
+  - checkbox "Heron City"
+  - text: Heron City
+  - checkbox "Kista"
+  - text: Kista
+  - checkbox "Rigoletto"
+  - text: Rigoletto
+  - checkbox "Råsunda"
+  - text: Råsunda
+  - checkbox "Saga"
+  - text: Saga
+  - checkbox "Scandinavia"
+  - text: Scandinavia
+  - checkbox "Sergel"
+  - text: Sergel
+  - checkbox "Sickla"
+  - text: Sickla
+  - checkbox "Skandia"
+  - text: Skandia
+  - checkbox "Sture"
+  - text: Sture
+  - checkbox "Söder"
+  - text: Söder
+  - checkbox "Täby"
+  - text: Täby
+  - checkbox "Victoria"
+  - text: Victoria
+  - checkbox "Vällingby"
+  - text: Vällingby
+  - checkbox "Alla" [checked]
+  - text: Alla
+  - link "På bio nu":
+    - /url: /pa-bio-nu/?date=2026-03-11
+  - heading "Utvalt" [level=2]
+  - paragraph: Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. Den 23 september går startskottet för Cancerfondens Rosa Bandet-kampanj 2024. HejsanHoppsan.
+  - heading "Filmstaden stöder Rosa Bandet" [level=3]:
+    - link "Filmstaden stöder Rosa Bandet":
+      - /url: /nyhet/rosa-bandet-pa-filmstaden/
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - img "Det har gått nästan 20 år sedan den kritikerrosade publiksuccén Gladiator (2000) kom ut på bio med Russell Crowe i huvudrollen."
+  - paragraph: Behöver du hjälp? Klicka här!
+  - heading "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar" [level=3]:
+    - link "Lyft din gladius och gör som Maximus! Kontakta Kundservice för frågor och svar":
+      - /url: /kundservice/fragor-och-svar/kontakta-oss/
+  - heading "Kommande filmer" [level=2]
+  - list:
+    - listitem:
+      - link "How to Make a Killing":
+        - /url: /film/how-to-make-a-killing/
+      - text: Thriller Premiär 13 mars
+    - listitem:
+      - img "Labyrinth"
+      - img "Labyrinth"
+      - link "Labyrinth":
+        - /url: /film/labyrinth/
+      - text: Fantasy Premiär 13 mars
+    - listitem:
+      - img "Minnen av honom"
+      - img "Minnen av honom"
+      - link "Minnen av honom":
+        - /url: /film/minnen-av-honom/
+      - text: Romantik Premiär 13 mars
+    - listitem:
+      - link "V för Vendetta - Klassiker":
+        - /url: /film/v-for-vendetta-klassiker/
+      - button "Klassiker" [disabled]
+      - text: Action Premiär 17 mars
+    - listitem:
+      - 'img "Billie Eilish - Hit Me Hard and Soft: The Tour"'
+      - 'img "Billie Eilish - Hit Me Hard and Soft: The Tour"'
+      - 'link "Billie Eilish - Hit Me Hard and Soft: The Tour"':
+        - /url: /film/billie-eilish-hit-me-hard-and-soft-the-tour/
+      - text: Musik Premiär 20 mars
+  - button "Visa fler filmer"
+  - heading "Mer för bioälskare" [level=2]
+  - list:
+    - listitem:
+      - link "Erbjudanden ":
+        - /url: /erbjudanden/
+      - link "Bioupplevelsen ":
+        - /url: /bioupplevelsen/
+      - link "Genres ":
+        - /url: /genre/
+      - link "Se det aktuella Klassiker-programmet ":
+        - /url: /klassiker-pa-bio/
+      - link "Filmarkivet ":
+        - /url: /filmarkivet/
+  - heading "Nyheter" [level=2]
+  - list:
+    - listitem:
+      - 'heading "An offer you can''t refuse: Se biopublikens mest önskade klassiker" [level=3]':
+        - 'link "An offer you can''t refuse: Se biopublikens mest önskade klassiker"':
+          - /url: /nyhet/an-offer-you-cant-refuse-se-biopublikens-mest-onskade-klassiker/
+      - paragraph: 9 januari 2026
+    - listitem:
+      - heading "Vinn ett helt år på bio!" [level=3]:
+        - link "Vinn ett helt år på bio!":
+          - /url: /nyhet/vinn-ett-helt-ar-pa-bio/
+      - paragraph: 19 december 2025
+    - listitem:
+      - 'heading "Medlemserbjudande: Anaconda Combo" [level=3]':
+        - 'link "Medlemserbjudande: Anaconda Combo"':
+          - /url: /nyhet/medlemserbjudande-anaconda-combo/
+      - paragraph: 19 december 2025
+- contentinfo:
+  - heading "Om oss" [level=2]
+  - list:
+    - listitem:
+      - link "Jobba hos oss ":
+        - /url: https://jobb.filmstaden.se/
+    - listitem:
+      - link "Press ":
+        - /url: https://www.mynewsdesk.com/se/filmstaden-ab/
+    - listitem:
+      - link "Om Filmstaden":
+        - /url: /kundservice/fragor-och-svar/fragor-och-svar/om-filmstaden/
+    - listitem:
+      - link "Filmpanelen":
+        - /url: /filmpanelen/
+    - listitem:
+      - link "Alla våra biostäder":
+        - /url: /alla-biostader/
+    - listitem:
+      - link "Alla våra biografer":
+        - /url: /biografer/
+  - heading "För företag" [level=2]
+  - list:
+    - listitem:
+      - link "Företagsbiljetter":
+        - /url: /foretagsbiljetter/
+    - listitem:
+      - link "Möten & Event ":
+        - /url: https://moten.filmstaden.se/
+    - listitem:
+      - link "Bioreklam ":
+        - /url: https://media.filmstaden.se/
+    - listitem:
+      - link "Föreningsbiljetten":
+        - /url: /foreningsbiljetten/
+    - listitem:
+      - link "Test-sida":
+        - /url: /test/
+  - heading "Hjälp & kontakt" [level=2]
+  - list:
+    - listitem:
+      - link "Kundservice":
+        - /url: /kundservice/fragor-och-svar/
+    - listitem:
+      - link "Tillgänglig bio":
+        - /url: /tillganglig-bio/
+    - listitem:
+      - link "Personuppgiftspolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/personuppgiftspolicy/
+    - listitem:
+      - link "Cookiepolicy":
+        - /url: /kundservice/fragor-och-svar/villkor-och-policies/cookiepolicy/
+    - listitem:
+      - link "Kontakta oss":
+        - /url: /kundservice/kontakta-oss/
+    - listitem:
+      - link "Cookieinställningar":
+        - /url: "#"
+  - heading "Sociala medier" [level=2]
+  - list:
+    - listitem:
+      - link "Instagram ":
+        - /url: https://www.instagram.com/filmstaden_ab/
+    - listitem:
+      - link "Facebook ":
+        - /url: https://www.facebook.com/filmstadenab
+    - listitem:
+      - link "LinkedIn ":
+        - /url: https://se.linkedin.com/company/filmstaden
+  - separator
+  - img "Filmstaden logotype"
+  - paragraph: Filmstaden ©2021. En del av Odeon Cinemas Group
+- text: Navigated to Vilken film vill du se?
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('test', async ({ page }) => {
+   4 |   await page.goto('https://sv-sit-marvel.filmstaden.se/');
+   5 |   //Landingpage
+   6 |   await page.getByRole('button', { name: 'Yes it’s okay' }).click();
+   7 |   await page.getByRole('link', { name: 'Stockholm' }).first().click();
+   8 |   //Startpage
+   9 |   await page.getByRole('button', { name: 'Mer ' }).click();
+  10 |   await page.getByRole('link', { name: 'Presentkort', exact: true }).click();
+  11 |   //Presentkortpage
+  12 |   await page.getByRole('textbox', { name: 'Har du redan ett presentkort' }).fill('fgsdfsdfsd');
+> 13 |   await page.getByRole('button', { name: 'Visa saldo' }).click();
+     |                                                          ^ Error: locator.click: Test timeout of 60000ms exceeded.
+  14 |   await expect(page.getByRole('heading', { name: 'Kortet kan inte hittas' })).toBeVisible();
+  15 |   await page.getByRole('button', { name: '' }).click();
+  16 |   await page.getByRole('textbox', { name: 'Har du redan ett presentkort' }).fill('');
+  17 |   await page.getByRole('textbox', { name: 'Har du redan ett presentkort' }).fill('20051295717');
+  18 |   await page.getByRole('button', { name: 'Visa saldo' }).click();
+  19 |   await expect(page.getByRole('heading', { name: 'Det här presentkortet har fö' })).toBeVisible();
+  20 | });
+  21 |
+```
